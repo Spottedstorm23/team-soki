@@ -1,0 +1,2 @@
+module TeamSoki.Textadventure {
+}

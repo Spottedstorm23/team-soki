@@ -22,3 +22,4 @@
 
 # own directories and files
 .idea
+.out
