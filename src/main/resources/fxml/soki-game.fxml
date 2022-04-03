@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="630.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="soki.textadventure.controller.GameController">
+   <children>
+      <GridPane layoutY="-14.0" prefHeight="630.0" prefWidth="920.0" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="NEVER" maxWidth="10.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="844.0" />
+          <ColumnConstraints hgrow="NEVER" maxWidth="10.0" minWidth="10.0" prefWidth="10.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="NEVER" />
+            <RowConstraints valignment="CENTER" vgrow="ALWAYS" />
+          <RowConstraints maxHeight="419.0" minHeight="10.0" prefHeight="57.0" valignment="CENTER" vgrow="NEVER" />
+          <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" valignment="BOTTOM" vgrow="NEVER" />
+        </rowConstraints>
+         <children>
+            <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" style="-fx-control-inner-background: #000000; -fx-highlight-fill: #00FF00; -fx-highlight-text-fill: #000000; -fx-text-fill: #00FF00;" text="Lichtung: Hütte, See, Steg&#10;&gt;&gt; Hütte&#10;&#10;Du gehst zur Hütte..." GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Consolas" size="12.0" />
+               </font>
+            </TextArea>
+            <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="500.0" prefWidth="500.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="328.0" minWidth="10.0" prefWidth="166.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="280.0" minWidth="10.0" prefWidth="225.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="User-Standort" textFill="LIME" GridPane.columnIndex="2">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="Monospaced Regular" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_LEFT" text="Aktueller Standort:" textFill="LIME" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="Monospaced Regular" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField promptText="User-Eingabe" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-text-fill: #00FF00;" text="User">
+                     <GridPane.margin>
+                        <Insets top="10.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="Monospaced Regular" size="12.0" />
+                     </font>
+                  </TextField>
+                  <Button mnemonicParsing="false" onAction="#QUITGame" text="QUIT" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
