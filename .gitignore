@@ -22,4 +22,5 @@
 
 # own directories and files
 .idea
-.out
+out
+target

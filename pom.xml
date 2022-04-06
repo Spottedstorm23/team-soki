@@ -4,17 +4,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>groupId</groupId>
-    <artifactId>team-soki</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>teamSOKI</groupId>
+    <artifactId>textadventure</artifactId>
+    <version>1.0</version>
+    <name>Tesxtadventure</name>
+    <packaging>jar</packaging>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-
         <!-- Properties taken from MAVEN-JavaFX-Project, IntelliJ automatic build -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <junit.version>5.8.1</junit.version>
+        <java.version>17</java.version>
+        <javafx.version>17.0.1</javafx.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
     <dependencies>
@@ -41,18 +43,7 @@
             <artifactId>controlsfx</artifactId>
             <version>11.1.0</version>
         </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
+
     </dependencies>
 
     <!-- Build attributes taken from MAVEN-JavaFX-Project, IntelliJ automatic build -->
@@ -69,26 +60,25 @@
                 </configuration>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>soki.textadventure.Main</mainClass>
+                            <classpathPrefix>dependency-jars/</classpathPrefix>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
-                <executions>
-                    <execution>
-                        <!-- Default configuration for running with: mvn clean javafx:run -->
-                        <id>default-cli</id>
-                        <configuration>
-                            <mainClass>soki.textadventure/soki.textadventure.Main</mainClass>
-                            <launcher>app</launcher>
-                            <jlinkZipName>app</jlinkZipName>
-                            <jlinkImageName>app</jlinkImageName>
-                            <noManPages>true</noManPages>
-                            <stripDebug>true</stripDebug>
-                            <noHeaderFiles>true</noHeaderFiles>
-                        </configuration>
-                    </execution>
-                </executions>
+
             </plugin>
         </plugins>
     </build>
-    
 </project>
