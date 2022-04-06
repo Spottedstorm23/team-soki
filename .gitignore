@@ -24,3 +24,6 @@
 .idea
 out
 target
+Textadventure_executable/bin
+Textadventure_executable/jre
+Textadventure_executable/lib
