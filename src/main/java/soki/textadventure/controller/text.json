@@ -1,15 +1,1 @@
-{
-  "text": [
-    {
-      "row": 1,
-      "column": 1,
-      "contents": "Es war einmal eine Julie..."
-    },
-    {
-      "row": 1,
-      "column": 2,
-      "contents": "Ihr Haar war schwarz wie Ebenholz."
-    }
-  ],
-  "crustyCrab": "nein, hier ist Patrick"
-}
+{"text":[{"contents":"Es war einmal eine Julie...","column":1,"row":1},{"column":2,"contents":"Ihr Haar war schwarz wie Ebenholz.","row":1}],"save-row":1,"save-column":2}
