@@ -1,1 +1,4 @@
 Kopiert die jre mal hier her, die ist zu groß für git....
+(Zeug aus openjdk-Ordner rein --> openjdk-17.0.2 aus dem C:\User\wir\.jdks\openjdk-17.0.2
+Nur der Inhalt (bin, conf, include, jmods, legal, lib, release))
+
