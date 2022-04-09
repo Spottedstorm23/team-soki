@@ -16,7 +16,7 @@
       <GridPane layoutY="-14.0" prefHeight="630.0" prefWidth="920.0" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
           <ColumnConstraints hgrow="NEVER" maxWidth="10.0" minWidth="10.0" prefWidth="10.0" />
-            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="844.0" />
+            <ColumnConstraints hgrow="ALWAYS" />
           <ColumnConstraints hgrow="NEVER" maxWidth="10.0" minWidth="10.0" prefWidth="10.0" />
         </columnConstraints>
         <rowConstraints>
@@ -26,7 +26,7 @@
           <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" valignment="BOTTOM" vgrow="NEVER" />
         </rowConstraints>
          <children>
-            <TextArea editable="false" prefHeight="517.0" prefWidth="927.0" style="-fx-control-inner-background: #000000; -fx-highlight-fill: #00FF00; -fx-highlight-text-fill: #000000; -fx-text-fill: #00FF00;" text="Lichtung: Hütte, See, Steg&#10;&gt;&gt; Hütte&#10;&#10;Du gehst zur Hütte..." GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextArea fx:id="textAreaGameWindow" disable="true" editable="false" prefHeight="517.0" prefWidth="927.0" promptText="TextArea" style="-fx-control-inner-background: #000000; -fx-highlight-fill: #00FF00; -fx-highlight-text-fill: #000000; -fx-text-fill: #00FF00; -fx-opacity: 1.0;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font name="Monospaced Regular" size="18.0" />
                </font>
@@ -40,10 +40,10 @@
               <rowConstraints>
                 <RowConstraints vgrow="SOMETIMES" />
                 <RowConstraints maxHeight="25.0" minHeight="9.0" prefHeight="9.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label alignment="CENTER" text="User-Standort" textAlignment="CENTER" textFill="LIME" GridPane.columnIndex="2">
+                  <Label fx:id="labelUserStandortGameWindow" alignment="CENTER" text="User-Standort" textAlignment="CENTER" textFill="LIME" GridPane.columnIndex="2">
                      <GridPane.margin>
                         <Insets left="10.0" />
                      </GridPane.margin>
@@ -59,7 +59,7 @@
                         <Font name="Monospaced Regular" size="18.0" />
                      </font>
                   </Label>
-                  <TextField promptText="User-Eingabe" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-text-fill: #00FF00;" text="User Monospaced text &gt;&gt; Hütte, See, Steg">
+                  <TextField fx:id="textFieldGameWindow" disable="true" promptText="User-Eingabe" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-text-fill: #00FF00; -fx-opacity: 1.0;">
                      <GridPane.margin>
                         <Insets top="10.0" />
                      </GridPane.margin>

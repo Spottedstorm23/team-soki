@@ -21,8 +21,8 @@ public class Main extends Application {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("SOKI");
         stage.setScene(scene);
-        stage.initStyle(StageStyle.TRANSPARENT); // remove close, minimize, full screen option
-        stage.setFullScreen(true); // full screen
+        // stage.initStyle(StageStyle.TRANSPARENT); // remove close, minimize, full screen option
+        // stage.setFullScreen(true); // full screen
         stage.setResizable(false); // cannot change window size
         stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH); // cannot exit full screen
         stage.show();
