@@ -3,11 +3,22 @@ package soki.textadventure.controller;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.input.KeyCombination;
+import javafx.stage.Stage;
+import javafx.stage.Window;
+
 import javax.swing.Timer;
+import java.awt.*;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class GameController {   // Controller for soki-game.fxml
     /*
@@ -55,7 +66,11 @@ public class GameController {   // Controller for soki-game.fxml
 
             // TODO: inputText-Interaktionen/-Reaktionen
             // "inoputText"-Interaktionen hier rein!
-            checkInput(inputText);
+            try {
+                checkInput(inputText);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
         });
 
     }
@@ -74,7 +89,7 @@ public class GameController {   // Controller for soki-game.fxml
                     System.out.print(s);
                     textAreaGameWindow.appendText(s);
                     try {
-                        Thread.sleep(100L);
+                        Thread.sleep(50L);
                     } catch (InterruptedException ex) {
                         ex.printStackTrace();
                     }
@@ -98,7 +113,7 @@ public class GameController {   // Controller for soki-game.fxml
         } // function "actionPerformed"
     });
 
-    public void checkInput(String toBeCheckedInput) {
+    public void checkInput(String toBeCheckedInput) throws IOException {
         switch (toBeCheckedInput) {
             case "rechts":
                 currentline = 0; // rechts (richtungsArray)
@@ -112,18 +127,23 @@ public class GameController {   // Controller for soki-game.fxml
                 currentline = 2; // geradeaus (richtungsArray)
                 break;
             case "hilfe":
-                textAreaGameWindow.appendText("Mögliche Eingaben: \nrechts\nlinks\ngeradeaus\nbeenden\n");
-                currentline = -1;
+                // TODO: Display array here without brackets
+                textAreaGameWindow.appendText("Mögliche Eingaben: \nrechts\nlinks\ngeradeaus\nmenu\nbeenden\n");
+                currentline = -1; // not used
                 break;
             case "beenden":
                 // TODO: SAVE GAME HERE
-                Platform.exit();
-                // currentline = -2; // not used
+                QUITGame();
+                currentline = -2; // not used
+                break;
+            case "menu":
+                openMenu();
             default:
                 currentline = -3;
                 break;
         }
         if (currentline>=0){
+            // TODO: TIMER --> Letter by letter
             textAreaGameWindow.appendText(richtungsArray[currentline] + "\n");
             }
         if (currentline == -3){
@@ -132,7 +152,26 @@ public class GameController {   // Controller for soki-game.fxml
 
     }
 
-    public void QUITGame(ActionEvent actionEvent) {
+    public void openMenu() throws IOException {
+        Stage stage = (Stage) textFieldGameWindow.getScene().getWindow();
+        stage.close();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/soki-menu.fxml"));
+        Parent rootGame = fxmlLoader.load();
+        Scene menuScene = new Scene(rootGame);
+        Stage menuStage = new Stage();
+        menuStage.setTitle("SOKI");
+        // menuStage.initStyle(StageStyle.TRANSPARENT); // remove close, minimize, full screen option
+        // menuStage.setFullScreen(true); // full screen
+        menuStage.setResizable(false); // cannot change window size
+        menuStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH); // cannot exit full screen
+        menuStage.setScene(menuScene);
+        menuStage.getIcons().add(new Image(this.getClass().getResourceAsStream("/icons/Soki-Icon.png")));
+        menuStage.show();
+    }
+
+
+    public void QUITGame() {
         Platform.exit(); // CLOSES ALL STAGES
     }
 

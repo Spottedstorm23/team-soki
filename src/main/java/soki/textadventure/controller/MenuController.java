@@ -33,11 +33,13 @@ public class MenuController {
         Parent rootGame = fxmlLoader.load();
         Scene gameScene = new Scene(rootGame);
         Stage gameStage = new Stage();
+        gameStage.setTitle("SOKI");
         // gameStage.initStyle(StageStyle.TRANSPARENT); // remove close, minimize, full screen option
         // gameStage.setFullScreen(true); // full screen
         gameStage.setResizable(false); // cannot change window size
         gameStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH); // cannot exit full screen
         gameStage.setScene(gameScene);
+        gameStage.getIcons().add(new Image(this.getClass().getResourceAsStream("/icons/Soki-Icon.png")));
         gameStage.show();
     }
 }

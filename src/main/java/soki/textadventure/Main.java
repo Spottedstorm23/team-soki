@@ -3,6 +3,7 @@ package soki.textadventure;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -25,6 +26,7 @@ public class Main extends Application {
         // stage.setFullScreen(true); // full screen
         stage.setResizable(false); // cannot change window size
         stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH); // cannot exit full screen
+        stage.getIcons().add(new Image(this.getClass().getResourceAsStream("/icons/Soki-Icon.png")));
         stage.show();
     }
 
