@@ -34,10 +34,7 @@ public class Main extends Application {
 
         //Nur für Testzwecke
         FileController fc = new FileController();
-        String text = fc.getTextFromJson(1,2);
-        System.out.println(text);
-
-        fc.writeSavedStatsToFile(1,2);
+        fc.changeVisible("snek","DerBlob");
 
         //launch();
 
