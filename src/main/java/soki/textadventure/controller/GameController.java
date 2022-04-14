@@ -1,10 +1,8 @@
 package soki.textadventure.controller;
 
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -13,10 +11,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 
 import javax.swing.Timer;
-import java.awt.*;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
@@ -45,6 +41,11 @@ public class GameController {   // Controller for soki-game.fxml
     String textgeradeaus = "Du gehst gerade aus...";
                                 // 0         1            2
     String[] richtungsArray = {textrechts,textlinks,textgeradeaus};
+    String[] allgMoeglichkeiten = {"menu", "beenden"};
+
+    // if possible: how to add all elements from one array to another?
+    String[] moeglichkeitenArray = {"rechts", "links","geradeaus", allgMoeglichkeiten[0], allgMoeglichkeiten[1]};
+
     int currentline;
 
     public void setNextStoryLine() {
@@ -89,7 +90,7 @@ public class GameController {   // Controller for soki-game.fxml
                     System.out.print(s);
                     textAreaGameWindow.appendText(s);
                     try {
-                        Thread.sleep(50L);
+                        Thread.sleep(10L); // USE "50L" FOR A GOOD PACE FOR THE GAME
                     } catch (InterruptedException ex) {
                         ex.printStackTrace();
                     }
@@ -98,9 +99,11 @@ public class GameController {   // Controller for soki-game.fxml
                 textAreaGameWindow.appendText("\n"); // neue Zeile beginnen
                 timer.stop();
 
-                textFieldGameWindow.setDisable(false);
-                currentline++;
-                setNextStoryLine();
+                if (alltext != richtungsArray) {
+                    textFieldGameWindow.setDisable(false);
+                    currentline++;
+                    setNextStoryLine();
+                }
 
             } else {
                 if (alltext != richtungsArray){
@@ -118,23 +121,17 @@ public class GameController {   // Controller for soki-game.fxml
             case "rechts":
                 currentline = 0; // rechts (richtungsArray)
                 break;
-
             case "links":
                 currentline = 1; // links (richtungsArray)
                 break;
-
             case "geradeaus":
                 currentline = 2; // geradeaus (richtungsArray)
                 break;
             case "hilfe":
-                // TODO: Display array here without brackets
-                textAreaGameWindow.appendText("Mögliche Eingaben: \nrechts\nlinks\ngeradeaus\nmenu\nbeenden\n");
-                currentline = -1; // not used
+                currentline = -1;
                 break;
             case "beenden":
-                // TODO: SAVE GAME HERE
-                QUITGame();
-                currentline = -2; // not used
+                currentline = -2;
                 break;
             case "menu":
                 openMenu();
@@ -142,14 +139,28 @@ public class GameController {   // Controller for soki-game.fxml
                 currentline = -3;
                 break;
         }
-        if (currentline>=0){
-            // TODO: TIMER --> Letter by letter
-            textAreaGameWindow.appendText(richtungsArray[currentline] + "\n");
-            }
-        if (currentline == -3){
-            textAreaGameWindow.appendText("KEIN ÜBEREINSTIMMENDER STRING\nBENUTZE \"hilfe\" FÜR VORSCHLÄGE\n");
-        }
 
+        switch (currentline){
+            case 0:
+            case 1:
+            case 2:
+                alltext = richtungsArray;
+                timer.start();
+                break;
+
+            case -1:
+                textAreaGameWindow.appendText(arrayWithoutBrackets(moeglichkeitenArray));
+                break;
+
+            case -2:
+                // TODO: SAVE GAME HERE
+                quitgame();
+                break;
+
+            case -3:
+                textAreaGameWindow.appendText("KEIN ÜBEREINSTIMMENDER STRING\nBENUTZE \"hilfe\" FÜR VORSCHLÄGE\n");
+                break;
+        }
     }
 
     public void openMenu() throws IOException {
@@ -170,11 +181,18 @@ public class GameController {   // Controller for soki-game.fxml
         menuStage.show();
     }
 
+    public String arrayWithoutBrackets(String[] stringArray){
+        StringBuilder builder = new StringBuilder();
+        for (String value : stringArray){
+            builder.append(value + "\n");
+        }
+        String text = builder.toString();
 
-    public void QUITGame() {
-        Platform.exit(); // CLOSES ALL STAGES
+        return text;
     }
 
-    // TODO: Possibility to quit game and/or return to menu
+    public void quitgame() {
+        Platform.exit(); // CLOSES ALL STAGES
+    }
 
 }
