@@ -12,59 +12,36 @@ import java.io.Reader;
 
 public class FileController {
 
-    //todo: mithilfe von Callback/Interface besser zusammenfassen, weniger Dopplung, aber dafür komplizierter
-
-    private String pathToTestJsonFile = "src/main/java/soki/textadventure/controller/text.json";
     private String pathToPlayerDateJsonFile = "src/main/java/soki/textadventure/controller/playerdata.json";
 
-    public void addPlayer(String name) {
-        JSONObject playerPrototype = new JSONObject();
-        playerPrototype.put("name",name);
-        playerPrototype.put("id",0);
-        playerPrototype.put("playthrough",0);
-        playerPrototype.put("objects",new JSONArray());
-
-        JSONObject playerdateObject = readContent(pathToPlayerDateJsonFile);
-
-        JSONArray playerList = (JSONArray) playerdateObject.get("player");
-        playerList.add(playerPrototype);
-
-        writeContent(playerdateObject, pathToPlayerDateJsonFile);
+    public void changeLocation(int iD){
+        JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
+        playerdataObject.replace("id",iD);
+        writeContent(playerdataObject, pathToPlayerDateJsonFile);
     }
 
-    public void changeLocation(String name, int iD){
-        JSONObject playerdateObject = readContent(pathToPlayerDateJsonFile);
-        JSONObject playerObject = findObjectFromPlayerInFileObject(playerdateObject, name);
-        playerObject.replace("id",iD);
-        writeContent(playerdateObject, pathToPlayerDateJsonFile);
-    }
-
-    public void addObject(String name, String object, Boolean isVisible) {
-        JSONObject playerdateObject = readContent(pathToPlayerDateJsonFile);
-        JSONObject playerObject = findObjectFromPlayerInFileObject(playerdateObject, name);
+    public void addObject(String object, Boolean isVisible) {
+        JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
 
         JSONObject objectPrototype = new JSONObject();
         objectPrototype.put("name",object);
         objectPrototype.put("isVisible",isVisible);
 
-        JSONArray objectList = (JSONArray) playerObject.get("objects");
+        JSONArray objectList = (JSONArray) playerdataObject.get("objects");
         objectList.add(objectPrototype);
 
-        writeContent(playerdateObject, pathToPlayerDateJsonFile);
+        writeContent(playerdataObject, pathToPlayerDateJsonFile);
     }
 
-    public void setPlaythrough(String name, int playthrough) {
-        JSONObject playerdateObject = readContent(pathToPlayerDateJsonFile);
-        JSONObject playerObject = findObjectFromPlayerInFileObject(playerdateObject, name);
-        playerObject.replace("playthrough",playthrough);
-        writeContent(playerdateObject, pathToPlayerDateJsonFile);
+    public void setPlaythrough(int playthrough) {
+        JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
+        playerdataObject.replace("playthrough",playthrough);
+        writeContent(playerdataObject, pathToPlayerDateJsonFile);
     }
 
-    public void changeVisible(String name, String object) {
-        JSONObject playerdateObject = readContent(pathToPlayerDateJsonFile);
-        JSONObject playerObject = findObjectFromPlayerInFileObject(playerdateObject, name);
-
-        JSONArray objectArray = (JSONArray) playerObject.get("objects");
+    public void changeVisible(String object) {
+        JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
+        JSONArray objectArray = (JSONArray) playerdataObject.get("objects");
 
         for (JSONObject innerObject : (Iterable<JSONObject>) objectArray) {
             String objectName = (String) innerObject.get("name");
@@ -75,20 +52,7 @@ public class FileController {
             }
         }
 
-        writeContent(playerdateObject, pathToPlayerDateJsonFile);
-    }
-
-    private JSONObject findObjectFromPlayerInFileObject(JSONObject fileObject, String name) {
-        JSONArray objectArray = (JSONArray) fileObject.get("player");
-
-        for (JSONObject innerObject : (Iterable<JSONObject>) objectArray) {
-            String listName = (String) innerObject.get("name");
-
-            if (listName.equals(name)) {
-                return innerObject;
-            }
-        }
-        return null;
+        writeContent(playerdataObject, pathToPlayerDateJsonFile);
     }
 
     private void writeContent(JSONObject objectForJSON, String pathToJsonFile) {
