@@ -15,6 +15,9 @@ import javafx.stage.Stage;
 import javax.swing.Timer;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class GameController {   // Controller for soki-game.fxml
     /*
@@ -34,17 +37,17 @@ public class GameController {   // Controller for soki-game.fxml
     String text1 = "Dies ist die erste Zeile von \"SOKI\"";
     String text2 = "Es beginnt mit einer Abzweigung nach rechts, links oder geradeaus.";
     String text3 = "Wohin willst du gehen?";
-    String[] alltext = {text1,text2,text3}; // INPUT STORY SECTION HERE
+    String[] alltext = {text1, text2, text3}; // INPUT STORY SECTION HERE
 
     String textrechts = "Du gehst nach rechts...";
     String textlinks = "Du gehst nach links...";
     String textgeradeaus = "Du gehst gerade aus...";
-                                // 0         1            2
-    String[] richtungsArray = {textrechts,textlinks,textgeradeaus};
+    // 0         1            2
+    String[] richtungsArray = {textrechts, textlinks, textgeradeaus};
     String[] allgMoeglichkeiten = {"menu", "beenden"};
 
     // if possible: how to add all elements from one array to another?
-    String[] moeglichkeitenArray = {"rechts", "links","geradeaus", allgMoeglichkeiten[0], allgMoeglichkeiten[1]};
+    String[] moeglichkeitenArray = {"rechts", "links", "geradeaus", allgMoeglichkeiten[0], allgMoeglichkeiten[1]};
 
     int currentline;
 
@@ -52,12 +55,12 @@ public class GameController {   // Controller for soki-game.fxml
         if (currentline < alltext.length) {
             timer.start();
         } else {
-         currentline = -1;
-         timer.start();
+            currentline = -1;
+            timer.start();
         }
     }
 
-    public void initialize() {
+    /*public void initialize() {
         currentline = 0; // START AT alltext[0]
         setNextStoryLine();
         textFieldGameWindow.setOnAction(e -> {
@@ -74,12 +77,17 @@ public class GameController {   // Controller for soki-game.fxml
             }
         });
 
+    }*/
+
+    public void initialize() {
+        String text = "help 123";
+        processUserInput(text);
     }
 
 
-    Timer timer = new Timer(80, new ActionListener(){
+    Timer timer = new Timer(80, new ActionListener() {
         @Override
-        public void actionPerformed(java.awt.event.ActionEvent e){
+        public void actionPerformed(java.awt.event.ActionEvent e) {
             textFieldGameWindow.setDisable(true);
             if (currentline >= 0) {
                 // ONE SECTION
@@ -106,7 +114,7 @@ public class GameController {   // Controller for soki-game.fxml
                 }
 
             } else {
-                if (alltext != richtungsArray){
+                if (alltext != richtungsArray) {
                     alltext = richtungsArray;
                 } // if
                 timer.stop();
@@ -140,7 +148,7 @@ public class GameController {   // Controller for soki-game.fxml
                 break;
         }
 
-        switch (currentline){
+        switch (currentline) {
             case 0:
             case 1:
             case 2:
@@ -163,6 +171,25 @@ public class GameController {   // Controller for soki-game.fxml
         }
     }
 
+
+    public void processUserInput(String input) {
+        // Input wird in kleine Buchstaben umgewandelt um weiterarbeit zu vereinfachen
+        String lowerCaseInput = input.toLowerCase();
+
+        // Es wird ein Matcher erstellt der den input auf alle Zeichen die nicht kleinbuchstaben oder Leerzeichen sind überprüft.
+        // Grund: Es soll vermieden werden, dass Eingaben gemacht werden, die den Ablauf des Programms stören
+        Pattern nonLettersRegex = Pattern.compile("[^a-z ]+");
+        Matcher includesNonLetters =nonLettersRegex.matcher(lowerCaseInput);
+
+        if (includesNonLetters.find()) {
+            System.out.println("Beinhaltet Zahlen oh no !");
+            return;
+        }
+
+
+
+    }
+
     public void openMenu() throws IOException {
         Stage stage = (Stage) textFieldGameWindow.getScene().getWindow();
         stage.close();
@@ -181,9 +208,9 @@ public class GameController {   // Controller for soki-game.fxml
         menuStage.show();
     }
 
-    public String arrayWithoutBrackets(String[] stringArray){
+    public String arrayWithoutBrackets(String[] stringArray) {
         StringBuilder builder = new StringBuilder();
-        for (String value : stringArray){
+        for (String value : stringArray) {
             builder.append(value + "\n");
         }
         String text = builder.toString();
