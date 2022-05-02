@@ -23,16 +23,23 @@ public class MenuController {
     }
 
     public void LoadGameMenu(ActionEvent actionEvent) throws IOException {
+        // Closes Menu window --> would still exist, if Game is started
+        Node node = (Node) actionEvent.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
+
         // TODO: Load existing game
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/soki-game.fxml"));
         Parent rootGame = fxmlLoader.load();
         Scene gameScene = new Scene(rootGame);
         Stage gameStage = new Stage();
-        gameStage.initStyle(StageStyle.TRANSPARENT); // remove close, minimize, full screen option
-        gameStage.setFullScreen(true); // full screen
+        gameStage.setTitle("SOKI");
+        // gameStage.initStyle(StageStyle.TRANSPARENT); // remove close, minimize, full screen option
+        // gameStage.setFullScreen(true); // full screen
         gameStage.setResizable(false); // cannot change window size
         gameStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH); // cannot exit full screen
         gameStage.setScene(gameScene);
+        gameStage.getIcons().add(new Image(this.getClass().getResourceAsStream("/icons/Soki-Icon.png")));
         gameStage.show();
     }
 }
