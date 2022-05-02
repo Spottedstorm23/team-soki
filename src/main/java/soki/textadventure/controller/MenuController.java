@@ -10,8 +10,10 @@ import javafx.scene.input.KeyCombination;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import soki.textadventure.Main;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class MenuController {
     // Controller for soki-menu.fxml
@@ -29,7 +31,7 @@ public class MenuController {
         stage.close();
 
         // TODO: Load existing game
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/soki-game.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/fxml/soki-game.fxml"));
         Parent rootGame = fxmlLoader.load();
         Scene gameScene = new Scene(rootGame);
         Stage gameStage = new Stage();
@@ -39,7 +41,7 @@ public class MenuController {
         gameStage.setResizable(false); // cannot change window size
         gameStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH); // cannot exit full screen
         gameStage.setScene(gameScene);
-        gameStage.getIcons().add(new Image(this.getClass().getResourceAsStream("/icons/Soki-Icon.png")));
+        gameStage.getIcons().add(new Image(Objects.requireNonNull(this.getClass().getResourceAsStream("/icons/Soki-Icon.png"))));
         gameStage.show();
     }
 }
