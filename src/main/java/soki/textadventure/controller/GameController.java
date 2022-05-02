@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import javax.swing.Timer;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -80,8 +81,8 @@ public class GameController {   // Controller for soki-game.fxml
     }*/
 
     public void initialize() {
-        String text = "help 123";
-        processUserInput(text);
+        String inputText = "Waehle B";
+       processUserInput(inputText);
     }
 
 
@@ -176,17 +177,73 @@ public class GameController {   // Controller for soki-game.fxml
         // Input wird in kleine Buchstaben umgewandelt um weiterarbeit zu vereinfachen
         String lowerCaseInput = input.toLowerCase();
 
-        // Es wird ein Matcher erstellt der den input auf alle Zeichen die nicht kleinbuchstaben oder Leerzeichen sind überprüft.
+        // Es wird ein Matcher erstellt der den Input auf verbotene Zeichen(0-9 sowie Sonderzeichen) überprüft.
         // Grund: Es soll vermieden werden, dass Eingaben gemacht werden, die den Ablauf des Programms stören
         Pattern nonLettersRegex = Pattern.compile("[^a-z ]+");
-        Matcher includesNonLetters =nonLettersRegex.matcher(lowerCaseInput);
+        Matcher includesNonLetters = nonLettersRegex.matcher(lowerCaseInput);
 
         if (includesNonLetters.find()) {
-            System.out.println("Beinhaltet Zahlen oh no !");
+            //TODO Ausgabe einer ordentlichen Fehlermeldung für den Nutzer
+            System.out.println("Beinhaltet Zahlen oder Sonderzeichen!");
             return;
         }
 
+        if (lowerCaseInput.matches("hilfe")) {
+            textAreaGameWindow.appendText("Eine Liste der möglichen Befehle:\n");
+            //TODO Liste mit möglichen Befehlen und erklärungen ausgeben
+        } else if (lowerCaseInput.matches("menu")) {
+            textAreaGameWindow.appendText("Du kehrst ins Hauptmenü zurück!\n");
+            //TODO Callback zum Hauptmenü
 
+        } else if (lowerCaseInput.matches("beenden")) {
+            // TODO Speichern
+            quitgame();
+        } else if (lowerCaseInput.matches("untersuche [a-z]+")) {
+            String targetObject = lowerCaseInput.replace("untersuche ", "");
+            textAreaGameWindow.appendText("Du untersuchst " + targetObject + "!\n");
+            //TODO return target und nutze entsprechenden dialog
+
+        } else if (lowerCaseInput.matches("nimm [a-z]+")) {
+            String targetItem = lowerCaseInput.replace("nimm ", "");
+            textAreaGameWindow.appendText("Du nimmst " + targetItem + "!\n");
+            //TODO return target und nutze entsprechenden dialog
+
+        } else if (lowerCaseInput.matches("inventar")) {
+            textAreaGameWindow.appendText("Du öffnest dein Ineventar und siehst die deine Items an!\n");
+            //TODO Inventarliste ausgeben
+
+        } else if (lowerCaseInput.matches("benutze [a-z ]+")) {
+            //TODO Ziel(e) zurückgeben und entsprechnden Dialog ausgeben
+            if (lowerCaseInput.contains("mit")) {
+                String[] substrings = lowerCaseInput.split("[a-z]* ");
+                System.out.println(Arrays.toString(substrings));
+                String targetedObject = substrings[3];
+                String usedItem = substrings[2];
+                textAreaGameWindow.appendText("Du benutzt " + usedItem + "mit " + targetedObject + "\n");
+
+            } else {
+                String usedItem = lowerCaseInput.replace("benutze ", "");
+                textAreaGameWindow.appendText("Du benutzt " + usedItem + "\n");
+
+            }
+
+        } else if (lowerCaseInput.matches("interagiere mit [a-z]+")) {
+            //TODO Ziel(e) zurückgeben und entsprechnden Dialog ausgeben
+            String target = lowerCaseInput.replace("interagiere mit ", "");
+            textAreaGameWindow.appendText("Du interagierst mit " + target + "\n");
+
+        } else if (lowerCaseInput.matches("gehe zu [a-z ]+")) {
+            //TODO Ort zurückgeben und entsprechnden Dialog ausgeben
+            String targetPlace = lowerCaseInput.replace("gehe zu ", "");
+            textAreaGameWindow.appendText("Du gehst zum " + targetPlace + "\n");
+
+        } else if (lowerCaseInput.matches("waehle [a-z]+")) {
+            String option = lowerCaseInput.replace("waehle ", "");
+            textAreaGameWindow.appendText("Du wählst Option " + option + "\n");
+
+        } else {
+            textAreaGameWindow.appendText("Du hast dich selbst verwirrt und versuchst deine Aktion neuzustarten");
+        }
 
     }
 
