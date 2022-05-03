@@ -109,7 +109,7 @@ public class GameController {   // Controller for soki-game.fxml
 
         if (includesNonLetters.find()) {
             //TODO Ausgabe einer ordentlichen Fehlermeldung für den Nutzer
-            textAreaGameWindow.appendText("Du hast dich selbst verwirrt und versuchst deine Aktion neuzustarten");
+            textAreaGameWindow.appendText("Du hast dich selbst verwirrt und versuchst deine Aktion neuzustarten\n");
             return;
         }
 
@@ -118,6 +118,7 @@ public class GameController {   // Controller for soki-game.fxml
 
         } else if (lowerCaseInput.matches("menu")) {
             setCurrentDialogLine("Du kehrst ins Hauptmenü zurück!\n");
+            // TODO Speichern
             openMenu();
 
         } else if (lowerCaseInput.matches("beenden")) {
@@ -140,12 +141,14 @@ public class GameController {   // Controller for soki-game.fxml
 
         } else if (lowerCaseInput.matches("benutze [a-z ]+")) {
             //TODO Ziel(e) zurückgeben und entsprechnden Dialog ausgeben
-            if (lowerCaseInput.contains("mit")) {
-                String[] substrings = lowerCaseInput.split("[a-z]* ");
+            if (lowerCaseInput.matches("benutze [a-z]+ mit[ ]*")) {
+                setCurrentDialogLine("Bitte gib ein Ziel für deine Aktion ein!\n");
+            } else if (lowerCaseInput.contains("mit")) {
+                String[] substrings = lowerCaseInput.split(" ");
                 System.out.println(Arrays.toString(substrings));
                 String targetedObject = substrings[3];
-                String usedItem = substrings[2];
-                setCurrentDialogLine("Du benutzt " + usedItem + "mit " + targetedObject + "\n");
+                String usedItem = substrings[1];
+                setCurrentDialogLine("Du benutzt " + usedItem + " mit " + targetedObject + "\n");
 
             } else {
                 String usedItem = lowerCaseInput.replace("benutze ", "");
