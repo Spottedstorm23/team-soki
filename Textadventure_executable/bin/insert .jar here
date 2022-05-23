@@ -1,1 +1,5 @@
 Diese Datei dient lediglich als Platzhalter für den bin Ordner, da .jar von git ignoriert wird.
+(.jar die in target von IntelliJ erstellt wurde (textadventure-1.0.jar) hier her verschieben
+und zu "textadventure.jar" umbenennen)
+("insert .jar here" und "insert jre here" kann danach weg)
+
