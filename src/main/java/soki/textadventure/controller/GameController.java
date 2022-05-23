@@ -1,6 +1,7 @@
 package soki.textadventure.controller;
 
 import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -27,6 +28,12 @@ public class GameController {   // Controller for soki-game.fxml
     OPACITY = 1.0 --> SEEN AS ENABLED
     textFieldGameWindow MANUALLY ENABLED, IF TIMER IS NOT RUNNING
      */
+    /*
+    NOTICE:
+    Button disabled to let the programm set the focus on the textfield first
+    --> TODO: Hide/Disable mouse Cursor while Programm is focused
+     */
+
 
     @FXML
     private TextArea textAreaGameWindow;
@@ -60,11 +67,12 @@ public class GameController {   // Controller for soki-game.fxml
     public void setCurrentDialogLine(String text) {
         this.currentDialog = text;
         timer.start();
-
     }
 
     public void initialize() {
-        setCurrentDialogLine("Hallo, was möchtest du machen?");
+        // setCurrentDialogLine("Hallo, was möchtest du machen?");
+        startFirstDialogueLine();
+
         textFieldGameWindow.setOnAction(e -> {
             String inputText = textFieldGameWindow.getText();
             textAreaGameWindow.appendText(">> " + inputText + "\n");
@@ -73,33 +81,57 @@ public class GameController {   // Controller for soki-game.fxml
                 processUserInput(inputText);
             } catch (IOException ex) {
                 ex.printStackTrace();
+            } catch (InterruptedException ex) {
+                throw new RuntimeException(ex);
             }
         });
     }
 
+    public void startFirstDialogueLine() {
+        setCurrentDialogLine("Hallo, was möchtest du machen?");
+    }
 
     Timer timer = new Timer(80, new ActionListener() {
+
         @Override
         public void actionPerformed(java.awt.event.ActionEvent e) {
+            textFieldGameWindow.setDisable(true);   // --> User soll nicht in der Lage sein,
+                                                    // während der Timer noch am Schreiben der Story ist,
+                                                    // zwischendurch eine Eingabe zu tätigen
             char[] character = currentDialog.toCharArray();
-
             for (char c : character) {
                 String s = String.valueOf(c);
                 textAreaGameWindow.appendText(s);
+                System.out.println(textAreaGameWindow.getText());
                 try {
-                    Thread.sleep(10L); // USE "50L" FOR A GOOD PACE FOR THE GAME
+                    Thread.sleep(50L); // USE "50L" FOR A GOOD PACE FOR THE GAME
                 } catch (InterruptedException ex) {
                     ex.printStackTrace();
                 }
             }
             textAreaGameWindow.appendText("\n"); // neue Zeile beginnen
             timer.stop();
+
             textFieldGameWindow.setDisable(false);
         }
     });
 
+    // Kurze Wartezeit beim Beenden des Spiels (siehe: "if (lowerCaseInput.matches("beenden"))")
+    public static void delay (long millis, Runnable continuation) {
+        Task<Void> sleeper = new Task<Void>() {
+            @Override
+            protected Void call() throws Exception {
+                try { Thread.sleep(millis); }
+                catch (InterruptedException e) { }
+                return null;
+            }
+        };
+        sleeper.setOnSucceeded(event -> continuation.run());
+        new Thread(sleeper).start();
+    }
 
-    public void processUserInput(String input) throws IOException {
+
+    public void processUserInput(String input) throws IOException, InterruptedException {
         String lowerCaseInput = input.toLowerCase();
 
         // Es wird ein Matcher erstellt der den Input auf verbotene Zeichen(0-9 sowie Sonderzeichen) überprüft.
@@ -119,11 +151,20 @@ public class GameController {   // Controller for soki-game.fxml
         } else if (lowerCaseInput.matches("menu")) {
             setCurrentDialogLine("Du kehrst ins Hauptmenü zurück!\n");
             // TODO Speichern
-            openMenu();
+            delay(3000, () -> {
+                try {
+                    openMenu();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            });
 
         } else if (lowerCaseInput.matches("beenden")) {
             // TODO Speichern
-            quitgame();
+            setCurrentDialogLine("Dein Spiel wurde gespeichert. \"SOKI\" wird nun beendet...");
+            delay(3000, this::quitgame);
+            // oder: delay(3000, () -> quitgame());
+
 
         } else if (lowerCaseInput.matches("untersuche [a-z]+")) {
             String targetObject = lowerCaseInput.replace("untersuche ", "");

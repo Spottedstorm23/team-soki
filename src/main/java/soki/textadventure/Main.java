@@ -7,6 +7,7 @@ import javafx.scene.image.Image;
 import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import soki.textadventure.controller.FileController;
 
 import java.io.IOException;
 
@@ -30,8 +31,14 @@ public class Main extends Application {
         stage.show();
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         System.out.println("Wir sind cool, miau miau! <(⓿3⓿)>");
-        launch();
+
+        //Nur für Testzwecke
+        FileController fc = new FileController();
+        fc.changeVisible("snek","DerBlob");
+
+        //launch();
+
     }
 }
