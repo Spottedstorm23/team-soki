@@ -41,7 +41,7 @@
                 <RowConstraints vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF;" text="Neues Spiel" textFill="LIME">
+                  <Button mnemonicParsing="false" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF;" text="Neues Spiel" textFill="LIME" onAction="#openNewGame">
                      <font>
                         <Font name="Monospaced Regular" size="30.0" />
                      </font>

@@ -26,7 +26,7 @@
           <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" valignment="BOTTOM" vgrow="NEVER" />
         </rowConstraints>
          <children>
-            <TextArea fx:id="textAreaGameWindow" disable="true" editable="false" prefHeight="517.0" prefWidth="927.0" promptText="TextArea" style="-fx-control-inner-background: #000000; -fx-highlight-fill: #00FF00; -fx-highlight-text-fill: #000000; -fx-text-fill: #00FF00; -fx-focus-color: #00FF00; -fx-border-color: #00FF00; -fx-opacity: 1.0; -fx-background-color: #000000;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextArea fx:id="textAreaGameWindow" wrapText="true" disable="true" editable="false" prefHeight="517.0" prefWidth="927.0" promptText="TextArea" style="-fx-control-inner-background: #000000; -fx-highlight-fill: #00FF00; -fx-highlight-text-fill: #000000; -fx-text-fill: #00FF00; -fx-focus-color: #00FF00; -fx-border-color: #00FF00; -fx-opacity: 1.0; -fx-background-color: #000000;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font name="Monospaced Regular" size="18.0" />
                </font>

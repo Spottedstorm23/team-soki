@@ -11,8 +11,8 @@ import java.io.IOException;
 import java.io.Reader;
 
 public class FileController {
-    private String pathToPlayerDateJsonFile = "src/main/java/soki/textadventure/controller/playerdata.json";
-    private String pathToTextDataJsonFile = "src/main/java/soki/textadventure/controller/text.json";
+    private String pathToPlayerDateJsonFile = "src/main/java/soki/textadventure/controller/jsonFiles/playerdata.json";
+    private String pathToTextDataJsonFile = "src/main/java/soki/textadventure/controller/jsonFiles/text.json";
 
     /*Functions for Playerdata*/
     public void giveallHaraItemsBack(){
@@ -133,6 +133,19 @@ public class FileController {
             }
         }
 
+
+        writeContent(playerdataObject, pathToPlayerDateJsonFile);
+    }
+
+    public void initializePlayerdata() {
+        JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
+        playerdataObject.replace("chapter", 0);
+        playerdataObject.replace("dialog", 0);
+        playerdataObject.replace("objects" ,new JSONArray());
+        playerdataObject.replace("name", "user");
+        playerdataObject.replace("playthrough",0);
+        playerdataObject.replace("haraList",new JSONArray());
+
         writeContent(playerdataObject, pathToPlayerDateJsonFile);
     }
 
@@ -189,8 +202,8 @@ public class FileController {
     }
 
     private JSONObject getSpezificDialogFromJSON (int chapternr, int dialognr){
-        JSONObject playerdataObject = readContent(pathToTextDataJsonFile);
-        JSONArray chapterArray = (JSONArray) playerdataObject.get("chapters");
+        JSONObject textDataObject = readContent(pathToTextDataJsonFile);
+        JSONArray chapterArray = (JSONArray) textDataObject.get("chapters");
 
         for (JSONObject chapter:(Iterable<JSONObject>) chapterArray) {
             if (chapternr == (int) (long) chapter.get("number")) {

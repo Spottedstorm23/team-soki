@@ -33,12 +33,7 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         System.out.println("Wir sind cool, miau miau! <(⓿3⓿)>");
-
-        //Nur für Testzwecke
-        FileController fc = new FileController();
-        fc.changeVisible("snek","DerBlob");
-
-        //launch();
+        launch();
 
     }
 }

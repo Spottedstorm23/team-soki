@@ -57,6 +57,8 @@ public class GameController {   // Controller for soki-game.fxml
             " Diese werden in der Regel als Liste zur Verfügung gestellt";
 
     private String currentDialog;
+    private FileController fileController = new FileController();
+    private boolean nameIsSet = false;
 
     //Eventuell für die Abfrage der Dialoge benötigten Werte?
     // o - Prolog; 1 - Chapter 1; 2 - Chapter 2; 3 - Chapter 3; 4 - Chapter 4;
@@ -88,7 +90,7 @@ public class GameController {   // Controller for soki-game.fxml
     }
 
     public void startFirstDialogueLine() {
-        setCurrentDialogLine("Hallo, was möchtest du machen?");
+        setCurrentDialogLine(fileController.getText(0,0));
     }
 
     Timer timer = new Timer(80, new ActionListener() {
@@ -102,7 +104,6 @@ public class GameController {   // Controller for soki-game.fxml
             for (char c : character) {
                 String s = String.valueOf(c);
                 textAreaGameWindow.appendText(s);
-                System.out.println(textAreaGameWindow.getText());
                 try {
                     Thread.sleep(50L); // USE "50L" FOR A GOOD PACE FOR THE GAME
                 } catch (InterruptedException ex) {

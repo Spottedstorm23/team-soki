@@ -1,0 +1,119 @@
+{
+  "chapters": [
+    {
+      "number": 0,
+      "dialogs": [
+        {
+          "number": 0,
+          "text": "Booting …\n…\nVor dir auf dem Bildschirm hat sich ein schwarzes Fenster geöffnet. Merkwürdig, dabei hast du nach Starten deines Rechners noch gar nichts angeklickt. \n„Hallo User!“ erscheint in leuchtend grüner Schrift. \n„Ich bin H-4-C-K, Ihr neues, allumfassendes Anti-Virenprogramm.“ Skeptisch wartest du ab, du bist dir sicher, kein neues Schutzprogramm installiert zu haben. Da schreibt das Programm auch schon weiter:\n„Sicher wundern Sie sich, warum ich hier bin. Keine Sorge, ich bin ein Bestandteil des Betriebsystemupdates.“ Stimmt, dein Rechner hat am gestrigen Abend ein neues Update installiert. Beruhigt davon bist du interessiert, was H-4-C-K alles kann. Du klickst in das Fenster.\n„Oh, Sie haben sich zu mir getraut. Das freut mich ^.^“ Bis gerade eben wusstest du nicht, dass Programme glücklich aussehen können.\n",
+          "commands": [
+            {
+              "goToChapter": 0,
+              "goToDialog": 1
+            }
+          ]
+        },
+        {
+          "number": 1,
+          "text": "„Also dann User… User… User klingt so unpersönlich, finden Sie nicht auch? Verraten Sie mir doch wie ich Sie ansprechen soll, schließlich werden wir viel Zeit gemeinsam verbringen“ Die Formulierung jagt dir einen leichten Schauer über den Rücken, den du jedoch gekonnt ignorierst. Du setzt deine Finger auf die Tatstatur und fängst an zu tippen.",
+          "commands": [
+            {
+              "goToChapter": 0,
+              "goToDialog": 1
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "text": "„Also dann User … User … User klingt so unpersönlich, finden Sie nicht auch? Wie wäre es wenn ich sie {Name} nenne?“ Dir läuft es kalt den Rücken herunter, warum weiß dieses Programm deinen Namen? Du überlegst das Fenster zu schließen als das Programm fortfährt. Dich beschleicht das leichte Gefühl, das Ganze bereits erlebt zu haben.“",
+          "commands": []
+        },
+        {
+          "number": 3,
+          "text": "„…“ Das Programm wirkt unzufriefen mit deiner Antwort. „Bisher ist mir noch niemand begegnet der solche Zeichen im Namen trug. Versuchen Sie es nocheinmal!“ Du spürst die Enttäuschung die in der Schrift mitschwingt und machst dich erneut daran deinen Namen einzutippen, dieses Mal lässt du Sonderzeichen und Ziffern weg.",
+          "commands": []
+        },
+        {
+          "number": 4,
+          "text": "„Sie sind aber witzig, allerdings glaube ich nicht, dass Ihr Name „User“ lautet.“ Das Programm erscheint dir ein wenig gernervt, wahrscheinlich bist du nicht der erste der dies versucht. Du widmest dich wieder der Eingabe und gibst deinen wirklichen Namen an",
+          "commands": []
+        },
+        {
+          "number": 5,
+          "text": "„{Name} also? Dann wollen wir anfangen, finden Sie nicht? Als erstes werde ich einen Scan laufen lassen, ob sich irgendwelche gefährlichen Dateien auf dem Host-System befinden.“ Host-System? Bevor du irgendwas machen kannst beginnt das Programm deine Daten zu durchwühlen. Du kannst mitverfolgen wie es blitzschnell auflistet durch welche Verzeichnisse es sich bewegt.\nPlötzlich stoppt es.\n„…!“\n„{Name}, ich habe hier eine merkwürdige Datei gefunden. Sie stammt von einer unsicheren Quelle und lässt sich von mir nicht entfernen“ Du stellst dir kurz die Frage, warum H-4-C-K, einfach so versucht Daten zu löschen. Das Programm fährt fort.\n„Möchtes Sie sich die Datei ansehen? Dann versuche ich sie zu öffnen“. Dir stehen nun zwei Möglichkeiten zur Verfügung: A – Ja du möchtest die Datei einsehen (Waehle A) oder B – Nein, jetzt gerade hast du nicht die Nerven dazu (Waehle B).\n",
+          "commands": []
+        },
+        {
+          "number": 6,
+          "text": "Du tippst „Nein“ als Antwort ein. Das Programm erscheint kurz merkwürdig verzerrt und statt deiner Antwort steht plötzlich „Ja“ in dem Fenster. Die ganze Situation ist dir nicht ganz geheuer.",
+          "commands": []
+        },
+        {
+          "number": 7,
+          "text": "„Ja? Dann versuche ich die Datei jetzt zu öffnen“ Das Programm scheint dies tatsächlich zu machen, denn auf deinem Bildschirm öffnen sich zwei weitere Fenster in denen kryptische Symbole erscheinen. Dann wird es schlagartig hell und kurz darauf dunkel.\n…\n…\nDu blinzelst. Scheinbar hat dich die rasche Lichtfolge kurz dein Bewusstsein gekostet. Du hoffst zumindest, dass es nur kurz war. Du drehst dich zu der Uhr die an der Wand zu deiner Linken Seite hängt… und siehst nichts, nur völlige Dunkelheit.\nPanisch blickst du dich um. „{Name}! {Name}!“ Du hörst eine unbekannte, weiblich klingende Stimme.\nVor dir erscheint ein grünliches leuchten. Du meinst zu erkennen, dass es sich um einsen und nullen handelt. Bevor du jedoch weiter darüber nachdenken kannst, ertönt erneut die Stimme:\n„Du bist wach! Gut, ich bin erleichtert dir ist nichts geschehen. Das ganze kommt etwas unerwartet findest du nicht?“ Die Tonlage der Stimme lässt anderes vermuten. Bevor du fragen kannst, wer das ist oder wo du dich befindest, wird es wieder hell. Du kneifst die Augen zusammen.\nAls du sie wieder öffnest, scheint eine Katzenartige Gestalt zwischen dir und dem grünen Gewirr zu schweben. Das grüne leuchten zischt leise und verschwindet dann. Die Katze wendet sich dir zu.\n„Du bist also {Name}. H-4-C-Ks neustes Opfer. Das grüne leuchten gerade? Das war sie. Sie hat dich in unser Realm gezogen um dich hier gefangen zu halten und zu studieren.“ Du starrst die Katze an. Ein verücktes Anti-Virenprogramm hat dich in eine andere Dimension entführt um aus dir ein Forschungsobjekt zu machen? Du weichst zurück, wer weiß ob die Katze nicht auch mit drin steckt und die Rettungsaktion gerade, nur ein Trick ist dein Vertrauen zu erlangen.\nDie Katze folgt deinen Schritten mit ihrem Blick. „Mein Name ist E.N.G.E.L. Erste Neointelligente Graphisch Enigmatische Lebensform. Wobei ich genaugenommen auch nur ein intelligentes Programm bin… so wie H-4-C-K. Nur mit weniger düsteren Zielen.“ Eine Pfote fährt über die Ohren. Die Katze fährt fort.\n„Nun, da du hier bist, musst du dich auch irgendwie in dieser Welt zurecht finden um zu entkommen, ewig kann ich dich nicht vor jenen wie H-4-C-K bewahren. Wollen wir beginnen?“ Zögerlich nickst du, vorerst scheint es besser zu sein mitzumachen bis du weißt ob du E.N.G.E.L vertrauen kannst.\nHinweis: Im Folgenden werden die Befehle erklärt mit denen du dich durch die Welt bewegen kannst. Beachte dabei, dass bei der Eingabe der Aktionen keine Sonderzeichen und keine Umlaute erlaubt sind. \n„Siehst du die kleine Hütte dahinten? Schau sie dir etwas genauer an. Los: Untersuche Huette“\n",
+          "commands": []
+        },
+        {
+          "number": 8,
+          "text": "„Nicht mich, die Hütte sollst du anschauen.!“ Die Katze peitscht genervt mit dem Schweif. Du versuchst es erneut.",
+          "commands": []
+        },
+        {
+          "number": 9,
+          "text": "Du schaust dir die Hütte genau an. Sie wirkt etwas verfallen und ihre Tür steht offen, ihren Inhalt siehst du nicht.\n„Sehr gut und jetzt gehe zu ihr hin. Worauf wartest du? Gehe zu Huette“\n",
+          "commands": []
+        },
+        {
+          "number": 10,
+          "text": "Schnell läufst du auf das kleine Gebäude zu und trittst durch die Tür ins innere. Du schaust dich um, als du den ersten weißen, verdächtig nach einem Knochen aussehenden Gegenstand siehst lässt du es bleiben. Du schaust zu E.N.G.E.L. Dieser deutet mit der Pfote auf eine Tüte. „Nimm dieses Katzenfutter dort auf. Du weißt doch wie das geht oder? Nimm Katzenfutter.“",
+          "commands": []
+        },
+        {
+          "number": 11,
+          "text": "So genau möchtest du eigentlich gar nicht wissen was das für ein Knochen ist.",
+          "commands": []
+        },
+        {
+          "number": 12,
+          "text": "Allein der Gedanke jagt dir einen Schauder über den Rücken. Du lässt ihn dort liegen wo er ist.",
+          "commands": []
+        },
+        {
+          "number": 13,
+          "text": "Du überlegst kurz und verwirfst den Gedanken, die Katze scheint niemand zu sein, denn du reizen möchtest.",
+          "commands": []
+        },
+        {
+          "number": 14,
+          "text": "Du nimmst die Tüte auf und steckst sie wie selbstverständlich in deine Tache. E.N.G.E.L wirkt zufrieden.\n„Mit Inventar kannst du dir anschauen was du aktuell bei dir trägst. Du kannst jeder Zeit deine Gegenstände untersuchen. Erinnere dich Untersuche und dann das gewünschte Ziel. Machen wir weiter gib mir das Futter indem du es mit mir benutzt. In etwa so: Benutze Katzenfutter mit Engel.\n",
+          "commands": []
+        },
+        {
+          "number": 15,
+          "text": "Eine ganz gewöhnliche Tüte Futter. Du solltest sie deinem kätzischen Lehrmeister geben.",
+          "commands": []
+        },
+        {
+          "number": 16,
+          "text": "Du hälst der Katze die Tüte hin. Freudig nimmt er sie dir ab, öffnet sie mit den Klauen und beginnt ihren Inhalt zu leeren. „Manche Gegenstände kannst du auch so benutzen, ohne dass du ihnen ein Ziel mitgibst. Also nur Benutze Gegenstand. So weit alles verstanden? Gut dann zum letzten Punkt: Interaktionen: Mit einigen Objekten oder Bewohnern dieser Welt kannst du interagieren. Aber vorsicht! Nicht alle sind dir freundlich gesonnen, viele verfolgen ähnliche Ziele wie H-4-C-K. Trotzdem solltest du es lernen. Versuchen wir es mal mit…“ Er sieht sich um. „Schließe die Tür der Hütte indem du mit ihr interagierst. Interagiere mit Tuer.“",
+          "commands": []
+        },
+        {
+          "number": 17,
+          "text": "Eine alte schief in den Angeln hängende Tür.",
+          "commands": []
+        },
+        {
+          "number": 18,
+          "text": "Du bezweifelst, dass du sie in deine Tasche bekommen würdest und lässt sie an ihrer Position.",
+          "commands": []
+        },
+        {
+          "number": 19,
+          "text": "Du ziehst die Tür zu. Sie knarzt etwas und wirkt als ob sie gleich zerfällt, aber sie schließt. Du wendest dich E.N.G.E.L zu. \n„Sehr gut. Wir sollten versuchen dich aus dieser Welt zurück in deine eigne zu schicken. Die Grundlagen dafür kennst du jetzt. Wenn du irgendwas vergessen solltest oder dir unsicher bist erbitte einfach Hilfe, dann erhälst du nochmal einen kurzen überblick. Lass uns aufbrechen“ Die Katze schwebt davon und dir bleibt nichts weiter übrig als ihm zu folgen.\n",
+          "commands": []
+        }
+      ]
+    }
+  ]
+}
