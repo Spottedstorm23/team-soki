@@ -42,6 +42,7 @@ public class MenuController {
         gameStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH); // cannot exit full screen
         gameStage.setScene(gameScene);
         gameStage.getIcons().add(new Image(Objects.requireNonNull(this.getClass().getResourceAsStream("/icons/Soki-Icon.png"))));
+
         gameStage.show();
     }
 }
