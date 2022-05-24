@@ -17,6 +17,7 @@ import javax.swing.Timer;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Locale;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -60,16 +61,19 @@ public class GameController {   // Controller for soki-game.fxml
     private FileController fileController = new FileController();
     private boolean nameIsSet = false;
 
-    //Eventuell für die Abfrage der Dialoge benötigten Werte?
     // o - Prolog; 1 - Chapter 1; 2 - Chapter 2; 3 - Chapter 3; 4 - Chapter 4;
     private int currentChapter = 0;
-    // Start immer mit dem ersten Block?
-    private int currentDialogBlock = 1;
+    private int currentDialogBlock = 0;
     private String playerName = "user";
+    private int currentPlayThrough = 0;
 
     public void setCurrentDialogLine(String text) {
         this.currentDialog = text;
         timer.start();
+    }
+
+    private boolean isNewGamePlus() {
+        return currentPlayThrough > 0 && currentChapter == 0 && currentDialogBlock == 0;
     }
 
     public void initialize() {
@@ -95,8 +99,14 @@ public class GameController {   // Controller for soki-game.fxml
     }
 
     public void startFirstDialogueLine() {
-        //setCurrentDialogLine(fileController.getText(0,0));
-        setCurrentDialogLine("o.o");
+        setCurrentDialogLine(fileController.getText(currentChapter,currentDialogBlock));
+        //setCurrentDialogLine("0.0");
+        if (isNewGamePlus()){
+            setSecondDialogOfNewGame("isFirstPlaythrough","false");
+        }
+        else if(currentChapter == 0 && currentDialogBlock == 0){
+            setSecondDialogOfNewGame("isFirstPlaythrough","true");
+        }
     }
 
     Timer timer = new Timer(80, new ActionListener() {
@@ -111,7 +121,7 @@ public class GameController {   // Controller for soki-game.fxml
                 String s = String.valueOf(c);
                 textAreaGameWindow.appendText(s);
                 try {
-                    Thread.sleep(50L); // USE "50L" FOR A GOOD PACE FOR THE GAME
+                    Thread.sleep(25L); // USE "50L" FOR A GOOD PACE FOR THE GAME
                 } catch (InterruptedException ex) {
                     ex.printStackTrace();
                 }
@@ -221,6 +231,7 @@ public class GameController {   // Controller for soki-game.fxml
 
         } else if (lowerCaseInput.matches("waehle [a-z]+")) {
             String option = lowerCaseInput.replace("waehle ", "");
+            System.out.println(option);
             findMyDialog("waehle", option);
 
         } else {
@@ -230,32 +241,49 @@ public class GameController {   // Controller for soki-game.fxml
     }
 
     private void findMyDialog(String command, String target) {
+        System.out.println(currentChapter + " , " + currentDialogBlock);
         int[] newChapAndDialog = fileController.getNextDialogNumbersAndExecuteFunction(currentChapter, currentDialogBlock, command, target);
-        currentChapter = newChapAndDialog[0];
-        currentDialogBlock = newChapAndDialog[1];
-        setCurrentDialogLine(fileController.getText(currentChapter, currentDialogBlock));
+        this.currentChapter = newChapAndDialog[0];
+        this.currentDialogBlock = newChapAndDialog[1];
+        System.out.println(currentChapter + " , " + currentDialogBlock);
+        setCurrentDialogLine(replacePlaceholderWithName(fileController.getText(currentChapter, currentDialogBlock)));
+    }
+
+    private void setSecondDialogOfNewGame(String command, String target){
+        int[] newChapAndDialog = fileController.getNextDialogNumbersAndExecuteFunction(currentChapter, currentDialogBlock, command, target);
+        this.currentChapter = newChapAndDialog[0];
+        this.currentDialogBlock = newChapAndDialog[1];
+        currentDialog = currentDialog + "\n" + replacePlaceholderWithName(fileController.getText(currentChapter,currentDialogBlock));
     }
 
     private void setUserName(String input) {
+        String lowerCaseInput = input.toLowerCase();
         Pattern nonLettersRegex = Pattern.compile("[^a-z ]+");
-        Matcher includesNonLetters = nonLettersRegex.matcher(input);
+        Matcher includesNonLetters = nonLettersRegex.matcher(lowerCaseInput);
 
         if (includesNonLetters.find()) {
-            setCurrentDialogLine(fileController.getText(0,3));
-        }
-        else if(input.toLowerCase().equals("user")){
-            setCurrentDialogLine(fileController.getText(0,4));
-        }
-        else {
+            setCurrentChapterAndDialogBlock(0,3);
+            setCurrentDialogLine(fileController.getText(currentChapter, currentDialogBlock));
+        } else if (input.equals("user")) {
+            setCurrentChapterAndDialogBlock(0,4);
+            setCurrentDialogLine(fileController.getText(currentChapter, currentDialogBlock));
+        } else {
             fileController.setPlayerName(input);
             this.playerName = input;
-            setCurrentDialogLine(replacePlaceholderWithName(fileController.getText(0,5)));
+            this.nameIsSet = true;
+            setCurrentChapterAndDialogBlock(0,5);
+            setCurrentDialogLine(replacePlaceholderWithName(fileController.getText(currentChapter, currentDialogBlock)));
 
         }
     }
 
-    private String replacePlaceholderWithName(String text){
-         String newText = text.replace("{Name}",playerName);
+    private void setCurrentChapterAndDialogBlock(int chap, int dial){
+        this.currentChapter = chap;
+        this.currentDialogBlock = dial;
+    }
+
+    private String replacePlaceholderWithName(String text) {
+        String newText = text.replace("{Name}", playerName);
         return newText;
     }
 
