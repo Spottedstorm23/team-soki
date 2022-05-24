@@ -13,12 +13,22 @@
                 {
                   "target": "true",
                   "goToChapter": 0,
-                  "goToDialog": 1
+                  "goToDialog": 1,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 1
+                  }
                 },
                 {
                   "target": "false",
                   "goToChapter": 0,
-                  "goToDialog": 2
+                  "goToDialog": 2,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 2
+                  }
                 }
               ]
             }
@@ -54,12 +64,24 @@
                 {
                   "target": "a",
                   "goToChapter": 0,
-                  "goToDialog": 7
+                  "goToDialog": 7,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "???",
+                    "parameter2": 0,
+                    "parameter3": 7
+                  }
                 },
                 {
                   "target": "b",
                   "goToChapter": 0,
-                  "goToDialog": 6
+                  "goToDialog": 6,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "???",
+                    "parameter2": 0,
+                    "parameter3": 7
+                  }
                 }
               ]
             }
@@ -75,12 +97,24 @@
                 {
                   "target": "engel",
                   "goToChapter": 0,
-                  "goToDialog": 8
+                  "goToDialog": 8,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "??? - Dimension",
+                    "parameter2": 0,
+                    "parameter3": 8
+                  }
                 },
                 {
                   "target": "huette",
                   "goToChapter": 0,
-                  "gotToDialog": 9
+                  "goToDialog": 9,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "??? - Dimension",
+                    "parameter2": 0,
+                    "parameter3": 9
+                  }
                 }
               ]
             }
@@ -96,12 +130,24 @@
                 {
                   "target": "engel",
                   "goToChapter": 0,
-                  "goToDialog": 8
+                  "goToDialog": 8,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "??? - Dimension",
+                    "parameter2": 0,
+                    "parameter3": 8
+                  }
                 },
                 {
                   "target": "huette",
                   "goToChapter": 0,
-                  "gotToDialog": 9
+                  "goToDialog": 9,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "??? - Dimension",
+                    "parameter2": 0,
+                    "parameter3": 9
+                  }
                 }
               ]
             }
@@ -109,7 +155,7 @@
         },
         {
           "number": 8,
-          "text": "„Nicht mich, die Hütte sollst du anschauen.!“ Die Katze peitscht genervt mit dem Schweif. Du versuchst es erneut.",
+          "text": "„Was machst du denn?!“ Die Katze peitscht genervt mit dem Schweif. Du versuchst es erneut.",
           "commands": [
             {
               "command": "untersuche",
@@ -117,12 +163,75 @@
                 {
                   "target": "engel",
                   "goToChapter": 0,
-                  "goToDialog": 8
+                  "goToDialog": 8,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 8
+                  }
                 },
                 {
                   "target": "huette",
                   "goToChapter": 0,
-                  "gotToDialog": 9
+                  "goToDialog": 9,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 9
+                  }
+                }
+              ]
+            },
+            {
+              "command": "gehe",
+              "targets": [
+                {
+                  "target": "huette",
+                  "goToChapter": 0,
+                  "goToDialog": 10,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Hütte",
+                    "parameter2": 0,
+                    "parameter3": 10
+                  }
+                }
+              ]
+            },
+            {
+              "command": "nimm",
+              "targets": [
+                {
+                  "target": "knochen",
+                  "goToChapter": 0,
+                  "goToDialog": 12,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 12
+                  }
+                },
+                {
+                  "target": "engel",
+                  "goToChapter": 0,
+                  "goToDialog": 13,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 13
+                  }
+                },
+                {
+                  "target": "katzenfutter",
+                  "goToChapter": 0,
+                  "goToDialog": 14,
+                  "executeFunction": {
+                    "functionId": 2,
+                    "parameter1": "katzenfutter",
+                    "parameter2": true,
+                    "parameter3": 0,
+                    "parameter4": 15
+                  }
                 }
               ]
             }
@@ -138,12 +247,22 @@
                 {
                   "target": "engel",
                   "goToChapter": 0,
-                  "goToDialog": 8
+                  "goToDialog": 8,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 8
+                  }
                 },
                 {
                   "target": "huette",
                   "goToChapter": 0,
-                  "gotToDialog": 9
+                  "goToDialog": 9,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 9
+                  }
                 }
               ]
             },
@@ -153,7 +272,13 @@
                 {
                   "target": "huette",
                   "goToChapter": 0,
-                  "gotToDialog": 10
+                  "goToDialog": 10,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Hütte",
+                    "parameter2": 0,
+                    "parameter3": 10
+                  }
                 }
               ]
             }
@@ -169,17 +294,32 @@
                 {
                   "target": "engel",
                   "goToChapter": 0,
-                  "goToDialog": 8
+                  "goToDialog": 8,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 8
+                  }
                 },
                 {
                   "target": "knochen",
                   "goToChapter": 0,
-                  "goToDialog": 11
+                  "goToDialog": 11,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 11
+                  }
                 },
                 {
                   "target": "katzenfutter",
                   "goToChapter": 0,
-                  "goToDialog": 15
+                  "goToDialog": 15,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 15
+                  }
                 }
               ]
             },
@@ -189,17 +329,34 @@
                 {
                   "target": "knochen",
                   "goToChapter": 0,
-                  "goToDialog": 12
+                  "goToDialog": 12,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 12
+                  }
                 },
                 {
                   "target": "engel",
                   "goToChapter": 0,
-                  "goToDialog": 13
+                  "goToDialog": 13,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 13
+                  }
                 },
                 {
                   "target": "katzenfutter",
                   "goToChapter": 0,
-                  "goToDialog": 14
+                  "goToDialog": 14,
+                  "executeFunction": {
+                    "functionId": 2,
+                    "parameter1": "katzenfutter",
+                    "parameter2": true,
+                    "parameter3": 0,
+                    "parameter4": 15
+                  }
                 }
               ]
             }
@@ -215,17 +372,32 @@
                 {
                   "target": "engel",
                   "goToChapter": 0,
-                  "goToDialog": 8
+                  "goToDialog": 8,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 8
+                  }
                 },
                 {
                   "target": "knochen",
                   "goToChapter": 0,
-                  "goToDialog": 11
+                  "goToDialog": 11,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 11
+                  }
                 },
                 {
                   "target": "katzenfutter",
                   "goToChapter": 0,
-                  "goToDialog": 15
+                  "goToDialog": 15,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 15
+                  }
                 }
               ]
             },
@@ -235,17 +407,34 @@
                 {
                   "target": "knochen",
                   "goToChapter": 0,
-                  "goToDialog": 12
+                  "goToDialog": 12,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 12
+                  }
                 },
                 {
                   "target": "engel",
                   "goToChapter": 0,
-                  "goToDialog": 13
+                  "goToDialog": 13,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 13
+                  }
                 },
                 {
                   "target": "katzenfutter",
                   "goToChapter": 0,
-                  "goToDialog": 14
+                  "goToDialog": 14,
+                  "executeFunction": {
+                    "functionId": 2,
+                    "parameter1": "katzenfutter",
+                    "parameter2": true,
+                    "parameter3": 0,
+                    "parameter4": 15
+                  }
                 }
               ]
             }
@@ -261,17 +450,32 @@
                 {
                   "target": "engel",
                   "goToChapter": 0,
-                  "goToDialog": 8
+                  "goToDialog": 8,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 8
+                  }
                 },
                 {
                   "target": "knochen",
                   "goToChapter": 0,
-                  "goToDialog": 11
+                  "goToDialog": 11,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 11
+                  }
                 },
                 {
                   "target": "katzenfutter",
                   "goToChapter": 0,
-                  "goToDialog": 15
+                  "goToDialog": 15,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 15
+                  }
                 }
               ]
             },
@@ -281,17 +485,34 @@
                 {
                   "target": "knochen",
                   "goToChapter": 0,
-                  "goToDialog": 12
+                  "goToDialog": 12,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 12
+                  }
                 },
                 {
                   "target": "engel",
                   "goToChapter": 0,
-                  "goToDialog": 13
+                  "goToDialog": 13,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 13
+                  }
                 },
                 {
                   "target": "katzenfutter",
                   "goToChapter": 0,
-                  "goToDialog": 14
+                  "goToDialog": 14,
+                  "executeFunction": {
+                    "functionId": 2,
+                    "parameter1": "katzenfutter",
+                    "parameter2": true,
+                    "parameter3": 0,
+                    "parameter4": 15
+                  }
                 }
               ]
             }
@@ -307,17 +528,32 @@
                 {
                   "target": "engel",
                   "goToChapter": 0,
-                  "goToDialog": 8
+                  "goToDialog": 8,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 8
+                  }
                 },
                 {
                   "target": "knochen",
                   "goToChapter": 0,
-                  "goToDialog": 11
+                  "goToDialog": 11,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 11
+                  }
                 },
                 {
                   "target": "katzenfutter",
                   "goToChapter": 0,
-                  "goToDialog": 15
+                  "goToDialog": 15,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 15
+                  }
                 }
               ]
             },
@@ -327,17 +563,34 @@
                 {
                   "target": "knochen",
                   "goToChapter": 0,
-                  "goToDialog": 12
+                  "goToDialog": 12,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 12
+                  }
                 },
                 {
                   "target": "engel",
                   "goToChapter": 0,
-                  "goToDialog": 13
+                  "goToDialog": 13,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 13
+                  }
                 },
                 {
                   "target": "katzenfutter",
                   "goToChapter": 0,
-                  "goToDialog": 14
+                  "goToDialog": 14,
+                  "executeFunction": {
+                    "functionId": 2,
+                    "parameter1": "katzenfutter",
+                    "parameter2": true,
+                    "parameter3": 0,
+                    "parameter4": 15
+                  }
                 }
               ]
             }
@@ -353,17 +606,32 @@
                 {
                   "target": "engel",
                   "goToChapter": 0,
-                  "goToDialog": 8
+                  "goToDialog": 8,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 8
+                  }
                 },
                 {
                   "target": "knochen",
                   "goToChapter": 0,
-                  "goToDialog": 11
+                  "goToDialog": 11,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 11
+                  }
                 },
                 {
                   "target": "katzenfutter",
                   "goToChapter": 0,
-                  "goToDialog": 15
+                  "goToDialog": 15,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 15
+                  }
                 }
               ]
             },
@@ -373,17 +641,32 @@
                 {
                   "target": "knochen",
                   "goToChapter": 0,
-                  "goToDialog": 12
+                  "goToDialog": 12,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 12
+                  }
                 },
                 {
                   "target": "engel",
                   "goToChapter": 0,
-                  "goToDialog": 13
+                  "goToDialog": 13,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 13
+                  }
                 },
                 {
                   "target": "katzenfutter",
                   "goToChapter": 0,
-                  "goToDialog": 14
+                  "goToDialog": 20,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 20
+                  }
                 }
               ]
             },
@@ -391,9 +674,16 @@
               "command": "benutze",
               "targets": [
                 {
-                  "target": "katzenfutter",
+                  "target": "katzenfutter mit engel",
+                  "checkObject": "katzenfutter",
                   "goToChapter": 0,
-                  "goToDialog": 16
+                  "goToDialog": 16,
+                  "executeFunction": {
+                    "functionId": 1,
+                    "parameter1": "katzenfutter",
+                    "parameter2": 0,
+                    "parameter3": 16
+                  }
                 }
               ]
             }
@@ -409,17 +699,32 @@
                 {
                   "target": "engel",
                   "goToChapter": 0,
-                  "goToDialog": 8
+                  "goToDialog": 8,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 8
+                  }
                 },
                 {
                   "target": "knochen",
                   "goToChapter": 0,
-                  "goToDialog": 11
+                  "goToDialog": 11,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 11
+                  }
                 },
                 {
                   "target": "katzenfutter",
                   "goToChapter": 0,
-                  "goToDialog": 15
+                  "goToDialog": 15,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 15
+                  }
                 }
               ]
             },
@@ -429,17 +734,32 @@
                 {
                   "target": "knochen",
                   "goToChapter": 0,
-                  "goToDialog": 12
+                  "goToDialog": 12,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 12
+                  }
                 },
                 {
                   "target": "engel",
                   "goToChapter": 0,
-                  "goToDialog": 13
+                  "goToDialog": 13,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 13
+                  }
                 },
                 {
                   "target": "katzenfutter",
                   "goToChapter": 0,
-                  "goToDialog": 14
+                  "goToDialog": 20,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 20
+                  }
                 }
               ]
             },
@@ -447,9 +767,16 @@
               "command": "benutze",
               "targets": [
                 {
-                  "target": "katzenfutter",
+                  "target": "katzenfutter mit engel",
+                  "checkObject": "katzenfutter",
                   "goToChapter": 0,
-                  "goToDialog": 16
+                  "goToDialog": 16,
+                  "executeFunction": {
+                    "functionId": 1,
+                    "parameter1": "katzenfutter",
+                    "parameter2": 0,
+                    "parameter3": 16
+                  }
                 }
               ]
             }
@@ -465,12 +792,22 @@
                 {
                   "target": "engel",
                   "goToChapter": 0,
-                  "goToDialog": 8
+                  "goToDialog": 8,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 8
+                  }
                 },
                 {
                   "target": "tuer",
                   "goToChapter": 0,
-                  "goToDialog": 17
+                  "goToDialog": 17,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 17
+                  }
                 }
               ]
             },
@@ -480,12 +817,21 @@
                 {
                   "target": "engel",
                   "goToChapter": 0,
-                  "goToDialog": 13
+                  "goToDialog": 13,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 13
+                  }
                 },
                 {
                   "target": "tuer",
                   "goToChapter": 0,
-                  "goToDialog": 18
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 18
+                  }
                 }
               ]
             },
@@ -495,7 +841,12 @@
                 {
                   "target": "tuer",
                   "goToChapter": 0,
-                  "goToDialog": 19
+                  "goToDialog": 19,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 19
+                  }
                 }
               ]
             }
@@ -511,12 +862,22 @@
                 {
                   "target": "engel",
                   "goToChapter": 0,
-                  "goToDialog": 8
+                  "goToDialog": 8,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 8
+                  }
                 },
                 {
                   "target": "tuer",
                   "goToChapter": 0,
-                  "goToDialog": 17
+                  "goToDialog": 17,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 17
+                  }
                 },
                 {
                   "command": "nimm",
@@ -524,12 +885,22 @@
                     {
                       "target": "engel",
                       "goToChapter": 0,
-                      "goToDialog": 13
+                      "goToDialog": 13,
+                      "executeFunction": {
+                        "functionId": 7,
+                        "parameter1": 0,
+                        "parameter2": 13
+                      }
                     },
                     {
                       "target": "tuer",
                       "goToChapter": 0,
-                      "goToDialog": 18
+                      "goToDialog": 18,
+                      "executeFunction": {
+                        "functionId": 7,
+                        "parameter1": 0,
+                        "parameter2": 18
+                      }
                     }
                   ]
                 },
@@ -539,7 +910,12 @@
                     {
                       "target": "tuer",
                       "goToChapter": 0,
-                      "goToDialog": 19
+                      "goToDialog": 19,
+                      "executeFunction": {
+                        "functionId": 7,
+                        "parameter1": 0,
+                        "parameter2": 19
+                      }
                     }
                   ]
                 }
@@ -557,12 +933,22 @@
                 {
                   "target": "engel",
                   "goToChapter": 0,
-                  "goToDialog": 8
+                  "goToDialog": 8,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 8
+                  }
                 },
                 {
                   "target": "tuer",
                   "goToChapter": 0,
-                  "goToDialog": 17
+                  "goToDialog": 17,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 17
+                  }
                 }
               ]
             },
@@ -572,12 +958,22 @@
                 {
                   "target": "engel",
                   "goToChapter": 0,
-                  "goToDialog": 13
+                  "goToDialog": 13,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 13
+                  }
                 },
                 {
                   "target": "tuer",
                   "goToChapter": 0,
-                  "goToDialog": 18
+                  "goToDialog": 18,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 18
+                  }
                 }
               ]
             },
@@ -587,7 +983,12 @@
                 {
                   "target": "tuer",
                   "goToChapter": 0,
-                  "goToDialog": 19
+                  "goToDialog": 19,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 19
+                  }
                 }
               ]
             }
@@ -597,6 +998,110 @@
           "number": 19,
           "text": "Du ziehst die Tür zu. Sie knarzt etwas und wirkt als ob sie gleich zerfällt, aber sie schließt. Du wendest dich E.N.G.E.L zu. \n„Sehr gut. Wir sollten versuchen dich aus dieser Welt zurück in deine eigne zu schicken. Die Grundlagen dafür kennst du jetzt. Wenn du irgendwas vergessen solltest oder dir unsicher bist erbitte einfach Hilfe, dann erhälst du nochmal einen kurzen überblick. Lass uns aufbrechen“ Die Katze schwebt davon und dir bleibt nichts weiter übrig als ihm zu folgen.\n",
           "commands": []
+        },
+        {
+          "number": 20,
+          "text": "Du hast das Katzenfutter bereits eingesteckt.",
+          "commands": [
+            {
+              "command": "untersuche",
+              "targets": [
+                {
+                  "target": "engel",
+                  "goToChapter": 0,
+                  "goToDialog": 8,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 8
+                  }
+                },
+                {
+                  "target": "knochen",
+                  "goToChapter": 0,
+                  "goToDialog": 11,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 11
+                  }
+                },
+                {
+                  "target": "katzenfutter",
+                  "goToChapter": 0,
+                  "goToDialog": 15,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 15
+                  }
+                }
+              ]
+            },
+            {
+              "command": "nimm",
+              "targets": [
+                {
+                  "target": "knochen",
+                  "goToChapter": 0,
+                  "goToDialog": 12,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 12
+                  }
+                },
+                {
+                  "target": "engel",
+                  "goToChapter": 0,
+                  "goToDialog": 13,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 13
+                  }
+                },
+                {
+                  "target": "katzenfutter",
+                  "goToChapter": 0,
+                  "goToDialog": 20,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 20
+                  }
+                }
+              ]
+            },
+            {
+              "command": "benutze",
+              "targets": [
+                {
+                  "target": "katzenfutter mit engel",
+                  "checkObject": [
+                    {
+                      "name": "katzenfutter",
+                      "goToChapter": 0,
+                      "goToDialog": 16,
+                      "executeFunction": {
+                        "functionId": 1,
+                        "parameter1": "katzenfutter",
+                        "parameter2": 0,
+                        "parameter3": 16
+                      }
+                    }
+                  ],
+                  "goToChapter": 0,
+                  "goToDialog": 16,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 16
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     }

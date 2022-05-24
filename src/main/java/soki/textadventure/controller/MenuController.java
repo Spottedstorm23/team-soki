@@ -17,7 +17,7 @@ import java.util.Objects;
 
 public class MenuController {
     // Controller for soki-menu.fxml
-    private FileController fileController = new FileController();
+    private final FileController fileController = new FileController();
 
     public void quitGameMenu(ActionEvent actionEvent) {
         Node node = (Node) actionEvent.getSource();
@@ -43,7 +43,6 @@ public class MenuController {
         gameStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH); // cannot exit full screen
         gameStage.setScene(gameScene);
         gameStage.getIcons().add(new Image(Objects.requireNonNull(this.getClass().getResourceAsStream("/icons/Soki-Icon.png"))));
-
         gameStage.show();
     }
 
@@ -64,7 +63,6 @@ public class MenuController {
         gameStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH); // cannot exit full screen
         gameStage.setScene(gameScene);
         gameStage.getIcons().add(new Image(Objects.requireNonNull(this.getClass().getResourceAsStream("/icons/Soki-Icon.png"))));
-
         gameStage.show();
     }
 }

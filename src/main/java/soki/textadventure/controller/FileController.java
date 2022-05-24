@@ -11,24 +11,24 @@ import java.io.IOException;
 import java.io.Reader;
 
 public class FileController {
-    private String pathToPlayerDateJsonFile = "src/main/java/soki/textadventure/controller/jsonFiles/playerdata.json";
-    private String pathToTextDataJsonFile = "src/main/java/soki/textadventure/controller/jsonFiles/text.json";
+    private final String pathToPlayerDateJsonFile = "src/main/java/soki/textadventure/controller/jsonFiles/playerdata.json";
+    private final String pathToTextDataJsonFile = "src/main/java/soki/textadventure/controller/jsonFiles/text.json";
 
     /*Functions for Playerdata*/
-    public void giveallHaraItemsBack(){
+    public void giveallHaraItemsBack() {
         JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
         JSONArray haraArray = (JSONArray) playerdataObject.get("haraList");
         JSONArray objectList = (JSONArray) playerdataObject.get("objects");
 
-        for (Object haraObjectName: haraArray) {
-            objectList.add(constructObjectForObjectArray((String)haraObjectName, true));
+        for (Object haraObjectName : haraArray) {
+            objectList.add(constructObjectForObjectArray((String) haraObjectName, true));
         }
         haraArray.clear();
 
         writeContent(playerdataObject, pathToPlayerDateJsonFile);
     }
 
-    public void transferItemToHara(String objectName){
+    public void transferItemToHara(String objectName) {
         removeObject(objectName);
 
         JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
@@ -38,7 +38,7 @@ public class FileController {
         writeContent(playerdataObject, pathToPlayerDateJsonFile);
     }
 
-    public boolean checkIfObjectExists(String objectName){
+    public boolean checkIfObjectExists(String objectName) {
         JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
         JSONArray objectArray = (JSONArray) playerdataObject.get("objects");
 
@@ -62,7 +62,7 @@ public class FileController {
         String[] listOfStringObjects = new String[objectArray.size()];
 
         //todo: in for(i) Schleife umbauen
-        int i=0;
+        int i = 0;
         for (JSONObject innerObject : (Iterable<JSONObject>) objectArray) {
             listOfStringObjects[i] = (String) innerObject.get("name");
             i++;
@@ -71,7 +71,7 @@ public class FileController {
         return listOfStringObjects;
     }
 
-    public void removeObject(String object){
+    public void removeObject(String object) {
         JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
         JSONArray objectArray = (JSONArray) playerdataObject.get("objects");
 
@@ -84,16 +84,16 @@ public class FileController {
                 removeObject = innerObject; //kann nicht direkt entfernt werden,
             }                               // weil das sonst die Schleife durcheinander bringt
         }
-        
+
         objectArray.remove(removeObject);
 
         writeContent(playerdataObject, pathToPlayerDateJsonFile);
     }
 
-    public void changeLocation(int chapternr, int dialognr){
+    public void changeLocation(int chapternr, int dialognr) {
         JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
-        playerdataObject.replace("chapter",chapternr);
-        playerdataObject.replace("dialog",dialognr);
+        playerdataObject.replace("chapter", chapternr);
+        playerdataObject.replace("dialog", dialognr);
         writeContent(playerdataObject, pathToPlayerDateJsonFile);
     }
 
@@ -106,23 +106,29 @@ public class FileController {
         writeContent(playerdataObject, pathToPlayerDateJsonFile);
     }
 
-    private JSONObject constructObjectForObjectArray(String object, Boolean isVisible){
+    private JSONObject constructObjectForObjectArray(String object, Boolean isVisible) {
         JSONObject objectPrototype = new JSONObject();
-        objectPrototype.put("name",object);
-        objectPrototype.put("isVisible",isVisible);
+        objectPrototype.put("name", object);
+        objectPrototype.put("isVisible", isVisible);
 
         return objectPrototype;
     }
 
-    public void setPlaythrough(int playthrough) {
+    public void setPlaythrough(String playthrough) {
         JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
-        playerdataObject.replace("playthrough",playthrough);
+        playerdataObject.replace("playthrough", playthrough);
         writeContent(playerdataObject, pathToPlayerDateJsonFile);
     }
 
     public void setPlayerName(String name) {
         JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
-        playerdataObject.replace("name",name);
+        playerdataObject.replace("name", name);
+        writeContent(playerdataObject, pathToPlayerDateJsonFile);
+    }
+
+    public void setPlayerLocation(String place) {
+        JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
+        playerdataObject.replace("location", place);
         writeContent(playerdataObject, pathToPlayerDateJsonFile);
     }
 
@@ -135,11 +141,9 @@ public class FileController {
 
             if (objectName.equals(object)) {
                 boolean visibleStatus = (boolean) innerObject.get("isVisible");
-                innerObject.replace("isVisible",!visibleStatus);
+                innerObject.replace("isVisible", !visibleStatus);
             }
         }
-
-
         writeContent(playerdataObject, pathToPlayerDateJsonFile);
     }
 
@@ -147,35 +151,64 @@ public class FileController {
         JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
         playerdataObject.replace("chapter", 0);
         playerdataObject.replace("dialog", 0);
-        playerdataObject.replace("objects" ,new JSONArray());
+        playerdataObject.replace("objects", new JSONArray());
         playerdataObject.replace("name", "user");
-        playerdataObject.replace("playthrough",0);
-        playerdataObject.replace("haraList",new JSONArray());
+        playerdataObject.replace("playthrough", 0);
+        playerdataObject.replace("haraList", new JSONArray());
+        playerdataObject.replace("location", "Heimischer Desktop");
 
         writeContent(playerdataObject, pathToPlayerDateJsonFile);
     }
 
+    public int getPlayerChapter() {
+        JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
+        long chapter = (long) playerdataObject.get("chapter");
+        return (int) chapter;
+    }
+
+    public int getPlayerDialog() {
+        JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
+        long dialog = (long) playerdataObject.get("dialog");
+        return (int) dialog;
+    }
+
+    public String getPlayerName() {
+        JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
+        return (String) playerdataObject.get("name");
+    }
+
+    public int getPlayerPlaythrough() {
+        JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
+        long playthrough = (long) playerdataObject.get("playthrough");
+        return (int) playthrough;
+    }
+
+    public String getPlayerLocation() {
+        JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
+        return (String) playerdataObject.get("location");
+    }
+
     /*Functions for Textdata*/
-    public int[] getNextDialogNumbersAndExecuteFunction(int oldChapternr, int oldDialognr, String playerCommand, String playerTarget){
+    public int[] getNextDialogNumbersAndExecuteFunction(int oldChapternr, int oldDialognr, String playerCommand, String playerTarget) {
         //Übergebe AKTUELLE Chapter und Dialog, Gibt Nummern für nächsten Dialog zurück
         JSONObject dialog = getSpezificDialogFromJSON(oldChapternr, oldDialognr);
         JSONArray commandArray = (JSONArray) dialog.get("commands");
 
         int newChapter, newDialog;
 
-        for (JSONObject command:(Iterable<JSONObject>) commandArray) {
-            if (playerCommand.equals((String)command.get("command"))){
+        for (JSONObject command : (Iterable<JSONObject>) commandArray) {
+            if (playerCommand.equals((String) command.get("command"))) {
                 JSONArray targetArray = (JSONArray) command.get("targets");
 
-                for (JSONObject target:(Iterable<JSONObject>) targetArray) {
-                    if (playerTarget.equals((String)target.get("target"))){
+                for (JSONObject target : (Iterable<JSONObject>) targetArray) {
+                    if (playerTarget.equals((String) target.get("target"))) {
                         newChapter = (int) (long) target.get("goToChapter");
                         newDialog = (int) (long) target.get("goToDialog");
 
                         JSONArray checkForObjects = (JSONArray) target.get("checkObject");
                         if (checkForObjects != null) {
-                            for (JSONObject checkForObject:(Iterable<JSONObject>) checkForObjects) {
-                                if (checkIfObjectExists((String)checkForObject.get("name"))) {
+                            for (JSONObject checkForObject : (Iterable<JSONObject>) checkForObjects) {
+                                if (checkIfObjectExists((String) checkForObject.get("name"))) {
                                     newChapter = (int) (long) checkForObject.get("goToChapter");
                                     newDialog = (int) (long) checkForObject.get("goToDialog");
 
@@ -202,16 +235,16 @@ public class FileController {
         return null;
     }
 
-    public String getText (int chapternr, int dialognr) {
+    public String getText(int chapternr, int dialognr) {
         JSONObject dialogObject = getSpezificDialogFromJSON(chapternr, dialognr);
         return (String) dialogObject.get("text");
     }
 
-    private JSONObject getSpezificDialogFromJSON (int chapternr, int dialognr){
+    private JSONObject getSpezificDialogFromJSON(int chapternr, int dialognr) {
         JSONObject textDataObject = readContent(pathToTextDataJsonFile);
         JSONArray chapterArray = (JSONArray) textDataObject.get("chapters");
 
-        for (JSONObject chapter:(Iterable<JSONObject>) chapterArray) {
+        for (JSONObject chapter : (Iterable<JSONObject>) chapterArray) {
             if (chapternr == (int) (long) chapter.get("number")) {
                 JSONArray dialogArray = (JSONArray) chapter.get("dialogs");
 
@@ -226,27 +259,52 @@ public class FileController {
         return null;
     }
 
-    private void executeFunctionFromJSON (JSONObject functionObject) {
+    private void executeFunctionFromJSON(JSONObject functionObject) {
         int functionId = (int) (long) functionObject.get("functionId");
         Object parameter1 = functionObject.get("parameter1");
         Object parameter2 = functionObject.get("parameter2");
+        Object parameter3 = functionObject.get("parameter3");
+        Object parameter4 = functionObject.get("parameter4");
+
 
         switch (functionId) {
-            case 0:
+            case 0: {
                 giveallHaraItemsBack();
                 break;
-            case 1:
+            }
+            case 1: {
                 transferItemToHara((String) parameter1);
+                changeLocation((int) ((long) parameter2), (int) ((long) parameter3));
                 break;
-            case 2:
+            }
+            case 2: {
                 addObject((String) parameter1, (boolean) parameter2);
+                changeLocation((int) ((long) parameter3), (int) ((long) parameter4));
                 break;
-            case 3:
+            }
+            case 3: {
                 removeObject((String) parameter1);
                 break;
-            case 4:
+            }
+            case 4: {
                 changeVisible((String) parameter1);
                 break;
+            }
+            case 5: {
+                setPlayerLocation((String) parameter1);
+                changeLocation((int) ((long) parameter2), (int) ((long) parameter3));
+                break;
+            }
+            case 6: {
+                setPlaythrough((String) parameter1);
+                changeLocation((int) ((long) parameter2), (int) ((long) parameter3));
+                break;
+            }
+            case 7: {
+                changeLocation((int) ((long) parameter1), (int) ((long) parameter2));
+                break;
+            }
+
         }
     }
 

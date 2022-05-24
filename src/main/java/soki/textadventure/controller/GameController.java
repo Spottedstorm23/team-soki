@@ -59,16 +59,20 @@ public class GameController {   // Controller for soki-game.fxml
 
     private String currentDialog;
     private FileController fileController = new FileController();
-    private boolean nameIsSet = false;
 
+    //Gamevariables
     // o - Prolog; 1 - Chapter 1; 2 - Chapter 2; 3 - Chapter 3; 4 - Chapter 4;
-    private int currentChapter = 0;
-    private int currentDialogBlock = 0;
-    private String playerName = "user";
-    private int currentPlayThrough = 0;
+    private int currentChapter;
+    private int currentDialogBlock;
+    private String playerName;
+    private int currentPlayThrough;
+    private boolean nameIsSet;
+    private String currentLocation;
+
 
     public void setCurrentDialogLine(String text) {
         this.currentDialog = text;
+        updateUserLocationInWindow();
         timer.start();
     }
 
@@ -76,10 +80,19 @@ public class GameController {   // Controller for soki-game.fxml
         return currentPlayThrough > 0 && currentChapter == 0 && currentDialogBlock == 0;
     }
 
+    public void setGameVariables(int chapter, int dialog, String name, int playthrough, boolean isSet, String location) {
+        setCurrentChapterAndDialogBlock(chapter, dialog);
+        this.playerName = name;
+        this.currentPlayThrough = playthrough;
+        this.nameIsSet = isSet;
+        this.currentLocation = location;
+    }
+
     public void initialize() {
         // setCurrentDialogLine("Hallo, was möchtest du machen?");
+        setGameVariables(fileController.getPlayerChapter(), fileController.getPlayerDialog(), fileController.getPlayerName(), fileController.getPlayerPlaythrough(), !Objects.equals(fileController.getPlayerName(), "user"), fileController.getPlayerLocation());
         startFirstDialogueLine();
-
+        updateUserLocationInWindow();
         textFieldGameWindow.setOnAction(e -> {
             String inputText = textFieldGameWindow.getText();
             textAreaGameWindow.appendText(">> " + inputText + "\n");
@@ -99,14 +112,14 @@ public class GameController {   // Controller for soki-game.fxml
     }
 
     public void startFirstDialogueLine() {
-        setCurrentDialogLine(fileController.getText(currentChapter,currentDialogBlock));
+        setCurrentDialogLine(replacePlaceholderWithName(fileController.getText(currentChapter, currentDialogBlock)));
         //setCurrentDialogLine("0.0");
-        if (isNewGamePlus()){
-            setSecondDialogOfNewGame("isFirstPlaythrough","false");
+        if (isNewGamePlus()) {
+            setSecondDialogOfNewGame("isFirstPlaythrough", "false");
+        } else if (currentChapter == 0 && currentDialogBlock == 0) {
+            setSecondDialogOfNewGame("isFirstPlaythrough", "true");
         }
-        else if(currentChapter == 0 && currentDialogBlock == 0){
-            setSecondDialogOfNewGame("isFirstPlaythrough","true");
-        }
+        updateUserLocationInWindow();
     }
 
     Timer timer = new Timer(80, new ActionListener() {
@@ -168,8 +181,8 @@ public class GameController {   // Controller for soki-game.fxml
             setCurrentDialogLine(listOfPossibleInputs);
 
         } else if (lowerCaseInput.matches("menu")) {
+            saveGame();
             setCurrentDialogLine("Du kehrst ins Hauptmenü zurück!\n");
-            // TODO Speichern
             delay(3000, () -> {
                 try {
                     openMenu();
@@ -179,7 +192,7 @@ public class GameController {   // Controller for soki-game.fxml
             });
 
         } else if (lowerCaseInput.matches("beenden")) {
-            // TODO Speichern
+            saveGame();
             setCurrentDialogLine("Dein Spiel wurde gespeichert. \"SOKI\" wird nun beendet...");
             delay(3000, this::quitgame);
             // oder: delay(3000, () -> quitgame());
@@ -206,26 +219,26 @@ public class GameController {   // Controller for soki-game.fxml
             //TODO Ziel(e) zurückgeben und entsprechnden Dialog ausgeben
             if (lowerCaseInput.matches("benutze [a-z]+ mit[ ]*")) {
                 setCurrentDialogLine("Bitte gib ein Ziel für deine Aktion ein!\n");
-            } else if (lowerCaseInput.contains("mit")) {
+            }
+            /*else if (lowerCaseInput.contains("mit")) {
                 String[] substrings = lowerCaseInput.split(" ");
                 System.out.println(Arrays.toString(substrings));
                 String targetedObject = substrings[3];
                 String usedItem = substrings[1];
                 setCurrentDialogLine("Du benutzt " + usedItem + " mit " + targetedObject + "\n");
 
-            } else {
+            }*/
+            else {
                 String usedItem = lowerCaseInput.replace("benutze ", "");
+                System.out.println(usedItem);
                 findMyDialog("benutze", usedItem);
-
             }
 
         } else if (lowerCaseInput.matches("interagiere mit [a-z]+")) {
-            //TODO Ziel(e) zurückgeben und entsprechnden Dialog ausgeben
             String target = lowerCaseInput.replace("interagiere mit ", "");
             findMyDialog("interagiere", target);
 
         } else if (lowerCaseInput.matches("gehe zu [a-z ]+")) {
-            //TODO Ort zurückgeben und entsprechnden Dialog ausgeben
             String targetPlace = lowerCaseInput.replace("gehe zu ", "");
             findMyDialog("gehe", targetPlace);
 
@@ -240,20 +253,25 @@ public class GameController {   // Controller for soki-game.fxml
 
     }
 
+    private void saveGame() {
+        fileController.changeLocation(currentChapter, currentDialogBlock);
+        fileController.setPlayerLocation(currentLocation);
+        fileController.setPlayerName(playerName);
+        fileController.setPlaythrough(String.valueOf(currentPlayThrough));
+    }
+
     private void findMyDialog(String command, String target) {
-        System.out.println(currentChapter + " , " + currentDialogBlock);
         int[] newChapAndDialog = fileController.getNextDialogNumbersAndExecuteFunction(currentChapter, currentDialogBlock, command, target);
         this.currentChapter = newChapAndDialog[0];
         this.currentDialogBlock = newChapAndDialog[1];
-        System.out.println(currentChapter + " , " + currentDialogBlock);
         setCurrentDialogLine(replacePlaceholderWithName(fileController.getText(currentChapter, currentDialogBlock)));
     }
 
-    private void setSecondDialogOfNewGame(String command, String target){
+    private void setSecondDialogOfNewGame(String command, String target) {
         int[] newChapAndDialog = fileController.getNextDialogNumbersAndExecuteFunction(currentChapter, currentDialogBlock, command, target);
         this.currentChapter = newChapAndDialog[0];
         this.currentDialogBlock = newChapAndDialog[1];
-        currentDialog = currentDialog + "\n" + replacePlaceholderWithName(fileController.getText(currentChapter,currentDialogBlock));
+        currentDialog = currentDialog + "\n" + replacePlaceholderWithName(fileController.getText(currentChapter, currentDialogBlock));
     }
 
     private void setUserName(String input) {
@@ -262,22 +280,24 @@ public class GameController {   // Controller for soki-game.fxml
         Matcher includesNonLetters = nonLettersRegex.matcher(lowerCaseInput);
 
         if (includesNonLetters.find()) {
-            setCurrentChapterAndDialogBlock(0,3);
-            setCurrentDialogLine(fileController.getText(currentChapter, currentDialogBlock));
+            setCurrentChapterAndDialogBlock(0, 3);
+            setCurrentDialogLine(replacePlaceholderWithName(fileController.getText(currentChapter, currentDialogBlock)));
+            fileController.changeLocation(currentChapter,currentDialogBlock);
         } else if (input.equals("user")) {
-            setCurrentChapterAndDialogBlock(0,4);
-            setCurrentDialogLine(fileController.getText(currentChapter, currentDialogBlock));
+            setCurrentChapterAndDialogBlock(0, 4);
+            setCurrentDialogLine(replacePlaceholderWithName(fileController.getText(currentChapter, currentDialogBlock)));
+            fileController.changeLocation(currentChapter,currentDialogBlock);
         } else {
             fileController.setPlayerName(input);
             this.playerName = input;
             this.nameIsSet = true;
-            setCurrentChapterAndDialogBlock(0,5);
+            setCurrentChapterAndDialogBlock(0, 5);
             setCurrentDialogLine(replacePlaceholderWithName(fileController.getText(currentChapter, currentDialogBlock)));
-
+            fileController.changeLocation(currentChapter,currentDialogBlock);
         }
     }
 
-    private void setCurrentChapterAndDialogBlock(int chap, int dial){
+    private void setCurrentChapterAndDialogBlock(int chap, int dial) {
         this.currentChapter = chap;
         this.currentDialogBlock = dial;
     }
@@ -285,6 +305,11 @@ public class GameController {   // Controller for soki-game.fxml
     private String replacePlaceholderWithName(String text) {
         String newText = text.replace("{Name}", playerName);
         return newText;
+    }
+
+    private void updateUserLocationInWindow() {
+        this.currentLocation = fileController.getPlayerLocation();
+        labelUserStandortGameWindow.setText(currentLocation);
     }
 
     public void openMenu() throws IOException {
