@@ -120,6 +120,12 @@ public class FileController {
         writeContent(playerdataObject, pathToPlayerDateJsonFile);
     }
 
+    public void setPlayerName(String name) {
+        JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
+        playerdataObject.replace("name",name);
+        writeContent(playerdataObject, pathToPlayerDateJsonFile);
+    }
+
     public void changeVisible(String object) {
         JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
         JSONArray objectArray = (JSONArray) playerdataObject.get("objects");

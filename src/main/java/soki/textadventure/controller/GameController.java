@@ -62,9 +62,10 @@ public class GameController {   // Controller for soki-game.fxml
 
     //Eventuell für die Abfrage der Dialoge benötigten Werte?
     // o - Prolog; 1 - Chapter 1; 2 - Chapter 2; 3 - Chapter 3; 4 - Chapter 4;
-    private int chapter = 0;
+    private int currentChapter = 0;
     // Start immer mit dem ersten Block?
-    private int dialogBlock = 1;
+    private int currentDialogBlock = 1;
+    private String playerName = "user";
 
     public void setCurrentDialogLine(String text) {
         this.currentDialog = text;
@@ -80,7 +81,11 @@ public class GameController {   // Controller for soki-game.fxml
             textAreaGameWindow.appendText(">> " + inputText + "\n");
             textFieldGameWindow.clear();
             try {
-                processUserInput(inputText);
+                if (nameIsSet) {
+                    processUserInput(inputText);
+                } else {
+                    setUserName(inputText);
+                }
             } catch (IOException ex) {
                 ex.printStackTrace();
             } catch (InterruptedException ex) {
@@ -90,7 +95,8 @@ public class GameController {   // Controller for soki-game.fxml
     }
 
     public void startFirstDialogueLine() {
-        setCurrentDialogLine(fileController.getText(0,0));
+        //setCurrentDialogLine(fileController.getText(0,0));
+        setCurrentDialogLine("o.o");
     }
 
     Timer timer = new Timer(80, new ActionListener() {
@@ -98,8 +104,8 @@ public class GameController {   // Controller for soki-game.fxml
         @Override
         public void actionPerformed(java.awt.event.ActionEvent e) {
             textFieldGameWindow.setDisable(true);   // --> User soll nicht in der Lage sein,
-                                                    // während der Timer noch am Schreiben der Story ist,
-                                                    // zwischendurch eine Eingabe zu tätigen
+            // während der Timer noch am Schreiben der Story ist,
+            // zwischendurch eine Eingabe zu tätigen
             char[] character = currentDialog.toCharArray();
             for (char c : character) {
                 String s = String.valueOf(c);
@@ -118,12 +124,14 @@ public class GameController {   // Controller for soki-game.fxml
     });
 
     // Kurze Wartezeit beim Beenden des Spiels (siehe: "if (lowerCaseInput.matches("beenden"))")
-    public static void delay (long millis, Runnable continuation) {
+    public static void delay(long millis, Runnable continuation) {
         Task<Void> sleeper = new Task<Void>() {
             @Override
             protected Void call() throws Exception {
-                try { Thread.sleep(millis); }
-                catch (InterruptedException e) { }
+                try {
+                    Thread.sleep(millis);
+                } catch (InterruptedException e) {
+                }
                 return null;
             }
         };
@@ -169,17 +177,20 @@ public class GameController {   // Controller for soki-game.fxml
 
         } else if (lowerCaseInput.matches("untersuche [a-z]+")) {
             String targetObject = lowerCaseInput.replace("untersuche ", "");
-            setCurrentDialogLine("Du untersuchst " + targetObject + "!\n");
+            findMyDialog("untersuche", targetObject);
             //TODO return target und nutze entsprechenden dialog
 
         } else if (lowerCaseInput.matches("nimm [a-z]+")) {
             String targetItem = lowerCaseInput.replace("nimm ", "");
-            setCurrentDialogLine("Du nimmst " + targetItem + "!\n");
+            findMyDialog("nimm", targetItem);
             //TODO return target und nutze entsprechenden dialog
 
         } else if (lowerCaseInput.matches("inventar")) {
-            setCurrentDialogLine("Du öffnest dein Ineventar und siehst die deine Items an!\n");
-            //TODO Inventarliste ausgeben
+            String inventory = Arrays.toString(fileController.listVisibleObjects());
+            if (inventory.equals("[]")) {
+                inventory = "Du hast zur Zeit nichts im Inventar";
+            }
+            setCurrentDialogLine(inventory);
 
         } else if (lowerCaseInput.matches("benutze [a-z ]+")) {
             //TODO Ziel(e) zurückgeben und entsprechnden Dialog ausgeben
@@ -194,27 +205,58 @@ public class GameController {   // Controller for soki-game.fxml
 
             } else {
                 String usedItem = lowerCaseInput.replace("benutze ", "");
-                setCurrentDialogLine("Du benutzt " + usedItem + "\n");
+                findMyDialog("benutze", usedItem);
+
             }
 
         } else if (lowerCaseInput.matches("interagiere mit [a-z]+")) {
             //TODO Ziel(e) zurückgeben und entsprechnden Dialog ausgeben
             String target = lowerCaseInput.replace("interagiere mit ", "");
-            setCurrentDialogLine("Du interagierst mit " + target + "\n");
+            findMyDialog("interagiere", target);
 
         } else if (lowerCaseInput.matches("gehe zu [a-z ]+")) {
             //TODO Ort zurückgeben und entsprechnden Dialog ausgeben
             String targetPlace = lowerCaseInput.replace("gehe zu ", "");
-            setCurrentDialogLine("Du gehst zum " + targetPlace + "\n");
+            findMyDialog("gehe", targetPlace);
 
         } else if (lowerCaseInput.matches("waehle [a-z]+")) {
             String option = lowerCaseInput.replace("waehle ", "");
-            setCurrentDialogLine("Du wählst Option " + option + "\n");
+            findMyDialog("waehle", option);
 
         } else {
             setCurrentDialogLine("Du hast dich selbst verwirrt und versuchst deine Aktion neuzustarten. \n Tipp: Nutze Hilfe wenn du nicht weiter weißt");
         }
 
+    }
+
+    private void findMyDialog(String command, String target) {
+        int[] newChapAndDialog = fileController.getNextDialogNumbersAndExecuteFunction(currentChapter, currentDialogBlock, command, target);
+        currentChapter = newChapAndDialog[0];
+        currentDialogBlock = newChapAndDialog[1];
+        setCurrentDialogLine(fileController.getText(currentChapter, currentDialogBlock));
+    }
+
+    private void setUserName(String input) {
+        Pattern nonLettersRegex = Pattern.compile("[^a-z ]+");
+        Matcher includesNonLetters = nonLettersRegex.matcher(input);
+
+        if (includesNonLetters.find()) {
+            setCurrentDialogLine(fileController.getText(0,3));
+        }
+        else if(input.toLowerCase().equals("user")){
+            setCurrentDialogLine(fileController.getText(0,4));
+        }
+        else {
+            fileController.setPlayerName(input);
+            this.playerName = input;
+            setCurrentDialogLine(replacePlaceholderWithName(fileController.getText(0,5)));
+
+        }
+    }
+
+    private String replacePlaceholderWithName(String text){
+         String newText = text.replace("{Name}",playerName);
+        return newText;
     }
 
     public void openMenu() throws IOException {
