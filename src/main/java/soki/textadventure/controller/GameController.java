@@ -262,6 +262,9 @@ public class GameController {   // Controller for soki-game.fxml
 
     private void findMyDialog(String command, String target) {
         int[] newChapAndDialog = fileController.getNextDialogNumbersAndExecuteFunction(currentChapter, currentDialogBlock, command, target);
+        if(newChapAndDialog == null){
+            newChapAndDialog = fileController.getNextDialogNumbersAndExecuteFunction(currentChapter, currentDialogBlock, "default", "default");
+        }
         this.currentChapter = newChapAndDialog[0];
         this.currentDialogBlock = newChapAndDialog[1];
         setCurrentDialogLine(replacePlaceholderWithName(fileController.getText(currentChapter, currentDialogBlock)));
