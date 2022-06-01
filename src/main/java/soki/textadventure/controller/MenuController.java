@@ -1,10 +1,12 @@
 package soki.textadventure.controller;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCombination;
 import javafx.stage.Modality;
@@ -16,10 +18,20 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class MenuController {
+    @FXML
+    private Label playerLocationLabel;
+    @FXML
+    private Label playerChapterLabel;
+
     // Controller for soki-menu.fxml
     private final FileController fileController = new FileController();
 
-    public void quitGameMenu(ActionEvent actionEvent) {
+    public void initialize() {
+        playerChapterLabel.setText(String.valueOf(fileController.getPlayerChapter()));
+        playerLocationLabel.setText(fileController.getPlayerLocation());
+    }
+
+        public void quitGameMenu(ActionEvent actionEvent) {
         Node node = (Node) actionEvent.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();

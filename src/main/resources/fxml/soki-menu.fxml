@@ -75,7 +75,7 @@
                               <Font name="Monospaced Regular" size="24.0" />
                            </font>
                         </Label>
-                        <Label text="Oase des Anfangs" textFill="LIME" GridPane.columnIndex="5">
+                        <Label fx:id="playerLocationLabel" text="Oase des Anfangs" textFill="LIME" GridPane.columnIndex="5">
                            <font>
                               <Font name="Monospaced Regular" size="24.0" />
                            </font>
@@ -85,7 +85,7 @@
                               <Font name="Monospaced Regular" size="24.0" />
                            </font>
                         </Label>
-                        <Label text="0" textFill="LIME" GridPane.columnIndex="2">
+                        <Label text="0" fx:id="playerChapterLabel" textFill="LIME" GridPane.columnIndex="2">
                            <font>
                               <Font name="Monospaced Regular" size="24.0" />
                            </font>
