@@ -253,6 +253,19 @@
                 },
                 {
                   "target": "katzenfutter",
+                  "checkObject": [
+                    {
+                      "name": "katzenfutter",
+                      "goToChapter": 0,
+                      "goToDialog": 20,
+                      "executeFunction": {
+                        "functionId": 1,
+                        "parameter1": "katzenfutter",
+                        "parameter2": 0,
+                        "parameter3": 20
+                      }
+                    }
+                  ],
                   "goToChapter": 0,
                   "goToDialog": 14,
                   "executeFunction": {
@@ -260,7 +273,7 @@
                     "parameter1": "katzenfutter",
                     "parameter2": true,
                     "parameter3": 0,
-                    "parameter4": 15
+                    "parameter4": 14
                   }
                 }
               ]
@@ -408,6 +421,19 @@
                 },
                 {
                   "target": "katzenfutter",
+                  "checkObject": [
+                    {
+                      "name": "katzenfutter",
+                      "goToChapter": 0,
+                      "goToDialog": 20,
+                      "executeFunction": {
+                        "functionId": 1,
+                        "parameter1": "katzenfutter",
+                        "parameter2": 0,
+                        "parameter3": 20
+                      }
+                    }
+                  ],
                   "goToChapter": 0,
                   "goToDialog": 14,
                   "executeFunction": {
@@ -415,7 +441,7 @@
                     "parameter1": "katzenfutter",
                     "parameter2": true,
                     "parameter3": 0,
-                    "parameter4": 15
+                    "parameter4": 14
                   }
                 }
               ]
@@ -501,6 +527,19 @@
                 },
                 {
                   "target": "katzenfutter",
+                  "checkObject": [
+                    {
+                      "name": "katzenfutter",
+                      "goToChapter": 0,
+                      "goToDialog": 20,
+                      "executeFunction": {
+                        "functionId": 1,
+                        "parameter1": "katzenfutter",
+                        "parameter2": 0,
+                        "parameter3": 20
+                      }
+                    }
+                  ],
                   "goToChapter": 0,
                   "goToDialog": 14,
                   "executeFunction": {
@@ -508,7 +547,7 @@
                     "parameter1": "katzenfutter",
                     "parameter2": true,
                     "parameter3": 0,
-                    "parameter4": 15
+                    "parameter4": 14
                   }
                 }
               ]
@@ -594,6 +633,19 @@
                 },
                 {
                   "target": "katzenfutter",
+                  "checkObject": [
+                    {
+                      "name": "katzenfutter",
+                      "goToChapter": 0,
+                      "goToDialog": 20,
+                      "executeFunction": {
+                        "functionId": 1,
+                        "parameter1": "katzenfutter",
+                        "parameter2": 0,
+                        "parameter3": 20
+                      }
+                    }
+                  ],
                   "goToChapter": 0,
                   "goToDialog": 14,
                   "executeFunction": {
@@ -601,7 +653,7 @@
                     "parameter1": "katzenfutter",
                     "parameter2": true,
                     "parameter3": 0,
-                    "parameter4": 15
+                    "parameter4": 14
                   }
                 }
               ]
@@ -687,6 +739,19 @@
                 },
                 {
                   "target": "katzenfutter",
+                  "checkObject": [
+                    {
+                      "name": "katzenfutter",
+                      "goToChapter": 0,
+                      "goToDialog": 20,
+                      "executeFunction": {
+                        "functionId": 1,
+                        "parameter1": "katzenfutter",
+                        "parameter2": 0,
+                        "parameter3": 20
+                      }
+                    }
+                  ],
                   "goToChapter": 0,
                   "goToDialog": 14,
                   "executeFunction": {
@@ -694,7 +759,7 @@
                     "parameter1": "katzenfutter",
                     "parameter2": true,
                     "parameter3": 0,
-                    "parameter4": 15
+                    "parameter4": 14
                   }
                 }
               ]
@@ -780,12 +845,27 @@
                 },
                 {
                   "target": "katzenfutter",
+                  "checkObject": [
+                    {
+                      "name": "katzenfutter",
+                      "goToChapter": 0,
+                      "goToDialog": 20,
+                      "executeFunction": {
+                        "functionId": 1,
+                        "parameter1": "katzenfutter",
+                        "parameter2": 0,
+                        "parameter3": 20
+                      }
+                    }
+                  ],
                   "goToChapter": 0,
-                  "goToDialog": 20,
+                  "goToDialog": 14,
                   "executeFunction": {
-                    "functionId": 7,
-                    "parameter1": 0,
-                    "parameter2": 20
+                    "functionId": 2,
+                    "parameter1": "katzenfutter",
+                    "parameter2": true,
+                    "parameter3": 0,
+                    "parameter4": 14
                   }
                 }
               ]
@@ -809,11 +889,11 @@
                     }
                   ],
                   "goToChapter": 0,
-                  "goToDialog": 16,
+                  "goToDialog": 21,
                   "executeFunction": {
                     "functionId": 7,
                     "parameter1": 0,
-                    "parameter2": 16
+                    "parameter2": 21
                   }
                 }
               ]
@@ -899,12 +979,27 @@
                 },
                 {
                   "target": "katzenfutter",
+                  "checkObject": [
+                    {
+                      "name": "katzenfutter",
+                      "goToChapter": 0,
+                      "goToDialog": 20,
+                      "executeFunction": {
+                        "functionId": 1,
+                        "parameter1": "katzenfutter",
+                        "parameter2": 0,
+                        "parameter3": 20
+                      }
+                    }
+                  ],
                   "goToChapter": 0,
-                  "goToDialog": 20,
+                  "goToDialog": 14,
                   "executeFunction": {
-                    "functionId": 7,
-                    "parameter1": 0,
-                    "parameter2": 20
+                    "functionId": 2,
+                    "parameter1": "katzenfutter",
+                    "parameter2": true,
+                    "parameter3": 0,
+                    "parameter4": 14
                   }
                 }
               ]
@@ -928,11 +1023,11 @@
                     }
                   ],
                   "goToChapter": 0,
-                  "goToDialog": 16,
+                  "goToDialog": 21,
                   "executeFunction": {
                     "functionId": 7,
                     "parameter1": 0,
-                    "parameter2": 16
+                    "parameter2": 21
                   }
                 }
               ]
@@ -1280,12 +1375,27 @@
                 },
                 {
                   "target": "katzenfutter",
+                  "checkObject": [
+                    {
+                      "name": "katzenfutter",
+                      "goToChapter": 0,
+                      "goToDialog": 20,
+                      "executeFunction": {
+                        "functionId": 1,
+                        "parameter1": "katzenfutter",
+                        "parameter2": 0,
+                        "parameter3": 20
+                      }
+                    }
+                  ],
                   "goToChapter": 0,
-                  "goToDialog": 20,
+                  "goToDialog": 14,
                   "executeFunction": {
-                    "functionId": 7,
-                    "parameter1": 0,
-                    "parameter2": 20
+                    "functionId": 2,
+                    "parameter1": "katzenfutter",
+                    "parameter2": true,
+                    "parameter3": 0,
+                    "parameter4": 14
                   }
                 }
               ]
@@ -1309,11 +1419,11 @@
                     }
                   ],
                   "goToChapter": 0,
-                  "goToDialog": 16,
+                  "goToDialog": 21,
                   "executeFunction": {
                     "functionId": 7,
                     "parameter1": 0,
-                    "parameter2": 16
+                    "parameter2": 21
                   }
                 }
               ]
@@ -1338,7 +1448,181 @@
         {
           "number": 21,
           "text": "Du zweifelst an der Sinnhaftigkeit der Aktion und versuchst etwas anderes.",
-          "commands": []
+          "commands": [
+            {
+              "command": "untersuche",
+              "targets": [
+                {
+                  "target": "engel",
+                  "goToChapter": 0,
+                  "goToDialog": 8,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 8
+                  }
+                },
+                {
+                  "target": "knochen",
+                  "goToChapter": 0,
+                  "goToDialog": 11,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 11
+                  }
+                },
+                {
+                  "target": "katzenfutter",
+                  "goToChapter": 0,
+                  "goToDialog": 15,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 15
+                  }
+                },
+                {
+                  "target": "huette",
+                  "goToChapter": 0,
+                  "goToDialog": 9,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 9
+                  }
+                },
+                {
+                  "target": "tuer",
+                  "goToChapter": 0,
+                  "goToDialog": 17,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 17
+                  }
+                }
+              ]
+            },
+            {
+              "command": "nimm",
+              "targets": [
+                {
+                  "target": "knochen",
+                  "goToChapter": 0,
+                  "goToDialog": 12,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 12
+                  }
+                },
+                {
+                  "target": "engel",
+                  "goToChapter": 0,
+                  "goToDialog": 13,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 13
+                  }
+                },
+                {
+                  "target": "katzenfutter",
+                  "checkObject": [
+                    {
+                      "name": "katzenfutter",
+                      "goToChapter": 0,
+                      "goToDialog": 20,
+                      "executeFunction": {
+                        "functionId": 1,
+                        "parameter1": "katzenfutter",
+                        "parameter2": 0,
+                        "parameter3": 20
+                      }
+                    }
+                  ],
+                  "goToChapter": 0,
+                  "goToDialog": 14,
+                  "executeFunction": {
+                    "functionId": 2,
+                    "parameter1": "katzenfutter",
+                    "parameter2": true,
+                    "parameter3": 0,
+                    "parameter4": 14
+                  }
+                },
+                {
+                  "target": "tuer",
+                  "goToChapter": 0,
+                  "goToDialog": 18,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 18
+                  }
+                }
+              ]
+            },
+            {
+              "command": "interagiere",
+              "targets": [
+                {
+                  "target": "tuer",
+                  "goToChapter": 0,
+                  "goToDialog": 19,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 19
+                  }
+                }
+              ]
+            },
+            {
+              "command": "benutze",
+              "targets": [
+                {
+                  "target": "katzenfutter mit engel",
+                  "checkObject": [
+                    {
+                      "name": "katzenfutter",
+                      "goToChapter": 0,
+                      "goToDialog": 16,
+                      "executeFunction": {
+                        "functionId": 1,
+                        "parameter1": "katzenfutter",
+                        "parameter2": 0,
+                        "parameter3": 16
+                      }
+                    }
+                  ],
+                  "goToChapter": 0,
+                  "goToDialog": 21,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 21
+                  }
+                }
+              ]
+            },
+            {
+              "command": "default",
+              "targets": [
+                {
+                  "target": "default",
+                  "goToChapter": 0,
+                  "goToDialog": 21,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 21
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     }
