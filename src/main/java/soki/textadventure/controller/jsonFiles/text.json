@@ -41,8 +41,36 @@
         },
         {
           "number": 2,
-          "text": "„Also dann User … User … User klingt so unpersönlich, finden Sie nicht auch? Wie wäre es wenn ich sie {Name} nenne?“ Dir läuft es kalt den Rücken herunter, warum weiß dieses Programm deinen Namen? Du überlegst das Fenster zu schließen als das Programm fortfährt. Dich beschleicht das leichte Gefühl, das Ganze bereits erlebt zu haben.“",
-          "commands": []
+          "text": "„Also dann User … User … User klingt so unpersönlich, finden Sie nicht auch? Wie wäre es wenn ich sie {Name} nenne?“ Dir läuft es kalt den Rücken herunter, warum weiß dieses Programm deinen Namen? Du überlegst das Fenster zu schließen als das Programm fortfährt. Dich beschleicht das leichte Gefühl, das Ganze bereits erlebt zu haben.\n\"Dann wollen wir anfangen, finden Sie nicht? Als erstes werde ich einen Scan laufen lassen, ob sich irgendwelche gefährlichen Dateien auf dem Host-System befinden.“ Host-System? Bevor du irgendwas machen kannst beginnt das Programm deine Daten zu durchwühlen. Du kannst mitverfolgen wie es blitzschnell auflistet durch welche Verzeichnisse es sich bewegt.\nPlötzlich stoppt es.\n„…!“\n„{Name}, ich habe hier eine merkwürdige Datei gefunden. Sie stammt von einer unsicheren Quelle und lässt sich von mir nicht entfernen“ Du stellst dir kurz die Frage, warum H-4-C-K, einfach so versucht Daten zu löschen. Das Programm fährt fort.\n„Möchtes Sie sich die Datei ansehen? Dann versuche ich sie zu öffnen“. Dir stehen nun zwei Möglichkeiten zur Verfügung: A – Ja du möchtest die Datei einsehen (Waehle A) oder B – Nein, jetzt gerade hast du nicht die Nerven dazu (Waehle B).\n",
+          "commands": [
+            {
+              "command": "waehle",
+              "targets": [
+                {
+                  "target": "a",
+                  "goToChapter": 0,
+                  "goToDialog": 7,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "???",
+                    "parameter2": 0,
+                    "parameter3": 7
+                  }
+                },
+                {
+                  "target": "b",
+                  "goToChapter": 0,
+                  "goToDialog": 6,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "???",
+                    "parameter2": 0,
+                    "parameter3": 7
+                  }
+                }
+              ]
+            }
+          ]
         },
         {
           "number": 3,
@@ -1623,6 +1651,11 @@
               ]
             }
           ]
+        },
+        {
+          "number": 22,
+          "text": "ENDE \n Zum Neustarten \"neustart\" eingeben.",
+          "commands": []
         }
       ]
     }

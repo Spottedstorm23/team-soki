@@ -1,0 +1,52 @@
+Funktionen Short IDs:
+1 - alle Hara Items an Spieler
+2 - item an Hara geben              -> 3 Parameter: Item, Chapter und Dialog
+3 - item ins Inventar einfügen      -> 4 Parameter: Item, Visibility, Chapter und Dialog
+4 - item entfernen                  -> item
+5 - itemsichtbarkeit ändern         -> sichtbarkeit
+6 - "reset game"                    -> 3 Paramter: 0, 0 und true
+7 - fortschritt in Playerdate       -> 2 Parameter: Chapter und Dialog
+
+
+Wenn ein logisch richtiger aber für den block unbekannter befehl eingegbene wird, wird auf einen standartblock zurückgegriffen.
+In dem müssen *alle* möglichen Optionen angegeben werden.
+
+{
+"command": "default",
+"targets": [
+   {
+     "target": "default",
+     "goToChapter": 0,
+     "goToDialog": 21,
+     "executeFunction": {
+       "functionId": 7,
+       "parameter1": 0,
+       "parameter2": 21
+     }
+   }
+  ]
+ }
+
+
+
+
+Ein Ende wurde errreicht.
+Standartmäßiges Aufrufen des nächsten Dialogblockes --> Endblock.
+{
+"target": "target",
+"goToChapter": 0,
+"goToDialog": 22,
+"executeFunction": {
+    "functionId": 6,
+    "parameter1": 0,
+    "parameter2": 22,
+    "parameter3": true
+    }
+}
+
+--> Endblock der den User zum neustart promptet
+{
+"number": 22,
+"text": "ENDE x - {Name des Endes} \n Zum Neustarten \"neustart\" eingeben.",
+"commands": []
+}

@@ -114,7 +114,7 @@ public class FileController {
         return objectPrototype;
     }
 
-    public void setPlaythrough(String playthrough) {
+    public void setPlaythrough(int playthrough) {
         JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
         playerdataObject.replace("playthrough", playthrough);
         writeContent(playerdataObject, pathToPlayerDateJsonFile);
@@ -156,6 +156,7 @@ public class FileController {
         playerdataObject.replace("playthrough", 0);
         playerdataObject.replace("haraList", new JSONArray());
         playerdataObject.replace("location", "Heimischer Desktop");
+        playerdataObject.replace("isEnd", false);
 
         writeContent(playerdataObject, pathToPlayerDateJsonFile);
     }
@@ -186,6 +187,17 @@ public class FileController {
     public String getPlayerLocation() {
         JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
         return (String) playerdataObject.get("location");
+    }
+
+    public boolean getIsEnd() {
+        JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
+        return (boolean) playerdataObject.get("isEnd");
+    }
+
+    public void setIsEnd(boolean state) {
+        JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
+        playerdataObject.replace("isEnd", state);
+        writeContent(playerdataObject, pathToPlayerDateJsonFile);
     }
 
     /*Functions for Textdata*/
@@ -296,15 +308,16 @@ public class FileController {
                 break;
             }
             case 6: {
-                setPlaythrough((String) parameter1);
-                changeLocation((int) ((long) parameter2), (int) ((long) parameter3));
+                setPlaythrough(getPlayerPlaythrough() + 1);
+                setPlayerLocation("Heimischer Desktop");
+                changeLocation((int) ((long) parameter1), (int) ((long) parameter2));
+                setIsEnd((Boolean) parameter3);
                 break;
             }
             case 7: {
                 changeLocation((int) ((long) parameter1), (int) ((long) parameter2));
                 break;
             }
-
         }
     }
 
