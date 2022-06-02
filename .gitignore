@@ -27,3 +27,4 @@ target
 Textadventure_executable/bin
 Textadventure_executable/jre
 Textadventure_executable/lib
+src/main/java/soki/textadventure/controller/jsonFiles/playerdata.json
