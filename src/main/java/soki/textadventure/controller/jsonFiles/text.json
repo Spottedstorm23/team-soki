@@ -74,7 +74,7 @@
         },
         {
           "number": 3,
-          "text": "„…“ Das Programm wirkt unzufriefen mit deiner Antwort. „Bisher ist mir noch niemand begegnet der solche Zeichen im Namen trug. Versuchen Sie es nocheinmal!“ Du spürst die Enttäuschung die in der Schrift mitschwingt und machst dich erneut daran deinen Namen einzutippen, dieses Mal lässt du Sonderzeichen und Ziffern weg.",
+          "text": "„…“ Das Programm wirkt unzufrieden mit deiner Antwort. „Bisher ist mir noch niemand begegnet der solche Zeichen im Namen trug. Versuchen Sie es nocheinmal!“ Du spürst die Enttäuschung die in der Schrift mitschwingt und machst dich erneut daran deinen Namen einzutippen, dieses Mal lässt du Sonderzeichen und Ziffern weg.",
           "commands": []
         },
         {
@@ -229,6 +229,26 @@
                   }
                 },
                 {
+                  "target": "knochen",
+                  "goToChapter": 0,
+                  "goToDialog": 11,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 11
+                  }
+                },
+                {
+                  "target": "katzenfutter",
+                  "goToChapter": 0,
+                  "goToDialog": 15,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 15
+                  }
+                },
+                {
                   "target": "huette",
                   "goToChapter": 0,
                   "goToDialog": 9,
@@ -237,21 +257,15 @@
                     "parameter1": 0,
                     "parameter2": 9
                   }
-                }
-              ]
-            },
-            {
-              "command": "gehe",
-              "targets": [
+                },
                 {
-                  "target": "huette",
+                  "target": "tuer",
                   "goToChapter": 0,
-                  "goToDialog": 10,
+                  "goToDialog": 17,
                   "executeFunction": {
-                    "functionId": 5,
-                    "parameter1": "Hütte",
-                    "parameter2": 0,
-                    "parameter3": 10
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 17
                   }
                 }
               ]
@@ -302,6 +316,59 @@
                     "parameter2": true,
                     "parameter3": 0,
                     "parameter4": 14
+                  }
+                },
+                {
+                  "target": "tuer",
+                  "goToChapter": 0,
+                  "goToDialog": 18,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 18
+                  }
+                }
+              ]
+            },
+            {
+              "command": "interagiere",
+              "targets": [
+                {
+                  "target": "tuer",
+                  "goToChapter": 0,
+                  "goToDialog": 19,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 19
+                  }
+                }
+              ]
+            },
+            {
+              "command": "benutze",
+              "targets": [
+                {
+                  "target": "katzenfutter mit engel",
+                  "checkObject": [
+                    {
+                      "name": "katzenfutter",
+                      "goToChapter": 0,
+                      "goToDialog": 16,
+                      "executeFunction": {
+                        "functionId": 1,
+                        "parameter1": "katzenfutter",
+                        "parameter2": 0,
+                        "parameter3": 16
+                      }
+                    }
+                  ],
+                  "goToChapter": 0,
+                  "goToDialog": 21,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 0,
+                    "parameter2": 21
                   }
                 }
               ]
