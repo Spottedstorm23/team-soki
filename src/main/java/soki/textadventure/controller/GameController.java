@@ -248,6 +248,7 @@ public class GameController {   // Controller for soki-game.fxml
             //todo maybe change this sleep if needed
             Thread.sleep(1000);
             fileController.setIsEnd(false);
+            fileController.changeLocation(0,0);
             this.currentChapter = 0;
             this.currentDialogBlock = 0;
             startFirstDialogueLine();

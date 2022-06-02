@@ -1403,8 +1403,25 @@
         },
         {
           "number": 19,
-          "text": "Du ziehst die Tür zu. Sie knarzt etwas und wirkt als ob sie gleich zerfällt, aber sie schließt. Du wendest dich E.N.G.E.L zu. \n„Sehr gut. Wir sollten versuchen dich aus dieser Welt zurück in deine eigne zu schicken. Die Grundlagen dafür kennst du jetzt. Wenn du irgendwas vergessen solltest oder dir unsicher bist erbitte einfach Hilfe, dann erhälst du nochmal einen kurzen überblick. Lass uns aufbrechen“ Die Katze schwebt davon und dir bleibt nichts weiter übrig als ihm zu folgen.\n",
-          "commands": []
+          "text": "Du ziehst die Tür zu. Sie knarzt etwas und wirkt als ob sie gleich zerfällt, aber sie schließt. Du wendest dich E.N.G.E.L zu. \n„Sehr gut. Wir sollten versuchen dich aus dieser Welt zurück in deine eigne zu schicken. Die Grundlagen dafür kennst du jetzt. Wenn du irgendwas vergessen solltest oder dir unsicher bist erbitte einfach Hilfe, dann erhälst du nochmal einen kurzen überblick. Lass uns aufbrechen“ Die Katze schwebt davon und dir bleibt nichts weiter übrig als ihm zu folgen.\n (Gehe zu Engel)",
+          "commands": [
+            {
+              "command": "gehe",
+              "targets": [
+                {
+                  "target": "engel",
+                  "goToChapter": 1,
+                  "goToDialog": 0,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Minor Interference",
+                    "parameter2": 1,
+                    "parameter3": 0
+                  }
+                }
+              ]
+            }
+          ]
         },
         {
           "number": 20,
@@ -1718,11 +1735,1490 @@
               ]
             }
           ]
+        }
+      ]
+    },
+    {
+      "number": 1,
+      "dialogs": [
+        {
+          "number": 0,
+          "text": "\"Komm, wir haben nicht ewig Zeit, oder möchtest du lieber hierbleiben?\" Du gibst dir Mühe, mit dem Kater Schritt zu halten. Für so kurze Beine hat er ein ordentliches Tempo drauf. \"Du fragst dich sicherlich wie und warum du hier gelandet bist, und noch viel mehr: wie du hier wieder wegkommst, nicht? Nun, alles zu seiner Zeit. Du bist hier in einer alternativen Dimension. Dein Heimatplanet und alles was du kennst existiert hier nicht. Wir nennen diesen Realm 'Minor Interference', auch wenn eigentlich nichts hieran 'minor' ist.\" Er springt in einem Satz auf einen Felsen am Wegesrand. \"Siehst du das Schloss dort hinten? Das ist das Backup-Archive. Oder alternativ: dein Ticket nach Hause, wenn du dich richtig anstellst.\" E.N.G.E.L. wendet seinen Kopf ab und sieht dir eindringlich in die Augen. \"Du musst wissen, dass du nicht die erste externe Entität bist, die in die Minor Interference gezogen wurde. Ich weiß nicht, wie lange H-4-C-K ihr Unwesen treibt und selbst sie ist nur Handlangerin eines wesentlich größeren Übels. Eins weiß ich allerdings mit Sicherheit: wenn du hier jemals wieder hinaus willst, musst du an ihm vorbei. Und dafür hast du genau zwei Optionen: bewaffne dich bis an die Zähne oder werde zu einem Teil seiner Datensammlung. Was meinst du? (Waehle A für Kämpfen oder B für aufgeben)\"",
+          "commands": [
+            {
+              "command": "waehle",
+              "targets": [
+                {
+                  "target": "a",
+                  "goToChapter": 1,
+                  "goToDialog": 2,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 2
+                  }
+                },
+                {
+                  "target": "b",
+                  "goToChapter": 1,
+                  "goToDialog": 1,
+                  "executeFunction": {
+                    "functionId": 6,
+                    "parameter1": 1,
+                    "parameter2": 1,
+                    "parameter3": true
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 1,
+          "text": "E.N.G.E.L. entgleisen die Gesichtszüge. \"Was? Das kann doch nicht dein Ernst sein!\" Hinter dir breitet sich ein grünes Flackern aus. Eine dir bekannte Stimme säuselt \"Lass dir von ihm nichts einreden, du triffst die richtige Entscheidung!\". Als du dich nach ihr umdrehst, erkennst du H-4-C-K wieder. Eine glühende Wolke aus Nullen und Einsen, die eine Hand manifestiert und diese nach dir ausstreckt. Du greifst nach ihr und alles um dich verschwimmt. Das Letzte, was du siehst, ist wie E.N.G.E.L. seinen Kopf schüttelt und ihn betrübt senkt. \nENDE 1 - Einer wie alle \n Zum Neustarten \"neustart\" eingeben.",
+          "commands": []
+        },
+        {
+          "number": 2,
+          "text": "E.N.G.E.L. zuckt zufrieden mit dem Ohr. \"Ich hatte nichts Geringeres erwartet. Also gut, höre mir noch einmal genau zu. Einige Entitäten schafften es, Seinem Backup zu entkommen und leben seitdem in Minor Interference verstreut. Sie alle haben Items, die in deinem finalen Kampf dein Überleben bedeuten könnten. Also sprich sie ruhig an, bis sie dir etwas rausrücken.\" Leichtfüßig begibt er sich wieder neben dich. \"Also gut {Name} jetzt hast du die Qual der Wahl. Entweder du begibst dich direkt zum Tor in Richtung Archiv oder du erkundest die Umgebung. Den Tempel zum Beispiel -oder dem Buchladen dort drüben.\"",
+          "commands": [
+            {
+              "command": "untersuche",
+              "targets": [
+                {
+                  "target": "tor",
+                  "goToChapter": 1,
+                  "goToDialog": 3,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 3
+                  }
+                },
+                {
+                  "target": "tempel",
+                  "goToChapter": 1,
+                  "goToDialog": 5,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 5
+                  }
+                },
+                {
+                  "target": "buchladen",
+                  "goToChapter": 1,
+                  "goToDialog": 4,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 4
+                  }
+                }
+              ]
+            },
+            {
+              "command": "gehe",
+              "targets": [
+                {
+                  "target": "tor",
+                  "goToChapter": 1,
+                  "goToDialog": 6,
+                  "checkObject": [
+                    {
+                      "name": "wachskerze",
+                      "goToChapter": 1,
+                      "goToDialog": 36,
+                      "executeFunction": {
+                        "functionId": 8,
+                        "parameter1": "wachskerze",
+                        "parameter2": "Eisernes Tor",
+                        "parameter3": 1,
+                        "paramter4": 36
+                      }
+                    }
+                  ],
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Eisernes Tor",
+                    "parameter2": 1,
+                    "paramter3": 6
+                  }
+                },
+                {
+                  "target": "tempel",
+                  "goToChapter": 1,
+                  "goToDialog": 10,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Tempel",
+                    "parameter2": 1,
+                    "parameter3": 10
+                  }
+                },
+                {
+                  "target": "buchladen",
+                  "goToChapter": 1,
+                  "goToDialog": 9,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Buchladen",
+                    "parameter2": 1,
+                    "parameter3": 9
+                  }
+                }
+              ]
+            },
+            {
+              "command": "default",
+              "targets": [
+                {
+                  "target": "default",
+                  "goToChapter": 1,
+                  "goToDialog": 43,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 43
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "text": "Ein düsteres Eisentor. Irgendwas jagt dir einen Schauer den Rücken herunter, wenn du es dir ansiehst",
+          "commands": [
+            {
+              "command": "untersuche",
+              "targets": [
+                {
+                  "target": "tor",
+                  "goToChapter": 1,
+                  "goToDialog": 3,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 3
+                  }
+                },
+                {
+                  "target": "tempel",
+                  "goToChapter": 1,
+                  "goToDialog": 5,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 5
+                  }
+                },
+                {
+                  "target": "buchladen",
+                  "goToChapter": 1,
+                  "goToDialog": 4,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 4
+                  }
+                }
+              ]
+            },
+            {
+              "command": "gehe",
+              "targets": [
+                {
+                  "target": "tor",
+                  "goToChapter": 1,
+                  "goToDialog": 6,
+                  "checkObject": [
+                    {
+                      "name": "wachskerze",
+                      "goToChapter": 1,
+                      "goToDialog": 36,
+                      "executeFunction": {
+                        "functionId": 8,
+                        "parameter1": "wachskerze",
+                        "parameter2": "Eisernes Tor",
+                        "parameter3": 1,
+                        "paramter4": 36
+                      }
+                    }
+                  ],
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Eisernes Tor",
+                    "parameter2": 1,
+                    "paramter3": 6
+                  }
+                },
+                {
+                  "target": "tempel",
+                  "goToChapter": 1,
+                  "goToDialog": 10,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Tempel",
+                    "parameter2": 1,
+                    "parameter3": 10
+                  }
+                },
+                {
+                  "target": "buchladen",
+                  "goToChapter": 1,
+                  "goToDialog": 9,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Buchladen",
+                    "parameter2": 1,
+                    "parameter3": 9
+                  }
+                }
+              ]
+            },
+            {
+              "command": "default",
+              "targets": [
+                {
+                  "target": "default",
+                  "goToChapter": 1,
+                  "goToDialog": 43,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 43
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 4,
+          "text": "Ein alter Buchladen. Du fragst dich, wie es kommt, dass es in dieser Welt einen gibt. Allerdings bist du dir sicher, dass der Laden nicht häufig besucher hat",
+          "commands": [
+            {
+              "command": "untersuche",
+              "targets": [
+                {
+                  "target": "tor",
+                  "goToChapter": 1,
+                  "goToDialog": 3,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 3
+                  }
+                },
+                {
+                  "target": "tempel",
+                  "goToChapter": 1,
+                  "goToDialog": 5,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 5
+                  }
+                },
+                {
+                  "target": "buchladen",
+                  "goToChapter": 1,
+                  "goToDialog": 4,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 4
+                  }
+                }
+              ]
+            },
+            {
+              "command": "gehe",
+              "targets": [
+                {
+                  "target": "tor",
+                  "goToChapter": 1,
+                  "goToDialog": 6,
+                  "checkObject": [
+                    {
+                      "name": "wachskerze",
+                      "goToChapter": 1,
+                      "goToDialog": 36,
+                      "executeFunction": {
+                        "functionId": 8,
+                        "parameter1": "wachskerze",
+                        "parameter2": "Eisernes Tor",
+                        "parameter3": 1,
+                        "paramter4": 36
+                      }
+                    }
+                  ],
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Eisernes Tor",
+                    "parameter2": 1,
+                    "paramter3": 6
+                  }
+                },
+                {
+                  "target": "tempel",
+                  "goToChapter": 1,
+                  "goToDialog": 10,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Tempel",
+                    "parameter2": 1,
+                    "parameter3": 10
+                  }
+                },
+                {
+                  "target": "buchladen",
+                  "goToChapter": 1,
+                  "goToDialog": 9,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Buchladen",
+                    "parameter2": 1,
+                    "parameter3": 9
+                  }
+                }
+              ]
+            },
+            {
+              "command": "default",
+              "targets": [
+                {
+                  "target": "default",
+                  "goToChapter": 1,
+                  "goToDialog": 43,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 43
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 5,
+          "text": "Ein prachtvolles Bauwerk. Anders als die anderen Ort hier, hat der Tempel eine einladende, aber mächtige Ausstrahlung. Du fragst dich, was dich dort erwartet",
+          "commands": [
+            {
+              "command": "untersuche",
+              "targets": [
+                {
+                  "target": "tor",
+                  "goToChapter": 1,
+                  "goToDialog": 3,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 3
+                  }
+                },
+                {
+                  "target": "tempel",
+                  "goToChapter": 1,
+                  "goToDialog": 5,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 5
+                  }
+                },
+                {
+                  "target": "buchladen",
+                  "goToChapter": 1,
+                  "goToDialog": 4,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 4
+                  }
+                }
+              ]
+            },
+            {
+              "command": "gehe",
+              "targets": [
+                {
+                  "target": "tor",
+                  "goToChapter": 1,
+                  "goToDialog": 6,
+                  "checkObject": [
+                    {
+                      "name": "wachskerze",
+                      "goToChapter": 1,
+                      "goToDialog": 36,
+                      "executeFunction": {
+                        "functionId": 8,
+                        "parameter1": "wachskerze",
+                        "parameter2": "Eisernes Tor",
+                        "parameter3": 1,
+                        "paramter4": 36
+                      }
+                    }
+                  ],
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Eisernes Tor",
+                    "parameter2": 1,
+                    "paramter3": 6
+                  }
+                },
+                {
+                  "target": "tempel",
+                  "goToChapter": 1,
+                  "goToDialog": 10,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Tempel",
+                    "parameter2": 1,
+                    "parameter3": 10
+                  }
+                },
+                {
+                  "target": "buchladen",
+                  "goToChapter": 1,
+                  "goToDialog": 9,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Buchladen",
+                    "parameter2": 1,
+                    "parameter3": 9
+                  }
+                }
+              ]
+            },
+            {
+              "command": "default",
+              "targets": [
+                {
+                  "target": "default",
+                  "goToChapter": 1,
+                  "goToDialog": 43,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 43
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 6,
+          "text": "E.N.G.E.L. starrt dich an. \"Bist du dir wirklich sicher, dass du jetzt schon weitergehen willst?\" (Waehle A wenn du dich umsehen willst und B wenn du zum Tor gehen möchtest)",
+          "commands": [
+            {
+              "command": "waehle",
+              "targets": [
+                {
+                  "target": "a",
+                  "goToChapter": 1,
+                  "goToDialog": 7,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 7
+                  }
+                },
+                {
+                  "target": "b",
+                  "goToChapter": 1,
+                  "goToDialog": 8,
+                  "executeFunction": {
+                    "functionId": 6,
+                    "parameter1": 1,
+                    "parameter2": 8,
+                    "parameter3": true
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 7,
+          "text": "\"Gut. Das dachte ich mir schon. Dann begib dich an einen anderen Ort\"",
+          "commands": [
+            {
+              "command": "untersuche",
+              "targets": [
+                {
+                  "target": "tor",
+                  "goToChapter": 1,
+                  "goToDialog": 3,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 3
+                  }
+                },
+                {
+                  "target": "tempel",
+                  "goToChapter": 1,
+                  "goToDialog": 5,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 5
+                  }
+                },
+                {
+                  "target": "buchladen",
+                  "goToChapter": 1,
+                  "goToDialog": 4,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 4
+                  }
+                }
+              ]
+            },
+            {
+              "command": "gehe",
+              "targets": [
+                {
+                  "target": "tor",
+                  "goToChapter": 1,
+                  "goToDialog": 6,
+                  "checkObject": [
+                    {
+                      "name": "wachskerze",
+                      "goToChapter": 1,
+                      "goToDialog": 36,
+                      "executeFunction": {
+                        "functionId": 8,
+                        "parameter1": "wachskerze",
+                        "parameter2": "Eisernes Tor",
+                        "parameter3": 1,
+                        "paramter4": 36
+                      }
+                    }
+                  ],
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Eisernes Tor",
+                    "parameter2": 1,
+                    "paramter3": 6
+                  }
+                },
+                {
+                  "target": "tempel",
+                  "goToChapter": 1,
+                  "goToDialog": 10,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Tempel",
+                    "parameter2": 1,
+                    "parameter3": 10
+                  }
+                },
+                {
+                  "target": "buchladen",
+                  "goToChapter": 1,
+                  "goToDialog": 9,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Buchladen",
+                    "parameter2": 1,
+                    "parameter3": 9
+                  }
+                }
+              ]
+            },
+            {
+              "command": "default",
+              "targets": [
+                {
+                  "target": "default",
+                  "goToChapter": 1,
+                  "goToDialog": 43,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 43
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 8,
+          "text": "E.N.G.E.L. peitscht verärgert mit dem Schwanz. \"Warum mache ich mir überhaupt noch die Mühe? Komm bringen wir es hinter uns!\"\nDein Begleiter und du macht euch auf den Weg. Vor euch baut sich plötzlich ein riesiges eisernes Tor auf. Davor lehnt ein unscheinbarer alter Mann. Je mehr ihr euch nähert desto breiter wird sein Grinsen. \"Aha, E.N.G.E.L., wen bringst du mir denn heute?\" Verstimmt wendet E.N.G.E.L. den Kopf ab. Das Grinsen auf dem Gesicht des Mannes wächst weiter. Seine Mundwinkel spannen sich unnatürlich weit über sein Gesicht. \"Oh Menschenkind, hättest du mal auf dein Katerchen gehört\" Die mittlerweile eher dämonisch wirkende Gestalt schnippt mit den Fingern und du spürst, wie dein Körper zerrissen wird. Doch anstatt Blut quillt ein dicker, grüner Nebel aus deinem Inneren. Das letzte was du siehst, sind zwei Paar Augen, die dich durch den Nebel anblitzen. \n ENDE 2 - Vom Torwächter vernebelt \n Zum Neustarten \"neustart\" eingeben.",
+          "commands": []
+        },
+        {
+          "number": 9,
+          "text": "E.N.G.E.L. streckt sich ausgiebig. \"Na gut, dann also zum Buchladen.\" Du drückst vorsichtig die Tür auf. Hinter den Bergen an Büchern hebt sich der Kopf des Buchhändlers. Zwei müde Augen blicken dir entgegen. \"Oh, Kundschaft! Das ist... selten. Ich fürchte, ich kann dir nichts verkaufen. Ich brauche all diese Bücher selbst, damit ich ihre Schriftarten analysieren kann. Auch wenn ich mittlerweile jedes verdammte Buch schon vierzigfach gelesen haben muss. Hey, wie wär‘s: du bringst mir ein neues Werk und im Gegenzug gebe ich dir etwas von mir, hm?\" Danach senkt er seinen Kopf wieder und verschwindet hinter einem Stapel Bücher. Dir bleibt wohl nichts übrig, als wo anders nach einem Schriftstück zu suchen.",
+          "commands": [
+            {
+              "command": "untersuche",
+              "targets": [
+                {
+                  "target": "tor",
+                  "goToChapter": 1,
+                  "goToDialog": 3,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 3
+                  }
+                },
+                {
+                  "target": "tempel",
+                  "goToChapter": 1,
+                  "goToDialog": 5,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 5
+                  }
+                },
+                {
+                  "target": "buchladen",
+                  "goToChapter": 1,
+                  "goToDialog": 4,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 4
+                  }
+                }
+              ]
+            },
+            {
+              "command": "gehe",
+              "targets": [
+                {
+                  "target": "tor",
+                  "goToChapter": 1,
+                  "goToDialog": 6,
+                  "checkObject": [
+                    {
+                      "name": "wachskerze",
+                      "goToChapter": 1,
+                      "goToDialog": 36,
+                      "executeFunction": {
+                        "functionId": 8,
+                        "parameter1": "wachskerze",
+                        "parameter2": "Eisernes Tor",
+                        "parameter3": 1,
+                        "paramter4": 36
+                      }
+                    }
+                  ],
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Eisernes Tor",
+                    "parameter2": 1,
+                    "paramter3": 6
+                  }
+                },
+                {
+                  "target": "tempel",
+                  "goToChapter": 1,
+                  "goToDialog": 10,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Tempel",
+                    "parameter2": 1,
+                    "parameter3": 10
+                  }
+                },
+                {
+                  "target": "buchladen",
+                  "goToChapter": 1,
+                  "goToDialog": 9,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Buchladen",
+                    "parameter2": 1,
+                    "parameter3": 9
+                  }
+                }
+              ]
+            },
+            {
+              "command": "interagiere",
+              "targets": [
+                {
+                  "target": "mit buchhaendler",
+                  "goToChapter": 1,
+                  "goToDialog": 11,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 11
+                  }
+                }
+              ]
+            },
+            {
+              "command": "benutze",
+              "targets": [
+                {
+                  "target": "schriftrolle mit buchhaendler",
+                  "goToChapter": 1,
+                  "goToDialog": 11,
+                  "checkObject": [
+                    {
+                      "name": "schriftrolle",
+                      "goToChapter": 1,
+                      "goToDialog": 12,
+                      "executeFunction": {
+                        "functionId": 1,
+                        "parameter1": "schriftrolle",
+                        "parameter2": 1,
+                        "parameter3": 12
+                      }
+                    }
+                  ],
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 11
+                  }
+                }
+              ]
+            },
+            {
+              "command": "default",
+              "targets": [
+                {
+                  "target": "default",
+                  "goToChapter": 1,
+                  "goToDialog": 43,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 43
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 10,
+          "text": "E.N.G.E.L. scheint über deine Wahl erfreut zu sein. Leichtfüßig tänzelt er in die Richtung des prunkvollen Gebäudes. Ihr nähert euch dem sagenhaften Gebäude und betretet es vorsichtig. Im Zentrum befindet sich das Herzstück des Tempels: ein gigantischer Brunnen bestehend aus unzähligen antiken Vasen, die sich in einem endlosen Kreislauf gegenseitig eine dicke goldene Flüssigkeit einschenken. Abgesehen davon ziehen dich die Stützpfeiler in ihren Bann. Kunstvoll wurden sie zu Figuren gehauen. Einer von ihnen scheint zu zerfallen. Vor deinen Augen lösen sich kleine Bröckchen von der Figur und rieseln zu Boden. Jedoch kommt es dir so vor, als ob du und E.N.G.E.L. nicht allein wärt. Du wendest dich zum Eingang und erblickst ein Gemälde, dass dich zu beobachten scheint.",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 11,
+          "text": "Der Buchhändler sieht auf als du ihn ansprichst. „Hast du mir schon ein neues Stück gefundern?“ Er schaut kurz erwartungsvoll, bevor er sich wieder der Schrift vor ihm zuwendet.",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "text": "Die Augen des Händlers blitzen auf. \"Das ist ja tatsächlich ein mir völlig unbekanntes Werk! Unfassbar, ich dachte es gäbe in diesem Realm keine anderen Schriftstücke mehr.\" Freudig wendet er seinen Blick wieder dir zu. \"Ich danke dir, hier ich gebe dir meine schönste Schreibfeder zur Belohnung!\" Du nimmst die Feder und legst sie in dein Inventar. E.N.G.E.L. jedoch legt den Kopf schief \"Willst du dir wirklich dein hart erarbeitetes Item so leicht abluchsen lassen?\" Sprichst du auf den Händler ein oder verlässt du den Laden?",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "text": "\"Aber bitte, verstehe auch meine Lage. Diese Rolle ist für mich so viel wertvoller als für dich. Wieso solltest du sie haben?\"",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "text": "\"Na gut, hier nimm noch diese Münzen! Hilft dir das?\" Du steckst die Münzen ein, bist aber noch unzufrieden.",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "text": "Der Händler seufzt geschlagen. \"Also schön. Dann suche\ndir eine andere Schriftrolle aus meinen Regalen aus und nimm sie mit dir.\" \nE.N.G.E.L. scheint diese Antwort schon erwartet zu haben. Mit einer Schriftrolle im Maul bahnt er sich seinen Weg zu dir zurück. Du hattest nicht einmal bemerkt, dass er von deiner Seite gewichen war. Kommentarlos steckst du die Rolle ein und beschließt den Händler in Ruhe zu lassen.\n",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "text": "Eine alte Statue. Sie bröckelt an einigen Stellen und erscheint recht instabil.",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "text": "Ein großer von unzähligen antiken Vasen gesäumter Brunnen. Das endlose Wasserspiel der Vasen scheint mit einer dir unbekannten goldenen Flüssigkeit zu geschehen.",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 18,
+          "text": "Ein älter wirkendes Gemälde. Irgendwie wirst du das Gefühl nicht los, dass dir sein Blick folgt während du dich im Tempel umsiehst.",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 19,
+          "text": "E.N.G.E.L. versperrt dir den Weg. \"Menschenwesen, ich weiß, dass deine Augen bei weitem nicht so gut sind wie meine. Aber selbst du solltest sehen, dass diese Figur gefährlich instabil ist.\"",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 20,
+          "text": "Du schreitest einfach über E.N.G.E.L. und gehst auf die Figur zu. Plötzlich löst sich ein ganzer Schwall an Brocken von der Figur und sie bricht über dir zusammen.\"{Name}!\" Du merkst wie dich vier Pfoten treffen.Als du wieder zu dir kommst, läuft E.N.G.E.L. aufgebracht vor dir auf und ab. \"Habe ich es dir nicht gesagt? Du kannst dich glücklich schätzen, dass du mich hast -sonst wärst du jetzt... Du wärst jetzt ein Matschfleck oder ein Pfannkuchen … \n Er bleibt vor dir sitzen und putzt sich energisch sein Fell, um den Staub heraus zu waschen. \"Dein Inventar konnte ich allerdings nicht retten.\" \n Du richtest dich auf und klopfst dir den Staub ab. Nicht weit von dir liegt eine auffällige Scherbe.",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 21,
+          "text": "Zielsicher greifst du nach der Scherbe. Wenn du schon fast von einer Säuleerschlagen wirst, dann sollte wenigstens ein Andenken dabei für dich dabei rausspringen. Beim genauen Betrachten der Scherbe fällt dir auf, dass sie beinahe durchsichtig ist.",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
         },
         {
           "number": 22,
-          "text": "ENDE \n Zum Neustarten \"neustart\" eingeben.",
-          "commands": []
+          "text": "Langsam näherst du dich dem Brunnen und verfolgst sein hypnotisierendes Spiel. Als du direkt vor dem Brunnen stehen bleibst, drehen sich alle Vasen zur Mitte des Brunnens und ein Kopf steigt aus der Flüssigkeit.\"Willkommen in meinem Tempel, Mensch, im Tempel des Mutes. Ich nehme an du bist hier um Mut für deine Reise zu tanken?\" Unsicher blickst du zu E.N.G.E.L., welcher dir zunickt. Du bestätigst dem Brunnen seine Vermutung. \"Nun gut, so soll es sein. Mein Segen sei mit dir\" Mit diesen Worten kehren die Vasen in ihre Ausgangsbewegung zurück und der Kopf verschwindet. E.N.G.E.L. wendet sich vom Brunnen ab. Es scheint so, als wäre der Brunnen nicht mehr ansprechbar. Etwas enttäuscht schaust du dem Spiel des Brunnens noch einem Moment zu. Das soll es schon gewesen sein? Hatte E.N.G.E.L. dich nicht beauftragt, Gegenstände zu suchen? Die Oberfläche der Flüssigkeit kräuselt sich noch kurz und wirft dir einige Münzen entgegen, die du einsteckst. \"Mach dir keine Sorgen, weil du keinen Gegenstand bekommen hast. Des Mutes Segen ist mehr wert als sämtliche Objekte dieses Tempels.\" versichert dir E.N.G.E.L..",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 23,
+          "text": "Bild funkelt dich glücklich an. \"Besucher! Wir haben oft Besucher, aber niemand achtet je auf mich. Traurig, nicht wahr? Dabei bin ich nicht minder schön als alles andere in diesem Raum.\" Ein leises Schnaufen ertönt aus E.N.G.E.L.s Richtung. Du siehst, dass er sich an einem sonnigen Plätzchen niedergelegt hat und kurz davor scheint, wegzudösen. \"Ich hoffe, du hast Geduld mitgebracht. Das könnte jetzt eine Weile dauern.",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 24,
+          "text": "\"Hey, ich war noch nicht fertig!\" ruft das Bild empört.E.N.G.E.L. hebt sich langsam wieder. \"Na gut, dann also doch nicht.\"",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "text": "\"Wie gesagt habe ich nur selten Zuhörer. Ich bin umso froher, dass du hier bist!\" Das Gemälde strahlt dich förmlich an.\"Ich habe so viel zu erzählen! Zum Beispiel eine Geschichte über den harten Kern dieser Welt!Möchtest du sie hören?\"",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "text": "\"Sehr gut! Der harte Kern dieser Welt ist nicht etwa ein Gegenstand, den du brühren kannst, nein!Er ist eine Geistergestalt, die hier ihr Unheil treibt! Gespenstisch, nicht? Wir nennen ihn Core und er befindet sich in just diesem Moment im Raum!\"Die Worte des Gemäldes jagen dir einen Schauer über den Rücken. \"Siehst du das Flackern dort hinten? Das ist er. Aber keine Sorge, er ist nicht böswillig. Du kannst ruhig zu ihm gehen und mit ihm reden. Auf seinen Reisen sammelt er einige interessante Dinge auf. Gegen eine kleine Bezahlung hat er allerlei Nützliches für dich im Angebot.\"",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "text": "\"Wusstest du, dass du auf deinem Weg einigen Torwächtern begegnen wirst? Du hast doch nicht erwartet, dass [v] sein Archiv unbewacht lässt, oder? Mach dir aber keine Sorgen, sie sind alle miteinander bestechlich. Da du hier gewesen bist, wird das erste Tor sicherlich kein Problem für dich darstellen!\"",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "text": "Das Gemälde redet und redet, dir fällt es schwer aufmerksam zu bleiben. Einzelne Wortfetzen kommen bei dir an. So wie es aussieht wirst du hier noch eine Weile bleiben.",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "text": "\"Unglaublich, so gut hat mir seit langem niemand mehr zugehört! Nun, ich will dich dafür belohnen, dass du mir dein Ohr geliehen hast und schenke dir etwas zum Aufnehmen für deine Augen.\"Das Gemälde schwingt zur Seite und ein Hohlraum erscheint dahinter. Darin liegt eine eingerollteSchriftrolle. Einige Münzen rollen dir entgegen. Du fängst sie geschickt auf und nimmst sie an dich.\"Neben dir rekelt sich E.N.G.E.L.. \"Endlich, das hat lange genug gedauert.\"",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "text": "Du streckst dich nach der Rolle und kannst sie gerade so erreichen. In deinen Händen fühlt sie sich sehr fragil an. Sie scheint wohl nicht mehr di jüngste zu sein. Behutsam legst du sie ins Inventar.",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 31,
+          "text": "Du beschließt, das leichte Flackern, auf das dich das Gemälde aufmerksam gemacht hat zu untersuchen. Vor deinen Augen verschmilzt der Nebel zu einer menschlichen Figur. \"Hat H-4-C-K wieder ein Menschlein gefangen?\" Fast schon mitleidig betrachtet dich der Geist. \"Du armes Ding, ihr schwächlichen Kreaturen könnt meist gar nicht begreifen, was über euch zusammenbricht. Lass mich dir helfen. Gegen den niedrigen Preis einiger Münzen biete ich dir nützliche Items für deinen Kampf im Archiv an.\" Der Geist zieht eine Tasche hervor und lässt dich hineinblicken. \"Zur Zeit biete ich dir eine Karte für das Innere des Archivs für den niedrigen Preis von [maximaler Wert aller sammelbaren Münzen aus Chap 1 + 2] oder einige Glückskekse für deine Schlacht an.\" Der Geist zwinkert dir zu. \"Man kann nie wissen, wann man mal Glück gebrauchen kann. Wenn du eines meiner Items haben möchtest, komme einfach zu mir und nehme es dir. Ich hole mir dann selbst die entsprechende Anzahl von Münzen aus deinem Inventar. Das geht aber natürlich nur, wenn du auch genug dabei hast.\"",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 32,
+          "text": "\"Bitte sehr, eine Portion essbares Glück für {Name}! Damit dein Glück nicht seine Wirkung verliert, muss es allerdings von deinem vierbeinigen Begleiter getragen werden. Du weißt schon, Katzen bringen Glück -Menschen dafür eher weniger.\"E.N.G.E.L. nimmt den Keks an sich und scheint ihn irgendwo zu verstauen. Du kannst allerdings nicht sehen wo.",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 33,
+          "text": "\"Eine weise Entscheidung! Hier ist die Karte, wievereinbart!\" Du legst die Karte in dein Inventar.",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 34,
+          "text": "\"Oh es scheint mir, dass dafür dein Geldbeutel nicht reicht. Komm doch später nochmal wieder.\"",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 35,
+          "text": "\"Interesse an meinen Waren?\"",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 36,
+          "text": "E.N.G.E.L. atmet tief durch. \"Also dann, auf geht's.\" Dein Begleiter und du macht euch auf den Weg. Vor euch baut sich plötzlich ein riesiges eisernes Tor auf. Davor lehnt ein unscheinbarer alter Mann. Je mehr ihr euch nähert desto breiter wird sein Grinsen. \"Aha, E.N.G.E.L., wen bringst du mir denn heute?\" E.N.G.E.L. bleibt stumm und mustert denn Mann argwöhnisch. Das Grinsen auf dem Gesicht des Mannes wächst weiter. Seine Mundwinkel spannen sich unnatürlich weit über sein Gesicht. \"Doch nicht wieder ein armes Menschlein?\" Die mittlerweile eher dämonisch wirkende Gestalt hebt ihre Hand, als wolle sie mit den Fingern schnipsen. E.N.G.E.L. faucht dich energisch an. \"Des Mutes Segen müsste sich jetzt in deinem Inventar manifestiert haben. Schnell benutze ihn mit dem Wächter! Du blickst in dein Inventar und bemerkst, dass sich darin tatsächlich eine Wachskerze befindet, die vorher mit Sicherheit nicht da war.",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 37,
+          "text": "Du holst die Kerze hervor und streckst sie in Richtung des Wächters. Wie von allein entzündet sie sich und stößt ein gleißend helles Licht aus. Viel heller, als es für eine Kerze möglich sein sollte. \"Gah, du verdammtes Elend!\" ächzt der Wächter. \"Flüssiger Mut, dass ich nicht lache! Flüssiges Unglück bist du vielleicht, nicht mehr!\" Geblendet zieht sich der Wächter zurück. Die Kerze erlischt in deiner Hand. Sie ist beinahe gänzlich abgebrannt. Du entscheidest dich, die noch heiße und tropfende Kerze nicht wieder in dein Inventar zu legen. Neben der Kerze entdeckst du allerdings einige Münzen, die der Wächter bei seiner Flucht wohl fallen gelassen hat. Du steckst sie schnell ein. Dein vierbeiniger Begleiter neben dir wirkt zufrieden. \"Na komm, lass uns weiter gehen.\"",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 38,
+          "text": "Eine wunderschöne Schreibfeder mit einer filigranen Spitze und einer Feder, einer dir unbekannten Vogelart.",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 39,
+          "text": "Schimmernde Münzen. Sie scheinen die Währung dieser Dimension zu sein.",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 40,
+          "text": "Eine beinahe durchsichtige Scherbe.",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 41,
+          "text": "Eine sehr alte Schriftrolle. Sie fällt scho auseinander, wenn du sie nur ansiehst",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 42,
+          "text": "Eine unscheinbare Wachskerze. Wenn du sie in die Hand nimmst erfüllt dich ein warmes Gefühl und du fühlst dich mutig genug, dich jeder Herausforderung dieser Welt zu stellen.",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 43,
+          "text": "Du zweifelst an der Sinnhaftigkeit der Aktion und versuchst etwas anderes.",
+          "commands": [
+            {
+              "command": "",
+              "targets": [
+                {
+                  "target": "",
+                  "goToChapter":,
+                  "goToDialog":,
+                  "executeFunction": {
+                    "functionId":,
+                    "parameter1":,
+                    "parameter2":
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     }

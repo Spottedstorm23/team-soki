@@ -300,6 +300,7 @@ public class FileController {
             }
             case 4: {
                 changeVisible((String) parameter1);
+                changeLocation((int) ((long) parameter2), (int) ((long) parameter3));
                 break;
             }
             case 5: {
@@ -316,6 +317,12 @@ public class FileController {
             }
             case 7: {
                 changeLocation((int) ((long) parameter1), (int) ((long) parameter2));
+                break;
+            }
+            case 8:{
+                changeVisible((String) parameter1);
+                setPlayerLocation((String) parameter2);
+                changeLocation((int) ((long) parameter3), (int) ((long) parameter4));
                 break;
             }
         }
