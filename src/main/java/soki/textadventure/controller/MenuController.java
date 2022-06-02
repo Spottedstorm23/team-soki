@@ -43,18 +43,17 @@ public class MenuController {
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();
 
-        // TODO: Load existing game
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/fxml/soki-game.fxml"));
         Parent rootGame = fxmlLoader.load();
         Scene gameScene = new Scene(rootGame);
         Stage gameStage = new Stage();
         gameStage.setTitle("SOKI");
-        // gameStage.initStyle(StageStyle.TRANSPARENT); // remove close, minimize, full screen option
-        // gameStage.setFullScreen(true); // full screen
+        gameStage.initStyle(StageStyle.TRANSPARENT); // remove close, minimize, full screen option
+        gameStage.setFullScreen(true); // full screen
         gameStage.setResizable(false); // cannot change window size
         gameStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH); // cannot exit full screen
         gameStage.setScene(gameScene);
-        gameStage.getIcons().add(new Image(Objects.requireNonNull(this.getClass().getResourceAsStream("/icons/Soki-Icon.png"))));
+        gameStage.getIcons().add(new Image(Objects.requireNonNull(this.getClass().getResourceAsStream("/icons/SLogo.png"))));
         gameStage.show();
     }
 
@@ -64,17 +63,18 @@ public class MenuController {
         Node node = (Node) actionEvent.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();
+
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/fxml/soki-game.fxml"));
         Parent rootGame = fxmlLoader.load();
         Scene gameScene = new Scene(rootGame);
         Stage gameStage = new Stage();
         gameStage.setTitle("SOKI");
-        // gameStage.initStyle(StageStyle.TRANSPARENT); // remove close, minimize, full screen option
-        // gameStage.setFullScreen(true); // full screen
+        gameStage.initStyle(StageStyle.TRANSPARENT); // remove close, minimize, full screen option
+        gameStage.setFullScreen(true); // full screen
         gameStage.setResizable(false); // cannot change window size
         gameStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH); // cannot exit full screen
         gameStage.setScene(gameScene);
-        gameStage.getIcons().add(new Image(Objects.requireNonNull(this.getClass().getResourceAsStream("/icons/Soki-Icon.png"))));
+        gameStage.getIcons().add(new Image(Objects.requireNonNull(this.getClass().getResourceAsStream("/icons/SLogo.png"))));
         gameStage.show();
     }
 }
