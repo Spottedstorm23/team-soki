@@ -1,6 +1,5 @@
 package soki.textadventure.controller;
 
-import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,11 +12,10 @@ import javafx.scene.image.Image;
 import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 
-import javax.swing.Timer;
+import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Locale;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
