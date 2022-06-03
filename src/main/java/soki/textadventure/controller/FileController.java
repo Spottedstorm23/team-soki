@@ -357,7 +357,41 @@ public class FileController {
                 if(getCoins()==0){
                     addObject("muenzen",true);
                 }
-                addCoins((int) ((long)parameter1));
+                addCoins(getCoins() + (int) ((long)parameter1));
+                if(getCoins()==0){
+                    removeObject("muenzen");
+                }
+                changeLocation((int) ((long) parameter2), (int) ((long) parameter3));
+                break;
+            }
+            case 12:{
+                addObject((String) parameter1, (boolean) parameter2);
+                transferItemToHara((String) parameter1);
+                changeLocation((int) ((long) parameter3), (int) ((long) parameter4));
+                break;}
+            case 13:{
+                if(getCoins()==0){
+                    addObject("muenzen",true);
+                }
+                addCoins(getCoins() + (int) ((long)parameter1));
+                if(getCoins()==0){
+                    removeObject("muenzen");
+                }
+                changeLocation((int) ((long) parameter2), (int) ((long) parameter3));
+                transferItemToHara((String) parameter4);
+                break;
+            }
+            case 14:{
+                if(getCoins()==0){
+                    addObject("muenzen",true);
+                }
+                addCoins(getCoins() + (int) ((long)parameter1));
+                if(getCoins()==0){
+                    removeObject("muenzen");
+                }
+                changeLocation((int) ((long) parameter2), (int) ((long) parameter3));
+                addObject((String) parameter4, (Boolean) parameter5);
+                break;
             }
         }
     }
