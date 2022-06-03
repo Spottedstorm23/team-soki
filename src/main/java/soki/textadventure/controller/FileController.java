@@ -157,6 +157,7 @@ public class FileController {
         playerdataObject.replace("haraList", new JSONArray());
         playerdataObject.replace("location", "Heimischer Desktop");
         playerdataObject.replace("isEnd", false);
+        playerdataObject.replace("coinCount", 0);
 
         writeContent(playerdataObject, pathToPlayerDateJsonFile);
     }
@@ -198,6 +199,22 @@ public class FileController {
         JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
         playerdataObject.replace("isEnd", state);
         writeContent(playerdataObject, pathToPlayerDateJsonFile);
+    }
+
+    public void clearInventory(){
+        JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
+        playerdataObject.replace("objects", new JSONArray());
+        writeContent(playerdataObject, pathToPlayerDateJsonFile);
+    }
+
+    public void addCoins(int newCount){
+        JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
+        playerdataObject.replace("coinCount", newCount);
+        writeContent(playerdataObject, pathToPlayerDateJsonFile);
+    }
+    public int getCoins() {
+        JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
+        return (int) playerdataObject.get("coinCount");
     }
 
     /*Functions for Textdata*/
@@ -277,6 +294,7 @@ public class FileController {
         Object parameter2 = functionObject.get("parameter2");
         Object parameter3 = functionObject.get("parameter3");
         Object parameter4 = functionObject.get("parameter4");
+        Object parameter5 = functionObject.get("parameter5");
 
 
         switch (functionId) {
@@ -324,6 +342,22 @@ public class FileController {
                 setPlayerLocation((String) parameter2);
                 changeLocation((int) ((long) parameter3), (int) ((long) parameter4));
                 break;
+            }
+            case 9:{
+                clearInventory();
+                changeLocation((int) ((long) parameter1), (int) ((long) parameter2));
+                break;
+            }
+            case 10:{
+                removeObject((String) parameter1);
+                addObject((String) parameter2, (boolean) parameter3);
+                changeLocation((int) ((long) parameter4), (int) ((long) parameter5));
+            }
+            case 11:{
+                if(getCoins()==0){
+                    addObject("muenzen",true);
+                }
+                addCoins((int) ((long)parameter1));
             }
         }
     }

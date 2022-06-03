@@ -2508,19 +2508,155 @@
         },
         {
           "number": 10,
-          "text": "E.N.G.E.L. scheint über deine Wahl erfreut zu sein. Leichtfüßig tänzelt er in die Richtung des prunkvollen Gebäudes. Ihr nähert euch dem sagenhaften Gebäude und betretet es vorsichtig. Im Zentrum befindet sich das Herzstück des Tempels: ein gigantischer Brunnen bestehend aus unzähligen antiken Vasen, die sich in einem endlosen Kreislauf gegenseitig eine dicke goldene Flüssigkeit einschenken. Abgesehen davon ziehen dich die Stützpfeiler in ihren Bann. Kunstvoll wurden sie zu Figuren gehauen. Einer von ihnen scheint zu zerfallen. Vor deinen Augen lösen sich kleine Bröckchen von der Figur und rieseln zu Boden. Jedoch kommt es dir so vor, als ob du und E.N.G.E.L. nicht allein wärt. Du wendest dich zum Eingang und erblickst ein Gemälde, dass dich zu beobachten scheint.",
+          "text": "E.N.G.E.L. scheint über deine Wahl erfreut zu sein. Leichtfüßig tänzelt er in die Richtung des prunkvollen Gebäudes. Ihr nähert euch dem sagenhaften Gebäude und betretet es vorsichtig. Im Zentrum befindet sich das Herzstück des Tempels: ein gigantischer Brunnen bestehend aus unzähligen antiken Vasen, die sich in einem endlosen Kreislauf gegenseitig eine dicke goldene Flüssigkeit einschenken. Abgesehen davon ziehen dich die Stützpfeiler in ihren Bann. Kunstvoll wurden sie zu Figuren gehauen. Einer von ihnen scheint zu zerfallen. Vor deinen Augen lösen sich kleine Bröckchen von der Figur und rieseln zu Boden. Jedoch kommt es dir so vor, als ob du und E.N.G.E.L. nicht allein wärt. Du wendest dich zum Eingang und erblickst ein Gemälde, dass dich zu beobachten scheint. Unter dem Gemälde ist eine Plakete angebracht auf der \"Bild\" steht. Du vermutest, dass es sich dabei um den Namen des Gemäldes handelt.",
           "commands": [
             {
-              "command": "",
+              "command": "untersuche",
               "targets": [
                 {
-                  "target": "",
-                  "goToChapter":,
-                  "goToDialog":,
+                  "target": "figur",
+                  "goToChapter": 1,
+                  "goToDialog": 16,
                   "executeFunction": {
-                    "functionId":,
-                    "parameter1":,
-                    "parameter2":
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 16
+                  }
+                },
+                {
+                  "target": "brunnen",
+                  "goToChapter": 1,
+                  "goToDialog": 17,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 17
+                  }
+                },
+                {
+                  "target": "bild",
+                  "goToChapter": 1,
+                  "goToDialog": 18,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 18
+                  }
+                },
+                {
+                  "target": "tor",
+                  "goToChapter": 1,
+                  "goToDialog": 3,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 3
+                  }
+                },
+                {
+                  "target": "tempel",
+                  "goToChapter": 1,
+                  "goToDialog": 5,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 5
+                  }
+                },
+                {
+                  "target": "buchladen",
+                  "goToChapter": 1,
+                  "goToDialog": 4,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 4
+                  }
+                }
+              ]
+            },
+            {
+              "command": "gehe",
+              "targets": [
+                {
+                  "target": "figur",
+                  "goToChapter": 1,
+                  "goToDialog": 19,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 19
+                  }
+                },
+                {
+                  "target": "brunnen",
+                  "goToChapter": 1,
+                  "goToDialog": 22,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 22
+                  }
+                },
+                {
+                  "target": "bild",
+                  "goToChapter": 1,
+                  "goToDialog": 23,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 23
+                  }
+                },
+                {
+                  "target": "tor",
+                  "goToChapter": 1,
+                  "goToDialog": 6,
+                  "checkObject": [
+                    {
+                      "name": "wachskerze",
+                      "goToChapter": 1,
+                      "goToDialog": 36,
+                      "executeFunction": {
+                        "functionId": 8,
+                        "parameter1": "wachskerze",
+                        "parameter2": "Eisernes Tor",
+                        "parameter3": 1,
+                        "paramter4": 36
+                      }
+                    }
+                  ],
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Eisernes Tor",
+                    "parameter2": 1,
+                    "paramter3": 6
+                  }
+                },
+                {
+                  "target": "buchladen",
+                  "goToChapter": 1,
+                  "goToDialog": 9,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Buchladen",
+                    "parameter2": 1,
+                    "parameter3": 9
+                  }
+                }
+              ]
+            },
+            {
+              "command": "default",
+              "targets": [
+                {
+                  "target": "default",
+                  "goToChapter": 1,
+                  "goToDialog": 43,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 43
                   }
                 }
               ]
@@ -2532,16 +2668,137 @@
           "text": "Der Buchhändler sieht auf als du ihn ansprichst. „Hast du mir schon ein neues Stück gefundern?“ Er schaut kurz erwartungsvoll, bevor er sich wieder der Schrift vor ihm zuwendet.",
           "commands": [
             {
-              "command": "",
+              "command": "untersuche",
               "targets": [
                 {
-                  "target": "",
-                  "goToChapter":,
-                  "goToDialog":,
+                  "target": "tor",
+                  "goToChapter": 1,
+                  "goToDialog": 3,
                   "executeFunction": {
-                    "functionId":,
-                    "parameter1":,
-                    "parameter2":
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 3
+                  }
+                },
+                {
+                  "target": "tempel",
+                  "goToChapter": 1,
+                  "goToDialog": 5,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 5
+                  }
+                },
+                {
+                  "target": "buchladen",
+                  "goToChapter": 1,
+                  "goToDialog": 4,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 4
+                  }
+                }
+              ]
+            },
+            {
+              "command": "gehe",
+              "targets": [
+                {
+                  "target": "tor",
+                  "goToChapter": 1,
+                  "goToDialog": 6,
+                  "checkObject": [
+                    {
+                      "name": "wachskerze",
+                      "goToChapter": 1,
+                      "goToDialog": 36,
+                      "executeFunction": {
+                        "functionId": 8,
+                        "parameter1": "wachskerze",
+                        "parameter2": "Eisernes Tor",
+                        "parameter3": 1,
+                        "paramter4": 36
+                      }
+                    }
+                  ],
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Eisernes Tor",
+                    "parameter2": 1,
+                    "paramter3": 6
+                  }
+                },
+                {
+                  "target": "tempel",
+                  "goToChapter": 1,
+                  "goToDialog": 10,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Tempel",
+                    "parameter2": 1,
+                    "parameter3": 10
+                  }
+                }
+              ]
+            },
+            {
+              "command": "interagiere",
+              "targets": [
+                {
+                  "target": "mit buchhaendler",
+                  "goToChapter": 1,
+                  "goToDialog": 11,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 11
+                  }
+                }
+              ]
+            },
+            {
+              "command": "benutze",
+              "targets": [
+                {
+                  "target": "schriftrolle mit buchhaendler",
+                  "goToChapter": 1,
+                  "goToDialog": 11,
+                  "checkObject": [
+                    {
+                      "name": "schriftrolle",
+                      "goToChapter": 1,
+                      "goToDialog": 12,
+                      "executeFunction": {
+                        "functionId": 10,
+                        "parameter1": "schriftrolle",
+                        "parameter2": "schreibfeder",
+                        "parameter3": true,
+                        "parameter4": 1,
+                        "parameter5": 12
+                      }
+                    }
+                  ],
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 11
+                  }
+                }
+              ]
+            },
+            {
+              "command": "default",
+              "targets": [
+                {
+                  "target": "default",
+                  "goToChapter": 1,
+                  "goToDialog": 43,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 43
                   }
                 }
               ]
@@ -2553,16 +2810,57 @@
           "text": "Die Augen des Händlers blitzen auf. \"Das ist ja tatsächlich ein mir völlig unbekanntes Werk! Unfassbar, ich dachte es gäbe in diesem Realm keine anderen Schriftstücke mehr.\" Freudig wendet er seinen Blick wieder dir zu. \"Ich danke dir, hier ich gebe dir meine schönste Schreibfeder zur Belohnung!\" Du nimmst die Feder und legst sie in dein Inventar. E.N.G.E.L. jedoch legt den Kopf schief \"Willst du dir wirklich dein hart erarbeitetes Item so leicht abluchsen lassen?\" Sprichst du auf den Händler ein oder verlässt du den Laden?",
           "commands": [
             {
-              "command": "",
+              "command": "gehe",
               "targets": [
                 {
-                  "target": "",
-                  "goToChapter":,
-                  "goToDialog":,
+                  "target": "tor",
+                  "goToChapter": 1,
+                  "goToDialog": 6,
+                  "checkObject": [
+                    {
+                      "name": "wachskerze",
+                      "goToChapter": 1,
+                      "goToDialog": 36,
+                      "executeFunction": {
+                        "functionId": 8,
+                        "parameter1": "wachskerze",
+                        "parameter2": "Eisernes Tor",
+                        "parameter3": 1,
+                        "paramter4": 36
+                      }
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId":,
-                    "parameter1":,
-                    "parameter2":
+                    "functionId": 5,
+                    "parameter1": "Eisernes Tor",
+                    "parameter2": 1,
+                    "paramter3": 6
+                  }
+                },
+                {
+                  "target": "tempel",
+                  "goToChapter": 1,
+                  "goToDialog": 10,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Tempel",
+                    "parameter2": 1,
+                    "parameter3": 10
+                  }
+                }
+              ]
+            },
+            {
+              "command": "interagiere",
+              "targets": [
+                {
+                  "target": "buchhaendler",
+                  "goToChapter": 1,
+                  "goToDialog": 13,
+                  "executeFunction": {
+                    "functionId": 2,
+                    "parameter1": 1,
+                    "parameter2": 13
                   }
                 }
               ]
@@ -2574,16 +2872,72 @@
           "text": "\"Aber bitte, verstehe auch meine Lage. Diese Rolle ist für mich so viel wertvoller als für dich. Wieso solltest du sie haben?\"",
           "commands": [
             {
-              "command": "",
+              "command": "gehe",
               "targets": [
                 {
-                  "target": "",
-                  "goToChapter":,
-                  "goToDialog":,
+                  "target": "tor",
+                  "goToChapter": 1,
+                  "goToDialog": 6,
+                  "checkObject": [
+                    {
+                      "name": "wachskerze",
+                      "goToChapter": 1,
+                      "goToDialog": 36,
+                      "executeFunction": {
+                        "functionId": 8,
+                        "parameter1": "wachskerze",
+                        "parameter2": "Eisernes Tor",
+                        "parameter3": 1,
+                        "paramter4": 36
+                      }
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId":,
-                    "parameter1":,
-                    "parameter2":
+                    "functionId": 5,
+                    "parameter1": "Eisernes Tor",
+                    "parameter2": 1,
+                    "paramter3": 6
+                  }
+                },
+                {
+                  "target": "tempel",
+                  "goToChapter": 1,
+                  "goToDialog": 10,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Tempel",
+                    "parameter2": 1,
+                    "parameter3": 10
+                  }
+                }
+              ]
+            },
+            {
+              "command": "interagiere",
+              "targets": [
+                {
+                  "target": "buchhaendler",
+                  "goToChapter": 1,
+                  "goToDialog": 14,
+                  "checkObject": [
+                    {
+                      "name": "2 muenzen",
+                      "goToChapter": 1,
+                      "goToDialog": 14,
+                      "executeFunction": {
+                        "functionId": 10,
+                        "parameter1": "2 muenzen",
+                        "parameter2": "4 muenzen",
+                        "parameter3": true,
+                        "paramter4": 1,
+                        "parameter5": 14
+                      }
+                    }
+                  ],
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 1,
+                    "parameter2": 14
                   }
                 }
               ]
@@ -2676,7 +3030,7 @@
         },
         {
           "number": 18,
-          "text": "Ein älter wirkendes Gemälde. Irgendwie wirst du das Gefühl nicht los, dass dir sein Blick folgt während du dich im Tempel umsiehst.",
+          "text": "Ein älter wirkendes Gemälde mit dem Namen \"Bild\". Irgendwie wirst du das Gefühl nicht los, dass dir sein Blick folgt während du dich im Tempel umsiehst.",
           "commands": [
             {
               "command": "",
@@ -2700,16 +3054,16 @@
           "text": "E.N.G.E.L. versperrt dir den Weg. \"Menschenwesen, ich weiß, dass deine Augen bei weitem nicht so gut sind wie meine. Aber selbst du solltest sehen, dass diese Figur gefährlich instabil ist.\"",
           "commands": [
             {
-              "command": "",
+              "command": "gehe",
               "targets": [
                 {
-                  "target": "",
-                  "goToChapter":,
-                  "goToDialog":,
+                  "target": "figur",
+                  "goToChapter": 1,
+                  "goToDialog": 20,
                   "executeFunction": {
-                    "functionId":,
-                    "parameter1":,
-                    "parameter2":
+                    "functionId": 9,
+                    "parameter1": 1,
+                    "parameter2": 20
                   }
                 }
               ]
@@ -2739,7 +3093,7 @@
         },
         {
           "number": 21,
-          "text": "Zielsicher greifst du nach der Scherbe. Wenn du schon fast von einer Säuleerschlagen wirst, dann sollte wenigstens ein Andenken dabei für dich dabei rausspringen. Beim genauen Betrachten der Scherbe fällt dir auf, dass sie beinahe durchsichtig ist.",
+          "text": "Zielsicher greifst du nach der Scherbe. Wenn du schon fast von einer Säuleerschlagen wirst, dann sollte wenigstens ein Andenken dabei für dich dabei rausspringen. Beim genauen Betrachten der Scherbe fällt dir auf, dass sie beinahe durchsichtig ist.\n Als du sie in deine Tasche steckst fällt dir auf was E.N.G.E.L. gemeint hat, alle deine zuvor gesammelten Gegenstände sind verschwunden.",
           "commands": [
             {
               "command": "",

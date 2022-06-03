@@ -7,7 +7,8 @@ Funktionen Short IDs:
 5 - Location des Spielers ändern    -> 3 Paramter: ort, chapter, dialog
 6 - "reset game"                    -> 3 Paramter: chapter, dialog und true
 7 - fortschritt in Playerdate       -> 2 Parameter: Chapter und Dialog
-
+8 - visibility + location change
+9 - clear inventory
 
 Wenn ein logisch richtiger aber für den block unbekannter befehl eingegbene wird, wird auf einen standartblock zurückgegriffen.
 In dem müssen *alle* möglichen Optionen angegeben werden.
