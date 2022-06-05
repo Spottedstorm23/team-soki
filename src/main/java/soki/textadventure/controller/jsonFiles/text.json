@@ -4121,7 +4121,7 @@
         },
         {
           "number": 21,
-          "text": "Zielsicher greifst du nach der Scherbe. Wenn du schon fast von einer Säuleerschlagen wirst, dann sollte wenigstens ein Andenken dabei für dich dabei rausspringen. Beim genauen Betrachten der Scherbe fällt dir auf, dass sie beinahe durchsichtig ist.\n Als du sie in deine Tasche steckst fällt dir auf was E.N.G.E.L. gemeint hat, alle deine zuvor gesammelten Gegenstände sind verschwunden.",
+          "text": "Zielsicher greifst du nach der Scherbe. Wenn du schon fast von einer Säule erschlagen wirst, dann sollte wenigstens ein Andenken dabei für dich dabei rausspringen. Beim genauen Betrachten der Scherbe fällt dir auf, dass sie beinahe durchsichtig ist.\n Als du sie in deine Tasche steckst fällt dir auf was E.N.G.E.L. gemeint hat, alle deine zuvor gesammelten Gegenstände sind verschwunden.",
           "commands": [
             {
               "command": "untersuche",
@@ -10375,6 +10375,654 @@
           ]
         }
       ]
-    }
+    },
+
+    {"number": 2,
+      "dialogs": [
+        {"number": 0,
+        "text":  "Storytext dialog",
+        "commands":  [
+          {
+            "command": "command zB untersuche",
+            "targets": [
+              {
+                "target": "target zB engel",
+                "goToChapter": Zahl,
+                "goToDialog": zahl,
+                "executeFunction": {
+                  "functionId": Zahl,
+                  "parameter1": Zahl,
+                  "parameter2":  zahl,
+                  "parameter3": Zahl,
+                  "parameter4": zahl,
+                  "parameter5": zahl
+                }
+              },
+
+              {
+                "target": "target zB knochen",
+                "goToChapter": Zahl,
+                "goToDialog": zahl,
+                "executeFunction": {
+                  "functionId": Zahl,
+                  "parameter1": Zahl,
+                  "parameter2":  zahl,
+                  "parameter3": Zahl,
+                  "parameter4": zahl,
+                  "parameter5": zahl
+                }
+              }
+
+            ]
+          },
+          {
+            "command": "command zB nimm",
+            "targets": [
+              {
+                "target": "target zB engel",
+                "goToChapter": Zahl,
+                "goToDialog": zahl,
+                "executeFunction": {
+                  "functionId": Zahl,
+                  "parameter1": Zahl,
+                  "parameter2":  zahl,
+                  "parameter3": Zahl,
+                  "parameter4": zahl,
+                  "parameter5": zahl
+                }
+              },
+
+              {
+                "target": "target zB knochen",
+                "goToChapter": Zahl,
+                "goToDialog": zahl,
+                "executeFunction": {
+                  "functionId": Zahl,
+                  "parameter1": Zahl,
+                  "parameter2":  zahl,
+                  "parameter3": Zahl,
+                  "parameter4": zahl,
+                  "parameter5": zahl
+                }
+              }
+            ]
+          }
+        ]},
+
+        {"number": 1,
+          "text":  "Storytext dialog",
+          "commands":  [
+            {
+              "command": "command zB untersuche",
+              "targets": [
+                {
+                  "target": "target zB engel",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                },
+
+                {
+                  "target": "target zB knochen",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                }
+
+              ]
+            },
+            {
+              "command": "command zB nimm",
+              "targets": [
+                {
+                  "target": "target zB engel",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                },
+
+                {
+                  "target": "target zB knochen",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                }
+              ]
+            }
+          ]},
+        {"number": 2,
+          "text":  "Storytext dialog",
+          "commands":  [
+            {
+              "command": "command zB untersuche",
+              "targets": [
+                {
+                  "target": "target zB engel",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                },
+
+                {
+                  "target": "target zB knochen",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                }
+
+              ]
+            },
+            {
+              "command": "command zB nimm",
+              "targets": [
+                {
+                  "target": "target zB engel",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                },
+
+                {
+                  "target": "target zB knochen",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                }
+              ]
+            }
+          ]},
+
+        {"number": 3,
+          "text":  "Storytext dialog",
+          "commands":  [
+            {
+              "command": "command zB untersuche",
+              "targets": [
+                {
+                  "target": "target zB engel",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                },
+
+                {
+                  "target": "target zB knochen",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                }
+
+              ]
+            },
+            {
+              "command": "command zB nimm",
+              "targets": [
+                {
+                  "target": "target zB engel",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                },
+
+                {
+                  "target": "target zB knochen",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                }
+              ]
+            }
+          ]},
+
+        {"number": 4,
+          "text":  "Storytext dialog",
+          "commands":  [
+            {
+              "command": "command zB untersuche",
+              "targets": [
+                {
+                  "target": "target zB engel",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                },
+
+                {
+                  "target": "target zB knochen",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                }
+
+              ]
+            },
+            {
+              "command": "command zB nimm",
+              "targets": [
+                {
+                  "target": "target zB engel",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                },
+
+                {
+                  "target": "target zB knochen",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                }
+              ]
+            }
+          ]},
+
+        {"number": 5,
+          "text":  "Storytext dialog",
+          "commands":  [
+            {
+              "command": "command zB untersuche",
+              "targets": [
+                {
+                  "target": "target zB engel",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                },
+
+                {
+                  "target": "target zB knochen",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                }
+
+              ]
+            },
+            {
+              "command": "command zB nimm",
+              "targets": [
+                {
+                  "target": "target zB engel",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                },
+
+                {
+                  "target": "target zB knochen",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                }
+              ]
+            }
+          ]},
+
+        {"number": 6,
+          "text":  "Storytext dialog",
+          "commands":  [
+            {
+              "command": "command zB untersuche",
+              "targets": [
+                {
+                  "target": "target zB engel",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                },
+
+                {
+                  "target": "target zB knochen",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                }
+
+              ]
+            },
+            {
+              "command": "command zB nimm",
+              "targets": [
+                {
+                  "target": "target zB engel",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                },
+
+                {
+                  "target": "target zB knochen",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                }
+              ]
+            }
+          ]},
+
+        {"number": 7,
+          "text":  "Storytext dialog",
+          "commands":  [
+            {
+              "command": "command zB untersuche",
+              "targets": [
+                {
+                  "target": "target zB engel",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                },
+
+                {
+                  "target": "target zB knochen",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                }
+
+              ]
+            },
+            {
+              "command": "command zB nimm",
+              "targets": [
+                {
+                  "target": "target zB engel",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                },
+
+                {
+                  "target": "target zB knochen",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                }
+              ]
+            }
+          ]},
+
+        {"number": 8,
+          "text":  "Storytext dialog",
+          "commands":  [
+            {
+              "command": "command zB untersuche",
+              "targets": [
+                {
+                  "target": "target zB engel",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                },
+
+                {
+                  "target": "target zB knochen",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                }
+
+              ]
+            },
+            {
+              "command": "command zB nimm",
+              "targets": [
+                {
+                  "target": "target zB engel",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                },
+
+                {
+                  "target": "target zB knochen",
+                  "goToChapter": Zahl,
+                  "goToDialog": zahl,
+                  "executeFunction": {
+                    "functionId": Zahl,
+                    "parameter1": Zahl,
+                    "parameter2":  zahl,
+                    "parameter3": Zahl,
+                    "parameter4": zahl,
+                    "parameter5": zahl
+                  }
+                }
+              ]
+            }
+          ]}
+
+
+      ]},
+
+    {"number": 3,
+      "dialogs": [
+        {"number": 0,
+          "text":  "Storytext dialog",
+          "commands":  []}
+      ]},
+
+    {"number": 4,
+      "dialogs": [
+        {"number": 0,
+          "text":  "Storytext dialog",
+          "commands":  []}
+      ]}
   ]
 }

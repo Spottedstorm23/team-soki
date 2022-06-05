@@ -1,1 +1,11 @@
-{"chapter":0,"dialog":0,"objects":[],"name":"user","playthrough":0,"location":"Heimischer Desktop","haraList":[],"isEnd":false,"coinCount": 0}
+{
+  "chapter": 0,
+  "dialog": 9,
+  "objects": [],
+  "name": "Seli",
+  "playthrough": 0,
+  "location": "??? - Dimension",
+  "haraList": [],
+  "isEnd": false,
+  "coinCount": 0
+}

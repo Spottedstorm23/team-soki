@@ -89,7 +89,6 @@ public class GameController {   // Controller for soki-game.fxml
     }
 
     public void initialize() {
-        // setCurrentDialogLine("Hallo, was möchtest du machen?");
         setGameVariables();
         startFirstDialogueLine();
         updateUserLocationInWindow();
@@ -129,12 +128,13 @@ public class GameController {   // Controller for soki-game.fxml
             textFieldGameWindow.setDisable(true);   // --> User soll nicht in der Lage sein,
             // während der Timer noch am Schreiben der Story ist,
             // zwischendurch eine Eingabe zu tätigen
+            textAreaGameWindow.setDisable(true);
             char[] character = currentDialog.toCharArray();
             for (char c : character) {
                 String s = String.valueOf(c);
                 textAreaGameWindow.appendText(s);
                 try {
-                    Thread.sleep(25L); // USE "50L" FOR A GOOD PACE FOR THE GAME
+                    Thread.sleep(50L); // USE "50L" FOR A GOOD PACE FOR THE GAME
                 } catch (InterruptedException ex) {
                     ex.printStackTrace();
                 }
@@ -143,6 +143,7 @@ public class GameController {   // Controller for soki-game.fxml
             timer.stop();
 
             textFieldGameWindow.setDisable(false);
+            textAreaGameWindow.setDisable(false);
         }
     });
 
@@ -248,7 +249,7 @@ public class GameController {   // Controller for soki-game.fxml
             //todo maybe change this sleep if needed
             Thread.sleep(1000);
             fileController.setIsEnd(false);
-            fileController.changeLocation(0,0);
+            fileController.changeLocation(0, 0);
             this.currentChapter = 0;
             this.currentDialogBlock = 0;
             startFirstDialogueLine();
