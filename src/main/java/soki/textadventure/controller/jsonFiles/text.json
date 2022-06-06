@@ -50679,13 +50679,13 @@
         },
         {
           "number": 13,
-          "text": "Du nimmst Candys giftgetränkte Zuckerstange und rammst sie in Dooms Schwachstelle.",
+          "text": "Du nimmst Candys giftgetränkte Zuckerstange und rammst sie in Dooms Schwachstelle. \nÜberrascht von deinem Erfolg ziehst du dich zu E.N.G.E.L. zurück (Gehe zu Engel)",
           "commands": [
             {
-              "command": "benutze",
+              "command": "gehe",
               "targets": [
                 {
-                  "target": "zuckerstange",
+                  "target": "engel",
                   "goToChapter": 4,
                   "goToDialog": 17,
                   "executeFunction": {
@@ -50701,13 +50701,13 @@
         },
         {
           "number": 14,
-          "text": "Du nimmst den Kometen und donnerst ihn mit aller Kraft in Dooms Schwachstelle.",
+          "text": "Du nimmst den Kometen und donnerst ihn mit aller Kraft in Dooms Schwachstelle.\nÜberrascht von deinem Erfolg ziehst du dich zu E.N.G.E.L. zurück (Gehe zu Engel)",
           "commands": [
             {
-              "command": "benutze",
+              "command": "gehe",
               "targets": [
                 {
-                  "target": "komet",
+                  "target": "engel",
                   "goToChapter": 4,
                   "goToDialog": 17,
                   "executeFunction": {
@@ -50723,13 +50723,13 @@
         },
         {
           "number": 15,
-          "text": "Du nimmst Lux’ Zahn und schneidest in Dooms Schwachstelle.",
+          "text": "Du nimmst Lux’ Zahn und schneidest in Dooms Schwachstelle.\nÜberrascht von deinem Erfolg ziehst du dich zu E.N.G.E.L. zurück (Gehe zu Engel)",
           "commands": [
             {
-              "command": "benutze",
+              "command": "gehe",
               "targets": [
                 {
-                  "target": "zahn",
+                  "target": "engel",
                   "goToChapter": 4,
                   "goToDialog": 17,
                   "executeFunction": {
@@ -50745,13 +50745,13 @@
         },
         {
           "number": 16,
-          "text": "Du öffnest einen Glückskeks. Doch statt einer Weisheit befindet sich im Inneren ein Dolch, welchen du nimmst und in Dooms Schwachstelle rammst.",
+          "text": "Du öffnest einen Glückskeks. Doch statt einer Weisheit befindet sich im Inneren ein Dolch, welchen du nimmst und in Dooms Schwachstelle rammst. \nÜberrascht von deinem Erfolg ziehst du dich zu E.N.G.E.L. zurück (Gehe zu Engel)",
           "commands": [
             {
-              "command": "benutze",
+              "command": "gehe",
               "targets": [
                 {
-                  "target": "glueckskeks",
+                  "target": "engel",
                   "goToChapter": 4,
                   "goToDialog": 17,
                   "executeFunction": {
