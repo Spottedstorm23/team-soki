@@ -16,7 +16,6 @@ import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -329,7 +328,7 @@ public class GameController {   // Controller for soki-game.fxml
         Stage stage = (Stage) textFieldGameWindow.getScene().getWindow();
         stage.close();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/soki-menu.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/soki-menu.fxml"));
         Parent rootGame = fxmlLoader.load();
         Scene menuScene = new Scene(rootGame);
         Stage menuStage = new Stage();

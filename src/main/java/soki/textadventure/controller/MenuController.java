@@ -10,7 +10,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCombination;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import soki.textadventure.Main;
@@ -27,9 +26,10 @@ public class MenuController {
     private Button loadButton;
 
     // Controller for soki-menu.fxml
-    private final FileController fileController = new FileController();
+    private  FileController fileController;
 
     public void initialize() {
+        fileController = new FileController();
         playerChapterLabel.setText(String.valueOf(fileController.getPlayerChapter()));
         playerLocationLabel.setText(fileController.getPlayerLocation());
         if (fileController.getPlayerChapter() == 0 && fileController.getPlayerDialog() == 0 && fileController.getPlayerPlaythrough() == 0){
@@ -52,7 +52,7 @@ public class MenuController {
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/fxml/soki-game.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/soki-game.fxml"));
         Parent rootGame = fxmlLoader.load();
         Scene gameScene = new Scene(rootGame);
         Stage gameStage = new Stage();
@@ -73,7 +73,7 @@ public class MenuController {
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/fxml/soki-game.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/soki-game.fxml"));
         Parent rootGame = fxmlLoader.load();
         Scene gameScene = new Scene(rootGame);
         Stage gameStage = new Stage();

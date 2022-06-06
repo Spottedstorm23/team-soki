@@ -7,7 +7,6 @@ import javafx.scene.image.Image;
 import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import soki.textadventure.controller.FileController;
 
 import java.io.IOException;
 
@@ -19,7 +18,7 @@ public class Main extends Application {
         // FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("soki-menu.fxml"));
         //FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/soki-menu.fxml"));
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/soki-menu.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/soki-menu.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("SOKI");
         stage.setScene(scene);
