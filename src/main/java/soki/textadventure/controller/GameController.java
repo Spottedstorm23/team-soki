@@ -16,6 +16,7 @@ import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -208,9 +209,12 @@ public class GameController {   // Controller for soki-game.fxml
 
         } else if (lowerCaseInput.matches("inventar")) {
             String inventory = Arrays.toString(fileController.listVisibleObjects());
+            inventory = inventory.replace("[", "");
+            inventory = inventory.replace("]", "");
             if (inventory.equals("[]")) {
                 inventory = "Du hast zur Zeit nichts im Inventar";
             }
+            inventory = inventory.replace("muenzen", "muenzen (Du hast zur Zeit " + fileController.getCoins() + ")");
             setCurrentDialogLine(inventory);
 
         } else if (lowerCaseInput.matches("benutze [a-z ]+")) {

@@ -201,20 +201,23 @@ public class FileController {
         writeContent(playerdataObject, pathToPlayerDateJsonFile);
     }
 
-    public void clearInventory(){
+    public void clearInventory() {
         JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
         playerdataObject.replace("objects", new JSONArray());
         writeContent(playerdataObject, pathToPlayerDateJsonFile);
     }
 
-    public void addCoins(int newCount){
+    public void addCoins(int newCount) {
         JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
-        playerdataObject.replace("coinCount", newCount);
+        int count = getCoins() + newCount;
+        playerdataObject.replace("coinCount", count);
         writeContent(playerdataObject, pathToPlayerDateJsonFile);
     }
+
     public int getCoins() {
         JSONObject playerdataObject = readContent(pathToPlayerDateJsonFile);
-        return (int) playerdataObject.get("coinCount");
+        long coinCount = (long) playerdataObject.get("coinCount");
+        return (int) coinCount;
     }
 
     /*Functions for Textdata*/
@@ -338,56 +341,57 @@ public class FileController {
                 changeLocation((int) ((long) parameter1), (int) ((long) parameter2));
                 break;
             }
-            case 8:{
+            case 8: {
                 changeVisible((String) parameter1);
                 setPlayerLocation((String) parameter2);
                 changeLocation((int) ((long) parameter3), (int) ((long) parameter4));
                 break;
             }
-            case 9:{
+            case 9: {
                 clearInventory();
                 changeLocation((int) ((long) parameter1), (int) ((long) parameter2));
                 break;
             }
-            case 10:{
+            case 10: {
                 removeObject((String) parameter1);
                 addObject((String) parameter2, (boolean) parameter3);
                 changeLocation((int) ((long) parameter4), (int) ((long) parameter5));
             }
-            case 11:{
-                if(getCoins()==0){
-                    addObject("muenzen",true);
+            case 11: {
+                if (getCoins() == 0) {
+                    addObject("muenzen", true);
                 }
-                addCoins(getCoins() + (int) ((long)parameter1));
-                if(getCoins()==0){
+                addCoins((int) ((long) parameter1));
+                if (getCoins() == 0) {
                     removeObject("muenzen");
                 }
                 changeLocation((int) ((long) parameter2), (int) ((long) parameter3));
                 break;
             }
-            case 12:{
+            case 12: {
                 addObject((String) parameter1, (boolean) parameter2);
                 transferItemToHara((String) parameter1);
                 changeLocation((int) ((long) parameter3), (int) ((long) parameter4));
-                break;}
-            case 13:{
-                if(getCoins()==0){
-                    addObject("muenzen",true);
+                break;
+            }
+            case 13: {
+                if (getCoins() == 0) {
+                    addObject("muenzen", true);
                 }
-                addCoins(getCoins() + (int) ((long)parameter1));
-                if(getCoins()==0){
+                addCoins((int) ((long) parameter1));
+                if (getCoins() == 0) {
                     removeObject("muenzen");
                 }
                 changeLocation((int) ((long) parameter2), (int) ((long) parameter3));
                 transferItemToHara((String) parameter4);
                 break;
             }
-            case 14:{
-                if(getCoins()==0){
-                    addObject("muenzen",true);
+            case 14: {
+                if (getCoins() == 0) {
+                    addObject("muenzen", true);
                 }
-                addCoins(getCoins() + (int) ((long)parameter1));
-                if(getCoins()==0){
+                addCoins((int) ((long) parameter1));
+                if (getCoins() == 0) {
                     removeObject("muenzen");
                 }
                 changeLocation((int) ((long) parameter2), (int) ((long) parameter3));

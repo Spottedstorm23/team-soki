@@ -48,7 +48,7 @@
                         <Font name="Monospaced Regular" size="30.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#LoadGameMenu" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF;" text="Spiel laden" textFill="LIME" GridPane.rowIndex="1">
+                  <Button fx:id="loadButton" mnemonicParsing="false" onAction="#LoadGameMenu" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF;" text="Spiel laden" textFill="LIME" GridPane.rowIndex="1">
                      <font>
                         <Font name="Monospaced Regular" size="30.0" />
                      </font>
