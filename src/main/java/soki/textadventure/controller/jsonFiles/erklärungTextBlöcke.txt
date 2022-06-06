@@ -7,8 +7,16 @@ Funktionen Short IDs:
 5 - Location des Spielers ändern    -> 3 Paramter: ort, chapter, dialog
 6 - "reset game"                    -> 3 Paramter: chapter, dialog und true
 7 - fortschritt in Playerdate       -> 2 Parameter: Chapter und Dialog
-8 - visibility + location change
-9 - clear inventory
+8 - visibility + location change    ->  4 Parameter: new Visibility, location, chapter und dialog
+9 - clear inventory                 -> 2 Parameter: chapter und dialog
+10 - item entfernen und neues item hinzufügen -> 5 Parameter: oldItem, new item, new itemvisibility, chapter und dialog
+11 - Münzen zum inventar hinzufügen -> 3 Parameter: anzahl der hinzuzufügenden Münzen, chapter und dialog
+12 - item hinzufügen + sofort an hara geben -> 4 Parameter: item, itemvisibility, chapter und dialog
+13 - münzen hinzufügen + ein item an hara -> 4 parameter: anzahl der hinzuzufügenden Münzen, chapter und dialog, item
+14 - münzen hinzufügen + item zum inventar hinzufügen -> 5 parameter: anzahl der hinzuzufügenden Münzen, chapter und dialog, item und itemvisibility
+15- münzen hinzufügen  + ort ändern -> 4 Parameter: hinzuzufügende münzen, chapter, dialog, ort
+16 - von engel aufgesammelte items hinzufügen + gewisse items aus der liste löschen -> 2 Parameter: chapter + dialog, items sind hardcoded
+
 
 Wenn ein logisch richtiger aber für den block unbekannter befehl eingegbene wird, wird auf einen standartblock zurückgegriffen.
 In dem müssen *alle* möglichen Optionen angegeben werden.

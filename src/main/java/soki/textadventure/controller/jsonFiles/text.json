@@ -5808,7 +5808,7 @@
         },
         {
           "number": 31,
-          "text": "Du beschließt, das leichte Flackern, auf das dich das Gemälde aufmerksam gemacht hat zu untersuchen. Vor deinen Augen verschmilzt der Nebel zu einer menschlichen Figur. \"Hat H-4-C-K wieder ein Menschlein gefangen?\" Fast schon mitleidig betrachtet dich der Geist. \"Du armes Ding, ihr schwächlichen Kreaturen könnt meist gar nicht begreifen, was über euch zusammenbricht. Lass mich dir helfen. Gegen den niedrigen Preis einiger Münzen biete ich dir nützliche Items für deinen Kampf im Archiv an.\" Der Geist zieht eine Tasche hervor und lässt dich hineinblicken. \"Zur Zeit biete ich dir eine Karte für das Innere des Archivs für den niedrigen Preis von [maximaler Wert aller sammelbaren Münzen aus Chap 1 + 2] oder einige Glückskekse für deine Schlacht an.\" Der Geist zwinkert dir zu. \"Man kann nie wissen, wann man mal Glück gebrauchen kann. Wenn du eines meiner Items haben möchtest, komme einfach zu mir und nehme es dir. Ich hole mir dann selbst die entsprechende Anzahl von Münzen aus deinem Inventar. Das geht aber natürlich nur, wenn du auch genug dabei hast.\"",
+          "text": "Du beschließt, das leichte Flackern, auf das dich das Gemälde aufmerksam gemacht hat zu untersuchen. Vor deinen Augen verschmilzt der Nebel zu einer menschlichen Figur. \"Hat H-4-C-K wieder ein Menschlein gefangen?\" Fast schon mitleidig betrachtet dich der Geist. \"Du armes Ding, ihr schwächlichen Kreaturen könnt meist gar nicht begreifen, was über euch zusammenbricht. Lass mich dir helfen. Gegen den niedrigen Preis einiger Münzen biete ich dir nützliche Items für deinen Kampf im Archiv an.\" Der Geist zieht eine Tasche hervor und lässt dich hineinblicken. \"Zur Zeit biete ich dir eine Karte für das Innere des Archivs für den niedrigen Preis von 12 Münzen oder einige Glückskekse für deine Schlacht an.\" Der Geist zwinkert dir zu. \"Man kann nie wissen, wann man mal Glück gebrauchen kann. Wenn du eines meiner Items haben möchtest, komme einfach zu mir und nehme es dir. Ich hole mir dann selbst die entsprechende Anzahl von Münzen aus deinem Inventar. Das geht aber natürlich nur, wenn du auch genug dabei hast.\"",
           "commands": [
             {
               "command": "untersuche",
@@ -10858,16 +10858,11 @@
                   "goToChapter": 2,
                   "goToDialog": 3,
                   "executeFunction": {
-                    "functionId": 5,
-                    "parameter1": "Burgstadt",
+                    "functionId": 15,
+                    "parameter1": 2,
                     "parameter2": 2,
                     "parameter3": 3,
-                    "executeFunction": {
-                      "functionId": 11,
-                      "parameter1": 2,
-                      "parameter2": 2,
-                      "parameter3": 3
-                    }
+                    "parameter4": "Burgstadt"
                   }
                 }
               ]
@@ -11128,8 +11123,6 @@
                 }
               ]
             }
-
-
           ]
         },
         {
@@ -11154,16 +11147,11 @@
                   "goToChapter": 2,
                   "goToDialog": 3,
                   "executeFunction": {
-                    "functionId": 5,
-                    "parameter1": "Burgstadt",
+                    "functionId": 15,
+                    "parameter1": 2,
                     "parameter2": 2,
                     "parameter3": 3,
-                    "executeFunction": {
-                      "functionId": 11,
-                      "parameter1": 2,
-                      "parameter2": 2,
-                      "parameter3": 3
-                    }
+                    "parameter4": "Burgstadt"
                   }
                 }
               ]
@@ -11182,10 +11170,10 @@
                   "goToChapter": 2,
                   "goToDialog": 7,
                   "executeFunction": {
-                    "functionId": 7,
-                    "parameter1": "In den Lüften",
-                    "parameter2": 2,
-                    "parameter3": 7
+                    "functionId": 6,
+                    "parameter1": 2,
+                    "parameter2": 7,
+                    "parameter3": true
                   }
                 },
                 {
@@ -12415,217 +12403,218 @@
         {
           "number": 12,
           "text": "Candy nimmst grinsend die Feder entgegen. \"Hah, und los geht’s!\"\nVor deinen Augen hüllen sich Candys Hände in einen violetten Dunst. Kurz darauf reicht sie dir eine Zuckerstange entgegen, die an beiden Seiten angespitzt ist und merkwürdig riecht.\n\"Aber nicht essen, ja?\" zwinkert sie dir zu. Danach lehnt sie sich wieder an die Wand und beobachtet Kessel.",
-          "commands": [{
-            "command": "untersuche",
-            "targets": [
-              {
-                "target": "ruinen",
-                "goToChapter": 2,
-                "goToDialog": 33,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 2,
-                  "parameter2": 33
-                }
-              },
-              {
-                "target": "candy",
-                "goToChapter": 2,
-                "goToDialog": 34,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 2,
-                  "parameter2": 34
-                }
-              },
-              {
-                "target": "kessel",
-                "goToChapter": 2,
-                "goToDialog": 35,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 2,
-                  "parameter2": 35
-                }
-              },
-              {
-                "target": "kristalle",
-                "goToChapter": 2,
-                "goToDialog": 51,
-                "checkObject": [
-                  {
-                    "name": "kristalle",
-                    "goToChapter": 2,
-                    "goToDialog": 43,
-                    "executeFunction": {
-                      "functionId": 7,
-                      "parameter1": 2,
-                      "parameter2": 43
-                    }
+          "commands": [
+            {
+              "command": "untersuche",
+              "targets": [
+                {
+                  "target": "ruinen",
+                  "goToChapter": 2,
+                  "goToDialog": 33,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 2,
+                    "parameter2": 33
                   }
-                ],
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 2,
-                  "parameter2": 51
-                }
-              },
-              {
-                "target": "schreibfeder",
-                "goToChapter": 2,
-                "goToDialog": 51,
-                "checkObject": [
-                  {
-                    "name": "schreibfeder",
-                    "goToChapter": 2,
-                    "goToDialog": 45,
-                    "executeFunction": {
-                      "functionId": 7,
-                      "parameter1": 2,
-                      "parameter2": 45
-                    }
+                },
+                {
+                  "target": "candy",
+                  "goToChapter": 2,
+                  "goToDialog": 34,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 2,
+                    "parameter2": 34
                   }
-                ],
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 2,
-                  "parameter2": 51
-                }
-              },
-              {
-                "target": "neue schriftrolle",
-                "goToChapter": 2,
-                "goToDialog": 51,
-                "checkObject": [
-                  {
-                    "name": "neue schriftrolle",
-                    "goToChapter": 2,
-                    "goToDialog": 46,
-                    "executeFunction": {
-                      "functionId": 7,
-                      "parameter1": 2,
-                      "parameter2": 46
-                    }
+                },
+                {
+                  "target": "kessel",
+                  "goToChapter": 2,
+                  "goToDialog": 35,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 2,
+                    "parameter2": 35
                   }
-                ],
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 2,
-                  "parameter2": 51
-                }
-              },
-              {
-                "target": "schriftrolle",
-                "goToChapter": 2,
-                "goToDialog": 51,
-                "checkObject": [
-                  {
-                    "name": "schriftrolle",
-                    "goToChapter": 2,
-                    "goToDialog": 55,
-                    "executeFunction": {
-                      "functionId": 7,
-                      "parameter1": 2,
-                      "parameter2": 55
+                },
+                {
+                  "target": "kristalle",
+                  "goToChapter": 2,
+                  "goToDialog": 51,
+                  "checkObject": [
+                    {
+                      "name": "kristalle",
+                      "goToChapter": 2,
+                      "goToDialog": 43,
+                      "executeFunction": {
+                        "functionId": 7,
+                        "parameter1": 2,
+                        "parameter2": 43
+                      }
                     }
+                  ],
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 2,
+                    "parameter2": 51
                   }
-                ],
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 2,
-                  "parameter2": 51
-                }
-              },
-              {
-                "target": "muenzen",
-                "goToChapter": 2,
-                "goToDialog": 51,
-                "checkObject": [
-                  {
-                    "name": "muenzen",
-                    "goToChapter": 2,
-                    "goToDialog": 47,
-                    "executeFunction": {
-                      "functionId": 7,
-                      "parameter1": 2,
-                      "parameter2": 47
+                },
+                {
+                  "target": "schreibfeder",
+                  "goToChapter": 2,
+                  "goToDialog": 51,
+                  "checkObject": [
+                    {
+                      "name": "schreibfeder",
+                      "goToChapter": 2,
+                      "goToDialog": 45,
+                      "executeFunction": {
+                        "functionId": 7,
+                        "parameter1": 2,
+                        "parameter2": 45
+                      }
                     }
+                  ],
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 2,
+                    "parameter2": 51
                   }
-                ],
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 2,
-                  "parameter2": 51
-                }
-              },
-              {
-                "target": "glueckskeks",
-                "goToChapter": 2,
-                "goToDialog": 51,
-                "checkObject": [
-                  {
-                    "name": "glueckskeks",
-                    "goToChapter": 2,
-                    "goToDialog": 54,
-                    "executeFunction": {
-                      "functionId": 7,
-                      "parameter1": 2,
-                      "parameter2": 54
+                },
+                {
+                  "target": "neue schriftrolle",
+                  "goToChapter": 2,
+                  "goToDialog": 51,
+                  "checkObject": [
+                    {
+                      "name": "neue schriftrolle",
+                      "goToChapter": 2,
+                      "goToDialog": 46,
+                      "executeFunction": {
+                        "functionId": 7,
+                        "parameter1": 2,
+                        "parameter2": 46
+                      }
                     }
+                  ],
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 2,
+                    "parameter2": 51
                   }
-                ],
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 2,
-                  "parameter2": 51
-                }
-              },
-              {
-                "target": "scherbe",
-                "goToChapter": 2,
-                "goToDialog": 51,
-                "checkObject": [
-                  {
-                    "name": "scherbe",
-                    "goToChapter": 2,
-                    "goToDialog": 50,
-                    "executeFunction": {
-                      "functionId": 7,
-                      "parameter1": 2,
-                      "parameter2": 50
+                },
+                {
+                  "target": "schriftrolle",
+                  "goToChapter": 2,
+                  "goToDialog": 51,
+                  "checkObject": [
+                    {
+                      "name": "schriftrolle",
+                      "goToChapter": 2,
+                      "goToDialog": 55,
+                      "executeFunction": {
+                        "functionId": 7,
+                        "parameter1": 2,
+                        "parameter2": 55
+                      }
                     }
+                  ],
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 2,
+                    "parameter2": 51
                   }
-                ],
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 2,
-                  "parameter2": 51
-                }
-              },
-              {
-                "target": "zuckerstange",
-                "goToChapter": 2,
-                "goToDialog": 51,
-                "checkObject": [
-                  {
-                    "name": "zuckerstange",
-                    "goToChapter": 2,
-                    "goToDialog": 53,
-                    "executeFunction": {
-                      "functionId": 7,
-                      "parameter1": 2,
-                      "parameter2": 53
+                },
+                {
+                  "target": "muenzen",
+                  "goToChapter": 2,
+                  "goToDialog": 51,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 47,
+                      "executeFunction": {
+                        "functionId": 7,
+                        "parameter1": 2,
+                        "parameter2": 47
+                      }
                     }
+                  ],
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 2,
+                    "parameter2": 51
                   }
-                ],
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 2,
-                  "parameter2": 51
+                },
+                {
+                  "target": "glueckskeks",
+                  "goToChapter": 2,
+                  "goToDialog": 51,
+                  "checkObject": [
+                    {
+                      "name": "glueckskeks",
+                      "goToChapter": 2,
+                      "goToDialog": 54,
+                      "executeFunction": {
+                        "functionId": 7,
+                        "parameter1": 2,
+                        "parameter2": 54
+                      }
+                    }
+                  ],
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 2,
+                    "parameter2": 51
+                  }
+                },
+                {
+                  "target": "scherbe",
+                  "goToChapter": 2,
+                  "goToDialog": 51,
+                  "checkObject": [
+                    {
+                      "name": "scherbe",
+                      "goToChapter": 2,
+                      "goToDialog": 50,
+                      "executeFunction": {
+                        "functionId": 7,
+                        "parameter1": 2,
+                        "parameter2": 50
+                      }
+                    }
+                  ],
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 2,
+                    "parameter2": 51
+                  }
+                },
+                {
+                  "target": "zuckerstange",
+                  "goToChapter": 2,
+                  "goToDialog": 51,
+                  "checkObject": [
+                    {
+                      "name": "zuckerstange",
+                      "goToChapter": 2,
+                      "goToDialog": 53,
+                      "executeFunction": {
+                        "functionId": 7,
+                        "parameter1": 2,
+                        "parameter2": 53
+                      }
+                    }
+                  ],
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 2,
+                    "parameter2": 51
+                  }
                 }
-              }
-            ]
-          },
+              ]
+            },
             {
               "command": "gehe",
               "targets": [
@@ -12704,7 +12693,8 @@
                   }
                 }
               ]
-            }]
+            }
+          ]
         },
         {
           "number": 13,
@@ -12750,11 +12740,12 @@
                   "goToChapter": 2,
                   "goToDialog": 16,
                   "executeFunction": {
-                    "functionId": 2,
-                    "parameter1": "trank",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 16
+                    "functionId": 14,
+                    "parameter1": 2,
+                    "parameter2": 2,
+                    "parameter3": 16,
+                    "parameter4": "trank",
+                    "parameter5": true
                   }
                 }
               ]
@@ -13440,75 +13431,76 @@
         {
           "number": 18,
           "text": "E.N.G.E.L. zappelt in dem Netz. “{Name}, bitte hole mich hier raus!”",
-          "commands": [{
-            "command": "untersuche",
-            "targets": [
-              {
-                "target": "hexenjaeger",
-                "goToChapter": 2,
-                "goToDialog": 36,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 2,
-                  "parameter2": 36
-                }
-              },
-              {
-                "target": "engel",
-                "goToChapter": 2,
-                "goToDialog": 37,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 2,
-                  "parameter2": 37
-                }
-              },
-              {
-                "target": "muenzen",
-                "goToChapter": 2,
-                "goToDialog": 51,
-                "checkObject": [
-                  {
-                    "name": "muenzen",
-                    "goToChapter": 2,
-                    "goToDialog": 47,
-                    "executeFunction": {
-                      "functionId": 7,
-                      "parameter1": 2,
-                      "parameter2": 47
-                    }
+          "commands": [
+            {
+              "command": "untersuche",
+              "targets": [
+                {
+                  "target": "hexenjaeger",
+                  "goToChapter": 2,
+                  "goToDialog": 36,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 2,
+                    "parameter2": 36
                   }
-                ],
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 2,
-                  "parameter2": 51
-                }
-              },
-              {
-                "target": "scherbe",
-                "goToChapter": 2,
-                "goToDialog": 51,
-                "checkObject": [
-                  {
-                    "name": "scherbe",
-                    "goToChapter": 2,
-                    "goToDialog": 50,
-                    "executeFunction": {
-                      "functionId": 7,
-                      "parameter1": 2,
-                      "parameter2": 50
-                    }
+                },
+                {
+                  "target": "engel",
+                  "goToChapter": 2,
+                  "goToDialog": 37,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 2,
+                    "parameter2": 37
                   }
-                ],
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 2,
-                  "parameter2": 51
+                },
+                {
+                  "target": "muenzen",
+                  "goToChapter": 2,
+                  "goToDialog": 51,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 47,
+                      "executeFunction": {
+                        "functionId": 7,
+                        "parameter1": 2,
+                        "parameter2": 47
+                      }
+                    }
+                  ],
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 2,
+                    "parameter2": 51
+                  }
+                },
+                {
+                  "target": "scherbe",
+                  "goToChapter": 2,
+                  "goToDialog": 51,
+                  "checkObject": [
+                    {
+                      "name": "scherbe",
+                      "goToChapter": 2,
+                      "goToDialog": 50,
+                      "executeFunction": {
+                        "functionId": 7,
+                        "parameter1": 2,
+                        "parameter2": 50
+                      }
+                    }
+                  ],
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 2,
+                    "parameter2": 51
+                  }
                 }
-              }
-            ]
-          },
+              ]
+            },
             {
               "command": "benutze",
               "targets": [
@@ -13540,9 +13532,10 @@
                   "goToChapter": 2,
                   "goToDialog": 20,
                   "executeFunction": {
-                    "functionId": 7,
-                    "parameter1": 2,
-                    "parameter2": 20
+                    "functionId": 11,
+                    "parameter1": -2,
+                    "parameter2": 2,
+                    "parameter3": 20
                   }
                 }
               ]
@@ -13586,202 +13579,204 @@
                   }
                 }
               ]
-            }]
+            }
+          ]
         },
         {
           "number": 19,
           "text": "\"Hey, was soll das? Blödes Pack!\" Der Jäger scheint jedoch keine Lust zu haben, sich mit einem wütenden E.N.G.E.L. anzulegen und flüchtet.\nE.N.G.E.L. leckt sich zur Beruhigung über die Schultern. \"Danke für deine Hilfe!\"",
-          "commands": [{
-            "command": "untersuche",
-            "targets": [
-              {
-                "target": "neldin",
-                "goToChapter": 2,
-                "goToDialog": 32,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 2,
-                  "parameter2": 32
-                }
-              },
-              {
-                "target": "trank",
-                "goToChapter": 2,
-                "goToDialog": 51,
-                "checkObject": [
-                  {
-                    "name": "trank",
-                    "goToChapter": 2,
-                    "goToDialog": 42,
-                    "executeFunction": {
-                      "functionId": 7,
-                      "parameter1": 2,
-                      "parameter2": 42
-                    }
+          "commands": [
+            {
+              "command": "untersuche",
+              "targets": [
+                {
+                  "target": "neldin",
+                  "goToChapter": 2,
+                  "goToDialog": 32,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 2,
+                    "parameter2": 32
                   }
-                ],
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 2,
-                  "parameter2": 51
-                }
-              },
-              {
-                "target": "kristalle",
-                "goToChapter": 2,
-                "goToDialog": 51,
-                "checkObject": [
-                  {
-                    "name": "kristalle",
-                    "goToChapter": 2,
-                    "goToDialog": 43,
-                    "executeFunction": {
-                      "functionId": 7,
-                      "parameter1": 2,
-                      "parameter2": 43
+                },
+                {
+                  "target": "trank",
+                  "goToChapter": 2,
+                  "goToDialog": 51,
+                  "checkObject": [
+                    {
+                      "name": "trank",
+                      "goToChapter": 2,
+                      "goToDialog": 42,
+                      "executeFunction": {
+                        "functionId": 7,
+                        "parameter1": 2,
+                        "parameter2": 42
+                      }
                     }
+                  ],
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 2,
+                    "parameter2": 51
                   }
-                ],
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 2,
-                  "parameter2": 51
-                }
-              },
-              {
-                "target": "schreibfeder",
-                "goToChapter": 2,
-                "goToDialog": 51,
-                "checkObject": [
-                  {
-                    "name": "schreibfeder",
-                    "goToChapter": 2,
-                    "goToDialog": 45,
-                    "executeFunction": {
-                      "functionId": 7,
-                      "parameter1": 2,
-                      "parameter2": 45
+                },
+                {
+                  "target": "kristalle",
+                  "goToChapter": 2,
+                  "goToDialog": 51,
+                  "checkObject": [
+                    {
+                      "name": "kristalle",
+                      "goToChapter": 2,
+                      "goToDialog": 43,
+                      "executeFunction": {
+                        "functionId": 7,
+                        "parameter1": 2,
+                        "parameter2": 43
+                      }
                     }
+                  ],
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 2,
+                    "parameter2": 51
                   }
-                ],
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 2,
-                  "parameter2": 51
-                }
-              },
-              {
-                "target": "neue schriftrolle",
-                "goToChapter": 2,
-                "goToDialog": 51,
-                "checkObject": [
-                  {
-                    "name": "neue schriftrolle",
-                    "goToChapter": 2,
-                    "goToDialog": 46,
-                    "executeFunction": {
-                      "functionId": 7,
-                      "parameter1": 2,
-                      "parameter2": 46
+                },
+                {
+                  "target": "schreibfeder",
+                  "goToChapter": 2,
+                  "goToDialog": 51,
+                  "checkObject": [
+                    {
+                      "name": "schreibfeder",
+                      "goToChapter": 2,
+                      "goToDialog": 45,
+                      "executeFunction": {
+                        "functionId": 7,
+                        "parameter1": 2,
+                        "parameter2": 45
+                      }
                     }
+                  ],
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 2,
+                    "parameter2": 51
                   }
-                ],
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 2,
-                  "parameter2": 51
-                }
-              },
-              {
-                "target": "schriftrolle",
-                "goToChapter": 2,
-                "goToDialog": 51,
-                "checkObject": [
-                  {
-                    "name": "schriftrolle",
-                    "goToChapter": 2,
-                    "goToDialog": 55,
-                    "executeFunction": {
-                      "functionId": 7,
-                      "parameter1": 2,
-                      "parameter2": 55
+                },
+                {
+                  "target": "neue schriftrolle",
+                  "goToChapter": 2,
+                  "goToDialog": 51,
+                  "checkObject": [
+                    {
+                      "name": "neue schriftrolle",
+                      "goToChapter": 2,
+                      "goToDialog": 46,
+                      "executeFunction": {
+                        "functionId": 7,
+                        "parameter1": 2,
+                        "parameter2": 46
+                      }
                     }
+                  ],
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 2,
+                    "parameter2": 51
                   }
-                ],
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 2,
-                  "parameter2": 51
-                }
-              },
-              {
-                "target": "muenzen",
-                "goToChapter": 2,
-                "goToDialog": 51,
-                "checkObject": [
-                  {
-                    "name": "muenzen",
-                    "goToChapter": 2,
-                    "goToDialog": 47,
-                    "executeFunction": {
-                      "functionId": 7,
-                      "parameter1": 2,
-                      "parameter2": 47
+                },
+                {
+                  "target": "schriftrolle",
+                  "goToChapter": 2,
+                  "goToDialog": 51,
+                  "checkObject": [
+                    {
+                      "name": "schriftrolle",
+                      "goToChapter": 2,
+                      "goToDialog": 55,
+                      "executeFunction": {
+                        "functionId": 7,
+                        "parameter1": 2,
+                        "parameter2": 55
+                      }
                     }
+                  ],
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 2,
+                    "parameter2": 51
                   }
-                ],
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 2,
-                  "parameter2": 51
-                }
-              },
-              {
-                "target": "glueckskeks",
-                "goToChapter": 2,
-                "goToDialog": 51,
-                "checkObject": [
-                  {
-                    "name": "glueckskeks",
-                    "goToChapter": 2,
-                    "goToDialog": 54,
-                    "executeFunction": {
-                      "functionId": 7,
-                      "parameter1": 2,
-                      "parameter2": 54
+                },
+                {
+                  "target": "muenzen",
+                  "goToChapter": 2,
+                  "goToDialog": 51,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 47,
+                      "executeFunction": {
+                        "functionId": 7,
+                        "parameter1": 2,
+                        "parameter2": 47
+                      }
                     }
+                  ],
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 2,
+                    "parameter2": 51
                   }
-                ],
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 2,
-                  "parameter2": 51
-                }
-              },
-              {
-                "target": "zuckerstange",
-                "goToChapter": 2,
-                "goToDialog": 51,
-                "checkObject": [
-                  {
-                    "name": "zuckerstange",
-                    "goToChapter": 2,
-                    "goToDialog": 53,
-                    "executeFunction": {
-                      "functionId": 7,
-                      "parameter1": 2,
-                      "parameter2": 53
+                },
+                {
+                  "target": "glueckskeks",
+                  "goToChapter": 2,
+                  "goToDialog": 51,
+                  "checkObject": [
+                    {
+                      "name": "glueckskeks",
+                      "goToChapter": 2,
+                      "goToDialog": 54,
+                      "executeFunction": {
+                        "functionId": 7,
+                        "parameter1": 2,
+                        "parameter2": 54
+                      }
                     }
+                  ],
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 2,
+                    "parameter2": 51
                   }
-                ],
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 2,
-                  "parameter2": 51
+                },
+                {
+                  "target": "zuckerstange",
+                  "goToChapter": 2,
+                  "goToDialog": 51,
+                  "checkObject": [
+                    {
+                      "name": "zuckerstange",
+                      "goToChapter": 2,
+                      "goToDialog": 53,
+                      "executeFunction": {
+                        "functionId": 7,
+                        "parameter1": 2,
+                        "parameter2": 53
+                      }
+                    }
+                  ],
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 2,
+                    "parameter2": 51
+                  }
                 }
-              }
-            ]
-          },
+              ]
+            },
             {
               "command": "gehe",
               "targets": [
@@ -13852,7 +13847,8 @@
                   }
                 }
               ]
-            }]
+            }
+          ]
         },
         {
           "number": 20,
@@ -14810,12 +14806,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -15426,12 +15430,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -16042,12 +16054,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -16659,12 +16679,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -17276,12 +17304,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -17893,12 +17929,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -18510,12 +18554,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -19127,12 +19179,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -19346,15 +19406,20 @@
           "text": "Lux wackelt entzückt mit den Ohren. \"Genau so habe ich mir das vorgestellt!\" Er nimmt die Kristalle an sich und schiebt dir mit einer Pfote einen Zahn zu. Als du den Zahn aufhebst bemerkst du, dass er so groß ist wie deine Handfläche und noch gut in Schuss zu sein scheint. Du willst gar nicht wissen, wie die Bestie ihn verloren hat.\n\"Also dann, viel Spaß im Schloss\" Cerberus tritt zu Seite damit du und E.N.G.E.L. durch das Tor huschen könnt.",
           "commands": [
             {
-              "target": "target",
-              "goToChapter": 3,
-              "goToDialog": 0,
-              "executeFunction": {
-                "functionId": 5,
-                "parameter1": "Archiv",
-                "parameter2": 3,
-                "parameter3": 0
-              }
+              "command": "gehe",
+              "targets": [
+                {
+                  "target": "engel",
+                  "goToChapter": 3,
+                  "goToDialog": 0,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Archiv",
+                    "parameter2": 3,
+                    "parameter3": 0
+                  }
+                }
+              ]
             }
           ]
         },
@@ -19363,15 +19428,20 @@
           "text": "Alle drei Köpfe beginnen zu gähnen und legen sich müde vor dir nieder. Core blinzelt dich noch ein letztes Mal an. \"Viel Glück!\" Danach schläft er ein und du und E.N.G.E.L. verschwinden durch das Tor.",
           "commands": [
             {
-              "target": "target",
-              "goToChapter": 3,
-              "goToDialog": 0,
-              "executeFunction": {
-                "functionId": 5,
-                "parameter1": "Archiv",
-                "parameter2": 3,
-                "parameter3": 0
-              }
+              "command": "gehe",
+              "targets": [
+                {
+                  "target": "engel",
+                  "goToChapter": 3,
+                  "goToDialog": 0,
+                  "executeFunction": {
+                    "functionId": 5,
+                    "parameter1": "Archiv",
+                    "parameter2": 3,
+                    "parameter3": 0
+                  }
+                }
+              ]
             }
           ]
         },
@@ -19861,12 +19931,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -20703,12 +20781,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -21545,12 +21631,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -22387,12 +22481,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -23229,12 +23331,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -24071,12 +24181,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -24913,12 +25031,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -25755,12 +25881,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -26597,12 +26731,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -27439,12 +27581,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -28281,12 +28431,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -29123,12 +29281,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -29965,12 +30131,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -30807,12 +30981,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -31649,12 +31831,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -32491,12 +32681,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -33333,12 +33531,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -34175,12 +34381,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -35017,12 +35231,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -35859,12 +36081,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -36706,12 +36936,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -37548,12 +37786,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -38390,12 +38636,20 @@
                   "target": "karte",
                   "goToChapter": 2,
                   "goToDialog": 25,
+                  "checkObject": [
+                    {
+                      "name": "muenzen",
+                      "goToChapter": 2,
+                      "goToDialog": 26
+                    }
+                  ],
                   "executeFunction": {
-                    "functionId": 12,
-                    "parameter1": "karte",
-                    "parameter2": true,
-                    "parameter3": 2,
-                    "parameter4": 25
+                    "functionId": 14,
+                    "parameter1": -12,
+                    "parameter2": 2,
+                    "parameter3": 25,
+                    "parameter4": "karte",
+                    "parameter5": true
                   }
                 }
               ]
@@ -38898,10 +39152,10 @@
                   "goToChapter": 3,
                   "goToDialog": 2,
                   "executeFunction": {
-                    "functionId": 5,
-                    "parameter1": "Hinab in die Tiefe",
-                    "parameter2": 3,
-                    "parameter3": 2
+                    "functionId": 6,
+                    "parameter1": 3,
+                    "parameter2": 2,
+                    "parameter3": true
                   }
                 },
                 {
@@ -39108,10 +39362,10 @@
                   "goToChapter": 3,
                   "goToDialog": 2,
                   "executeFunction": {
-                    "functionId": 5,
-                    "parameter1": "Hinab in die Tiefe",
-                    "parameter2": 3,
-                    "parameter3": 2
+                    "functionId": 6,
+                    "parameter1": 3,
+                    "parameter2": 2,
+                    "parameter3": true
                   }
                 },
                 {
@@ -39173,7 +39427,7 @@
         },
         {
           "number": 2,
-          "text": "Du steigst die Treppe hinab. Je tiefer du kommst, desto unheimlicher erscheint dir deine Umgebung. Fast so, als wärst du im Folterkeller angelangt. Am Fuß der Treppe machst du einige Schritte in den Raum und aktivierst einen versteckten Schalter. Eine Mauer baut sich zwischen dir und dem Ausgang auf. Du bist abgeschnitten von der Außenwelt und auch von E.N.G.E.L., der noch auf der Treppe gesessen hat.\nEin tiefes Grollen erklingt durch den Raum und erschüttert dich. Du suchst nach der Quelle des Lautes und wirst in einem Monster fündig. Das Wesen ist übersät mit umherzuckenden\nAugen. Jedes von ihnen hat eine andere Irisfarbe. Die großen Ohren des Wesens wackeln umher und scheinen sich nach deinem Standpunkt auszurichten.\nVerzweifelt suchst du einen Ausweg. Vergebens. Das Monster reißt dich mit seinen riesigen Krallen auseinander. Doch anstatt von Blut dringt grüner Nebel aus dir. Unter qualvollen Schmerzen wird dein gesamtes Sichtfeld erst grün und dann schwarz. ENDE 5 - Zum Kellerkind mutiert \n Zum Neustarten \"neustart\" eingeben.",
+          "text": "Du steigst die Treppe hinab. Je tiefer du kommst, desto unheimlicher erscheint dir deine Umgebung. Fast so, als wärst du im Folterkeller angelangt. Am Fuß der Treppe machst du einige Schritte in den Raum und aktivierst einen versteckten Schalter. Eine Mauer baut sich zwischen dir und dem Ausgang auf. Du bist abgeschnitten von der Außenwelt und auch von E.N.G.E.L., der noch auf der Treppe gesessen hat.\nEin tiefes Grollen erklingt durch den Raum und erschüttert dich. Du suchst nach der Quelle des Lautes und wirst in einem Monster fündig. Das Wesen ist übersät mit umherzuckenden\nAugen. Jedes von ihnen hat eine andere Irisfarbe. Die großen Ohren des Wesens wackeln umher und scheinen sich nach deinem Standpunkt auszurichten.\nVerzweifelt suchst du einen Ausweg. Vergebens. Das Monster reißt dich mit seinen riesigen Krallen auseinander. Doch anstatt von Blut dringt grüner Nebel aus dir. Unter qualvollen Schmerzen wird dein gesamtes Sichtfeld erst grün und dann schwarz. ENDE 4 - Zum Kellerkind mutiert \n Zum Neustarten \"neustart\" eingeben.",
           "commands": []
         },
         {
@@ -39575,7 +39829,6 @@
             {
               "command": "benutze",
               "targets": [
-
                 {
                   "target": "karte",
                   "goToChapter": 3,
@@ -40099,171 +40352,172 @@
         {
           "number": 7,
           "text": "Du hievst den Kometen in dein Inventar. Er ist ziemlich schwer.",
-          "commands": [{
-            "command": "untersuche",
-            "targets": [
-              {
-                "target": "mann",
-                "goToChapter": 3,
-                "goToDialog": 14,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 14
+          "commands": [
+            {
+              "command": "untersuche",
+              "targets": [
+                {
+                  "target": "mann",
+                  "goToChapter": 3,
+                  "goToDialog": 14,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 14
+                  }
+                },
+                {
+                  "target": "zahn",
+                  "goToChapter": 3,
+                  "goToDialog": 16,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 16
+                  }
+                },
+                {
+                  "target": "trank",
+                  "goToChapter": 3,
+                  "goToDialog": 17,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 17
+                  }
+                },
+                {
+                  "target": "kristalle",
+                  "goToChapter": 3,
+                  "goToDialog": 18,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 18
+                  }
+                },
+                {
+                  "target": "prisma",
+                  "goToChapter": 3,
+                  "goToDialog": 19,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 19
+                  }
+                },
+                {
+                  "target": "schreibfeder",
+                  "goToChapter": 3,
+                  "goToDialog": 20,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 20
+                  }
+                },
+                {
+                  "target": "neue schriftrolle",
+                  "goToChapter": 3,
+                  "goToDialog": 21,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 21
+                  }
+                },
+                {
+                  "target": "schriftrolle",
+                  "goToChapter": 3,
+                  "goToDialog": 22,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 22
+                  }
+                },
+                {
+                  "target": "muenzen",
+                  "goToChapter": 3,
+                  "goToDialog": 23,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 23
+                  }
+                },
+                {
+                  "target": "karte",
+                  "goToChapter": 3,
+                  "goToDialog": 24,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 24
+                  }
+                },
+                {
+                  "target": "netz",
+                  "goToChapter": 3,
+                  "goToDialog": 25,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 25
+                  }
+                },
+                {
+                  "target": "scherbe",
+                  "goToChapter": 3,
+                  "goToDialog": 26,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 26
+                  }
+                },
+                {
+                  "target": "zuckerstange",
+                  "goToChapter": 3,
+                  "goToDialog": 27,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 27
+                  }
+                },
+                {
+                  "target": "glueckskeks",
+                  "goToChapter": 3,
+                  "goToDialog": 28,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 28
+                  }
+                },
+                {
+                  "target": "brille",
+                  "goToChapter": 3,
+                  "goToDialog": 29,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 29
+                  }
+                },
+                {
+                  "target": "komet",
+                  "goToChapter": 3,
+                  "goToDialog": 31,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 31
+                  }
                 }
-              },
-              {
-                "target": "zahn",
-                "goToChapter": 3,
-                "goToDialog": 16,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 16
-                }
-              },
-              {
-                "target": "trank",
-                "goToChapter": 3,
-                "goToDialog": 17,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 17
-                }
-              },
-              {
-                "target": "kristalle",
-                "goToChapter": 3,
-                "goToDialog": 18,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 18
-                }
-              },
-              {
-                "target": "prisma",
-                "goToChapter": 3,
-                "goToDialog": 19,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 19
-                }
-              },
-              {
-                "target": "schreibfeder",
-                "goToChapter": 3,
-                "goToDialog": 20,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 20
-                }
-              },
-              {
-                "target": "neue schriftrolle",
-                "goToChapter": 3,
-                "goToDialog": 21,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 21
-                }
-              },
-              {
-                "target": "schriftrolle",
-                "goToChapter": 3,
-                "goToDialog": 22,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 22
-                }
-              },
-              {
-                "target": "muenzen",
-                "goToChapter": 3,
-                "goToDialog": 23,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 23
-                }
-              },
-              {
-                "target": "karte",
-                "goToChapter": 3,
-                "goToDialog": 24,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 24
-                }
-              },
-              {
-                "target": "netz",
-                "goToChapter": 3,
-                "goToDialog": 25,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 25
-                }
-              },
-              {
-                "target": "scherbe",
-                "goToChapter": 3,
-                "goToDialog": 26,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 26
-                }
-              },
-              {
-                "target": "zuckerstange",
-                "goToChapter": 3,
-                "goToDialog": 27,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 27
-                }
-              },
-              {
-                "target": "glueckskeks",
-                "goToChapter": 3,
-                "goToDialog": 28,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 28
-                }
-              },
-              {
-                "target": "brille",
-                "goToChapter": 3,
-                "goToDialog": 29,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 29
-                }
-              },
-              {
-                "target": "komet",
-                "goToChapter": 3,
-                "goToDialog": 31,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 31
-                }
-              }
-            ]
-          },
+              ]
+            },
             {
               "command": "gehe",
               "targets": [
@@ -40317,170 +40571,170 @@
           "text": "Du folgst weiter dem Gang. Mit jedem Schritt wird E.N.G.E.L. nervöser, wodurch du wiederum ebenfalls nervöser wirst. Der Gang mündet in eine riesige Serverfarm. In der Mitte befindet sich ein gläserner Fahrstuhl. Er muss in den Turm führen, den du von außen gesehen hast.\nE.N.G.E.L. mustert den Raum kritisch. \"Dieser Fahrstuhl ist nie im Leben unbewacht. Was soll’s, schauen wir uns ihn an.\"\nAuf leisen Sohlen nähert ihr euch dem Fahrstuhl. Kurz bevor ihr ihn erreicht springt euch eine zwergartige Kreatur entgegen und hält warnend ihre Arme hoch. Auf ihrem Kittel klebt ein Namensschild mit der Aufschrift 'Zip'. \"Halt! Was macht ihr hier?\"\nE.N.G.E.L. mustert den Zwerg. \"Wir sind nur auf der Durchreise.\"\nZip reißt seine Augen auf. \"Doch nicht etwa zu Doom? Seid ihr denn wahnsinnig?\"\nDu tauschst einen vielsagenden Blick mit E.N.G.E.L. aus. \"Vielleicht, aber wir haben keine andere Wahl.\" Meint der Kater trocken und bleibt von der geschockten Miene des Zwerges unbeeindruckt.\n\"Na, Reisende soll man nicht aufhalten. Ich würde auch gerne mal wieder reisen. Aber dazu bräuchte ich einen Zahn von Cerberus und der blöde Köter rückt einfach keine raus. Euch viel Glück bei eurem Himmelfahrtskommando.\" Zip macht euch zögerlich den Weg frei.",
           "commands": [
             {
-            "command": "untersuche",
-            "targets": [
-              {
-                "target": "zip",
-                "goToChapter": 3,
-                "goToDialog": 15,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 15
+              "command": "untersuche",
+              "targets": [
+                {
+                  "target": "zip",
+                  "goToChapter": 3,
+                  "goToDialog": 15,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 15
+                  }
+                },
+                {
+                  "target": "zahn",
+                  "goToChapter": 3,
+                  "goToDialog": 16,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 16
+                  }
+                },
+                {
+                  "target": "trank",
+                  "goToChapter": 3,
+                  "goToDialog": 17,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 17
+                  }
+                },
+                {
+                  "target": "kristalle",
+                  "goToChapter": 3,
+                  "goToDialog": 18,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 18
+                  }
+                },
+                {
+                  "target": "prisma",
+                  "goToChapter": 3,
+                  "goToDialog": 19,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 19
+                  }
+                },
+                {
+                  "target": "schreibfeder",
+                  "goToChapter": 3,
+                  "goToDialog": 20,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 20
+                  }
+                },
+                {
+                  "target": "neue schriftrolle",
+                  "goToChapter": 3,
+                  "goToDialog": 21,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 21
+                  }
+                },
+                {
+                  "target": "schriftrolle",
+                  "goToChapter": 3,
+                  "goToDialog": 22,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 22
+                  }
+                },
+                {
+                  "target": "muenzen",
+                  "goToChapter": 3,
+                  "goToDialog": 23,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 23
+                  }
+                },
+                {
+                  "target": "karte",
+                  "goToChapter": 3,
+                  "goToDialog": 24,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 24
+                  }
+                },
+                {
+                  "target": "netz",
+                  "goToChapter": 3,
+                  "goToDialog": 25,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 25
+                  }
+                },
+                {
+                  "target": "scherbe",
+                  "goToChapter": 3,
+                  "goToDialog": 26,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 26
+                  }
+                },
+                {
+                  "target": "zuckerstange",
+                  "goToChapter": 3,
+                  "goToDialog": 27,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 27
+                  }
+                },
+                {
+                  "target": "glueckskeks",
+                  "goToChapter": 3,
+                  "goToDialog": 28,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 28
+                  }
+                },
+                {
+                  "target": "brille",
+                  "goToChapter": 3,
+                  "goToDialog": 29,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 29
+                  }
+                },
+                {
+                  "target": "komet",
+                  "goToChapter": 3,
+                  "goToDialog": 31,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 31
+                  }
                 }
-              },
-              {
-                "target": "zahn",
-                "goToChapter": 3,
-                "goToDialog": 16,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 16
-                }
-              },
-              {
-                "target": "trank",
-                "goToChapter": 3,
-                "goToDialog": 17,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 17
-                }
-              },
-              {
-                "target": "kristalle",
-                "goToChapter": 3,
-                "goToDialog": 18,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 18
-                }
-              },
-              {
-                "target": "prisma",
-                "goToChapter": 3,
-                "goToDialog": 19,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 19
-                }
-              },
-              {
-                "target": "schreibfeder",
-                "goToChapter": 3,
-                "goToDialog": 20,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 20
-                }
-              },
-              {
-                "target": "neue schriftrolle",
-                "goToChapter": 3,
-                "goToDialog": 21,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 21
-                }
-              },
-              {
-                "target": "schriftrolle",
-                "goToChapter": 3,
-                "goToDialog": 22,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 22
-                }
-              },
-              {
-                "target": "muenzen",
-                "goToChapter": 3,
-                "goToDialog": 23,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 23
-                }
-              },
-              {
-                "target": "karte",
-                "goToChapter": 3,
-                "goToDialog": 24,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 24
-                }
-              },
-              {
-                "target": "netz",
-                "goToChapter": 3,
-                "goToDialog": 25,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 25
-                }
-              },
-              {
-                "target": "scherbe",
-                "goToChapter": 3,
-                "goToDialog": 26,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 26
-                }
-              },
-              {
-                "target": "zuckerstange",
-                "goToChapter": 3,
-                "goToDialog": 27,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 27
-                }
-              },
-              {
-                "target": "glueckskeks",
-                "goToChapter": 3,
-                "goToDialog": 28,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 28
-                }
-              },
-              {
-                "target": "brille",
-                "goToChapter": 3,
-                "goToDialog": 29,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 29
-                }
-              },
-              {
-                "target": "komet",
-                "goToChapter": 3,
-                "goToDialog": 31,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 31
-                }
-              }
-            ]
-          },
+              ]
+            },
             {
               "command": "gehe",
               "targets": [
@@ -41319,13 +41573,13 @@
         },
         {
           "number": 12,
-          "text": "Du drückst den Knopf um den Fahrstuhl zu öffnen und steigst hinein. Im Inneren suchen E.N.G.E.L. und du vergeblich nach Knöpfen. Diese werden jedoch nicht gebraucht, da der Fahrstuhl auch ohne jeglichen Input losfährt.\nWährend ihr weit über der Serverfarm schwebt wechseln E.N.G.E.L. und du einen weiteren tiefen Blick aus. Die Stunde der Wahrheit ist gekommen.",
+          "text": "Du drückst den Knopf um den Fahrstuhl zu öffnen und steigst hinein. Im Inneren suchen E.N.G.E.L. und du vergeblich nach Knöpfen. Diese werden jedoch nicht gebraucht, da der Fahrstuhl auch ohne jeglichen Input losfährt.\nWährend ihr weit über der Serverfarm schwebt wechseln E.N.G.E.L. und du einen weiteren tiefen Blick aus. Die Stunde der Wahrheit ist gekommen.(Gehe zu weiter)",
           "commands": [
             {
-              "command": "default",
+              "command": "gehe",
               "targets": [
                 {
-                  "target": "default",
+                  "target": "weiter",
                   "goToChapter": 4,
                   "goToDialog": 0,
                   "executeFunction": {
@@ -42116,190 +42370,190 @@
           "text": "Ein Zahn eines Cerberus-Kopfes.",
           "commands": [
             {
-            "command": "untersuche",
-            "targets": [
-              {
-                "target": "mann",
-                "goToChapter": 3,
-                "goToDialog": 13,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 13
+              "command": "untersuche",
+              "targets": [
+                {
+                  "target": "mann",
+                  "goToChapter": 3,
+                  "goToDialog": 13,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 13
+                  }
+                },
+                {
+                  "target": "mann",
+                  "goToChapter": 3,
+                  "goToDialog": 14,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 14
+                  }
+                },
+                {
+                  "target": "zip",
+                  "goToChapter": 3,
+                  "goToDialog": 15,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 15
+                  }
+                },
+                {
+                  "target": "zahn",
+                  "goToChapter": 3,
+                  "goToDialog": 16,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 16
+                  }
+                },
+                {
+                  "target": "trank",
+                  "goToChapter": 3,
+                  "goToDialog": 17,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 17
+                  }
+                },
+                {
+                  "target": "kristalle",
+                  "goToChapter": 3,
+                  "goToDialog": 18,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 18
+                  }
+                },
+                {
+                  "target": "prisma",
+                  "goToChapter": 3,
+                  "goToDialog": 19,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 19
+                  }
+                },
+                {
+                  "target": "schreibfeder",
+                  "goToChapter": 3,
+                  "goToDialog": 20,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 20
+                  }
+                },
+                {
+                  "target": "neue schriftrolle",
+                  "goToChapter": 3,
+                  "goToDialog": 21,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 21
+                  }
+                },
+                {
+                  "target": "schriftrolle",
+                  "goToChapter": 3,
+                  "goToDialog": 22,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 22
+                  }
+                },
+                {
+                  "target": "muenzen",
+                  "goToChapter": 3,
+                  "goToDialog": 23,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 23
+                  }
+                },
+                {
+                  "target": "karte",
+                  "goToChapter": 3,
+                  "goToDialog": 24,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 24
+                  }
+                },
+                {
+                  "target": "netz",
+                  "goToChapter": 3,
+                  "goToDialog": 25,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 25
+                  }
+                },
+                {
+                  "target": "scherbe",
+                  "goToChapter": 3,
+                  "goToDialog": 26,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 26
+                  }
+                },
+                {
+                  "target": "zuckerstange",
+                  "goToChapter": 3,
+                  "goToDialog": 27,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 27
+                  }
+                },
+                {
+                  "target": "glueckskeks",
+                  "goToChapter": 3,
+                  "goToDialog": 28,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 28
+                  }
+                },
+                {
+                  "target": "brille",
+                  "goToChapter": 3,
+                  "goToDialog": 29,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 29
+                  }
+                },
+                {
+                  "target": "komet",
+                  "goToChapter": 3,
+                  "goToDialog": 31,
+                  "executeFunction": {
+                    "functionId": 7,
+                    "parameter1": 3,
+                    "parameter2": 31
+                  }
                 }
-              },
-              {
-                "target": "mann",
-                "goToChapter": 3,
-                "goToDialog": 14,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 14
-                }
-              },
-              {
-                "target": "zip",
-                "goToChapter": 3,
-                "goToDialog": 15,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 15
-                }
-              },
-              {
-                "target": "zahn",
-                "goToChapter": 3,
-                "goToDialog": 16,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 16
-                }
-              },
-              {
-                "target": "trank",
-                "goToChapter": 3,
-                "goToDialog": 17,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 17
-                }
-              },
-              {
-                "target": "kristalle",
-                "goToChapter": 3,
-                "goToDialog": 18,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 18
-                }
-              },
-              {
-                "target": "prisma",
-                "goToChapter": 3,
-                "goToDialog": 19,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 19
-                }
-              },
-              {
-                "target": "schreibfeder",
-                "goToChapter": 3,
-                "goToDialog": 20,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 20
-                }
-              },
-              {
-                "target": "neue schriftrolle",
-                "goToChapter": 3,
-                "goToDialog": 21,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 21
-                }
-              },
-              {
-                "target": "schriftrolle",
-                "goToChapter": 3,
-                "goToDialog": 22,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 22
-                }
-              },
-              {
-                "target": "muenzen",
-                "goToChapter": 3,
-                "goToDialog": 23,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 23
-                }
-              },
-              {
-                "target": "karte",
-                "goToChapter": 3,
-                "goToDialog": 24,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 24
-                }
-              },
-              {
-                "target": "netz",
-                "goToChapter": 3,
-                "goToDialog": 25,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 25
-                }
-              },
-              {
-                "target": "scherbe",
-                "goToChapter": 3,
-                "goToDialog": 26,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 26
-                }
-              },
-              {
-                "target": "zuckerstange",
-                "goToChapter": 3,
-                "goToDialog": 27,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 27
-                }
-              },
-              {
-                "target": "glueckskeks",
-                "goToChapter": 3,
-                "goToDialog": 28,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 28
-                }
-              },
-              {
-                "target": "brille",
-                "goToChapter": 3,
-                "goToDialog": 29,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 29
-                }
-              },
-              {
-                "target": "komet",
-                "goToChapter": 3,
-                "goToDialog": 31,
-                "executeFunction": {
-                  "functionId": 7,
-                  "parameter1": 3,
-                  "parameter2": 31
-                }
-              }
-            ]
-          },
+              ]
+            },
             {
               "command": "gehe",
               "targets": [
@@ -42308,10 +42562,10 @@
                   "goToChapter": 3,
                   "goToDialog": 2,
                   "executeFunction": {
-                    "functionId": 5,
-                    "parameter1": "Hinab in die Tiefe",
-                    "parameter2": 3,
-                    "parameter3": 2
+                    "functionId": 6,
+                    "parameter1": 3,
+                    "parameter2": 2,
+                    "parameter3": true
                   }
                 },
                 {
@@ -42509,7 +42763,8 @@
                   }
                 }
               ]
-            }]
+            }
+          ]
         },
         {
           "number": 17,
@@ -42708,10 +42963,10 @@
                   "goToChapter": 3,
                   "goToDialog": 2,
                   "executeFunction": {
-                    "functionId": 5,
-                    "parameter1": "Hinab in die Tiefe",
-                    "parameter2": 3,
-                    "parameter3": 2
+                    "functionId": 6,
+                    "parameter1": 3,
+                    "parameter2": 2,
+                    "parameter3": true
                   }
                 },
                 {
@@ -43109,10 +43364,10 @@
                   "goToChapter": 3,
                   "goToDialog": 2,
                   "executeFunction": {
-                    "functionId": 5,
-                    "parameter1": "Hinab in die Tiefe",
-                    "parameter2": 3,
-                    "parameter3": 2
+                    "functionId": 6,
+                    "parameter1": 3,
+                    "parameter2": 2,
+                    "parameter3": true
                   }
                 },
                 {
@@ -43510,10 +43765,10 @@
                   "goToChapter": 3,
                   "goToDialog": 2,
                   "executeFunction": {
-                    "functionId": 5,
-                    "parameter1": "Hinab in die Tiefe",
-                    "parameter2": 3,
-                    "parameter3": 2
+                    "functionId": 6,
+                    "parameter1": 3,
+                    "parameter2": 2,
+                    "parameter3": true
                   }
                 },
                 {
@@ -43911,10 +44166,10 @@
                   "goToChapter": 3,
                   "goToDialog": 2,
                   "executeFunction": {
-                    "functionId": 5,
-                    "parameter1": "Hinab in die Tiefe",
-                    "parameter2": 3,
-                    "parameter3": 2
+                    "functionId": 6,
+                    "parameter1": 3,
+                    "parameter2": 2,
+                    "parameter3": true
                   }
                 },
                 {
@@ -44312,10 +44567,10 @@
                   "goToChapter": 3,
                   "goToDialog": 2,
                   "executeFunction": {
-                    "functionId": 5,
-                    "parameter1": "Hinab in die Tiefe",
-                    "parameter2": 3,
-                    "parameter3": 2
+                    "functionId": 6,
+                    "parameter1": 3,
+                    "parameter2": 2,
+                    "parameter3": true
                   }
                 },
                 {
@@ -44713,10 +44968,10 @@
                   "goToChapter": 3,
                   "goToDialog": 2,
                   "executeFunction": {
-                    "functionId": 5,
-                    "parameter1": "Hinab in die Tiefe",
-                    "parameter2": 3,
-                    "parameter3": 2
+                    "functionId": 6,
+                    "parameter1": 3,
+                    "parameter2": 2,
+                    "parameter3": true
                   }
                 },
                 {
@@ -45114,10 +45369,10 @@
                   "goToChapter": 3,
                   "goToDialog": 2,
                   "executeFunction": {
-                    "functionId": 5,
-                    "parameter1": "Hinab in die Tiefe",
-                    "parameter2": 3,
-                    "parameter3": 2
+                    "functionId": 6,
+                    "parameter1": 3,
+                    "parameter2": 2,
+                    "parameter3": true
                   }
                 },
                 {
@@ -45515,10 +45770,10 @@
                   "goToChapter": 3,
                   "goToDialog": 2,
                   "executeFunction": {
-                    "functionId": 5,
-                    "parameter1": "Hinab in die Tiefe",
-                    "parameter2": 3,
-                    "parameter3": 2
+                    "functionId": 6,
+                    "parameter1": 3,
+                    "parameter2": 2,
+                    "parameter3": true
                   }
                 },
                 {
@@ -45916,10 +46171,10 @@
                   "goToChapter": 3,
                   "goToDialog": 2,
                   "executeFunction": {
-                    "functionId": 5,
-                    "parameter1": "Hinab in die Tiefe",
-                    "parameter2": 3,
-                    "parameter3": 2
+                    "functionId": 6,
+                    "parameter1": 3,
+                    "parameter2": 2,
+                    "parameter3": true
                   }
                 },
                 {
@@ -46317,10 +46572,10 @@
                   "goToChapter": 3,
                   "goToDialog": 2,
                   "executeFunction": {
-                    "functionId": 5,
-                    "parameter1": "Hinab in die Tiefe",
-                    "parameter2": 3,
-                    "parameter3": 2
+                    "functionId": 6,
+                    "parameter1": 3,
+                    "parameter2": 2,
+                    "parameter3": true
                   }
                 },
                 {
@@ -46718,10 +46973,10 @@
                   "goToChapter": 3,
                   "goToDialog": 2,
                   "executeFunction": {
-                    "functionId": 5,
-                    "parameter1": "Hinab in die Tiefe",
-                    "parameter2": 3,
-                    "parameter3": 2
+                    "functionId": 6,
+                    "parameter1": 3,
+                    "parameter2": 2,
+                    "parameter3": true
                   }
                 },
                 {
@@ -47119,10 +47374,10 @@
                   "goToChapter": 3,
                   "goToDialog": 2,
                   "executeFunction": {
-                    "functionId": 5,
-                    "parameter1": "Hinab in die Tiefe",
-                    "parameter2": 3,
-                    "parameter3": 2
+                    "functionId": 6,
+                    "parameter1": 3,
+                    "parameter2": 2,
+                    "parameter3": true
                   }
                 },
                 {
@@ -47520,10 +47775,10 @@
                   "goToChapter": 3,
                   "goToDialog": 2,
                   "executeFunction": {
-                    "functionId": 5,
-                    "parameter1": "Hinab in die Tiefe",
-                    "parameter2": 3,
-                    "parameter3": 2
+                    "functionId": 6,
+                    "parameter1": 3,
+                    "parameter2": 2,
+                    "parameter3": true
                   }
                 },
                 {
@@ -47921,10 +48176,10 @@
                   "goToChapter": 3,
                   "goToDialog": 2,
                   "executeFunction": {
-                    "functionId": 5,
-                    "parameter1": "Hinab in die Tiefe",
-                    "parameter2": 3,
-                    "parameter3": 2
+                    "functionId": 6,
+                    "parameter1": 3,
+                    "parameter2": 2,
+                    "parameter3": true
                   }
                 },
                 {
@@ -48322,10 +48577,10 @@
                   "goToChapter": 3,
                   "goToDialog": 2,
                   "executeFunction": {
-                    "functionId": 5,
-                    "parameter1": "Hinab in die Tiefe",
-                    "parameter2": 3,
-                    "parameter3": 2
+                    "functionId": 6,
+                    "parameter1": 3,
+                    "parameter2": 2,
+                    "parameter3": true
                   }
                 },
                 {
@@ -48528,7 +48783,6 @@
         }
       ]
     },
-
     {
       "number": 4,
       "dialogs": [
@@ -48544,31 +48798,20 @@
                   "goToChapter": 4,
                   "goToDialog": 1,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 1
+                    "parameter2": 1,
+                    "parameter3": true
                   }
                 },
                 {
                   "target": "b",
                   "goToChapter": 4,
-                  "goToDialog": 30,
-                  "checkObject": [
-                    {
-                      "goToChapter": 4,
-                      "goToDialog": 30,
-                      "executeFunction": {
-                        "functionId": 3,
-                        "parameter1": "schreibfeder",
-                        "parameter2": 4,
-                        "parameter3": 30
-                      }
-                    }
-                  ],
+                  "goToDialog": 2,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 16,
                     "parameter1": 4,
-                    "parameter2": 30
+                    "parameter2": 2
                   }
                 }
               ]
@@ -48707,9 +48950,10 @@
                   "goToChapter": 4,
                   "goToDialog": 3,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 3
+                    "parameter2": 3,
+                    "parameter3": true
                   }
                 },
                 {
@@ -48952,9 +49196,10 @@
                   "goToChapter": 4,
                   "goToDialog": 8,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 8
+                    "parameter2": 8,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -49170,9 +49415,10 @@
                   "goToChapter": 4,
                   "goToDialog": 8,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 8
+                    "parameter2": 8,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -49388,9 +49634,10 @@
                   "goToChapter": 4,
                   "goToDialog": 8,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 8
+                    "parameter2": 8,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -49606,9 +49853,10 @@
                   "goToChapter": 4,
                   "goToDialog": 8,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 8
+                    "parameter2": 8,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -49829,9 +50077,10 @@
                   "goToChapter": 4,
                   "goToDialog": 12,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 12
+                    "parameter2": 12,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -50309,9 +50558,10 @@
                   "goToChapter": 4,
                   "goToDialog": 12,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 12
+                    "parameter2": 12,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -50432,14 +50682,20 @@
           "text": "Du nimmst Candys giftgetränkte Zuckerstange und rammst sie in Dooms Schwachstelle.",
           "commands": [
             {
-              "target": "target",
-              "goToChapter": 4,
-              "goToDialog": 17,
-              "executeFunction": {
-                "functionId": 7,
-                "parameter1": 4,
-                "parameter2": 17
-              }
+              "command": "benutze",
+              "targets": [
+                {
+                  "target": "zuckerstange",
+                  "goToChapter": 4,
+                  "goToDialog": 17,
+                  "executeFunction": {
+                    "functionId": 6,
+                    "parameter1": 4,
+                    "parameter2": 17,
+                    "paremeter3": true
+                  }
+                }
+              ]
             }
           ]
         },
@@ -50448,14 +50704,20 @@
           "text": "Du nimmst den Kometen und donnerst ihn mit aller Kraft in Dooms Schwachstelle.",
           "commands": [
             {
-              "target": "target",
-              "goToChapter": 4,
-              "goToDialog": 17,
-              "executeFunction": {
-                "functionId": 7,
-                "parameter1": 4,
-                "parameter2": 17
-              }
+              "command": "benutze",
+              "targets": [
+                {
+                  "target": "komet",
+                  "goToChapter": 4,
+                  "goToDialog": 17,
+                  "executeFunction": {
+                    "functionId": 6,
+                    "parameter1": 4,
+                    "parameter2": 17,
+                    "paremeter3": true
+                  }
+                }
+              ]
             }
           ]
         },
@@ -50464,14 +50726,20 @@
           "text": "Du nimmst Lux’ Zahn und schneidest in Dooms Schwachstelle.",
           "commands": [
             {
-              "target": "target",
-              "goToChapter": 4,
-              "goToDialog": 17,
-              "executeFunction": {
-                "functionId": 7,
-                "parameter1": 4,
-                "parameter2": 17
-              }
+              "command": "benutze",
+              "targets": [
+                {
+                  "target": "zahn",
+                  "goToChapter": 4,
+                  "goToDialog": 17,
+                  "executeFunction": {
+                    "functionId": 6,
+                    "parameter1": 4,
+                    "parameter2": 17,
+                    "paremeter3": true
+                  }
+                }
+              ]
             }
           ]
         },
@@ -50480,14 +50748,20 @@
           "text": "Du öffnest einen Glückskeks. Doch statt einer Weisheit befindet sich im Inneren ein Dolch, welchen du nimmst und in Dooms Schwachstelle rammst.",
           "commands": [
             {
-              "target": "target",
-              "goToChapter": 4,
-              "goToDialog": 17,
-              "executeFunction": {
-                "functionId": 7,
-                "parameter1": 4,
-                "parameter2": 17
-              }
+              "command": "benutze",
+              "targets": [
+                {
+                  "target": "glueckskeks",
+                  "goToChapter": 4,
+                  "goToDialog": 17,
+                  "executeFunction": {
+                    "functionId": 6,
+                    "parameter1": 4,
+                    "parameter2": 17,
+                    "paremeter3": true
+                  }
+                }
+              ]
             }
           ]
         },
@@ -50623,9 +50897,10 @@
                   "goToChapter": 4,
                   "goToDialog": 3,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 3
+                    "parameter2": 3,
+                    "parameter3": true
                   }
                 },
                 {
@@ -50722,9 +50997,10 @@
                   "goToChapter": 4,
                   "goToDialog": 8,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 8
+                    "parameter2": 8,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -51039,9 +51315,10 @@
                   "goToChapter": 4,
                   "goToDialog": 3,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 3
+                    "parameter2": 3,
+                    "parameter3": true
                   }
                 },
                 {
@@ -51138,9 +51415,10 @@
                   "goToChapter": 4,
                   "goToDialog": 8,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 8
+                    "parameter2": 8,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -51215,9 +51493,10 @@
                   "goToChapter": 4,
                   "goToDialog": 12,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 12
+                    "parameter2": 12,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -51455,9 +51734,10 @@
                   "goToChapter": 4,
                   "goToDialog": 3,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 3
+                    "parameter2": 3,
+                    "parameter3": true
                   }
                 },
                 {
@@ -51554,9 +51834,10 @@
                   "goToChapter": 4,
                   "goToDialog": 8,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 8
+                    "parameter2": 8,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -51631,9 +51912,10 @@
                   "goToChapter": 4,
                   "goToDialog": 12,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 12
+                    "parameter2": 12,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -51871,9 +52153,10 @@
                   "goToChapter": 4,
                   "goToDialog": 3,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 3
+                    "parameter2": 3,
+                    "parameter3": true
                   }
                 },
                 {
@@ -51970,9 +52253,10 @@
                   "goToChapter": 4,
                   "goToDialog": 8,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 8
+                    "parameter2": 8,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -52047,9 +52331,10 @@
                   "goToChapter": 4,
                   "goToDialog": 12,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 12
+                    "parameter2": 12,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -52287,9 +52572,10 @@
                   "goToChapter": 4,
                   "goToDialog": 3,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 3
+                    "parameter2": 3,
+                    "parameter3": true
                   }
                 },
                 {
@@ -52386,9 +52672,10 @@
                   "goToChapter": 4,
                   "goToDialog": 8,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 8
+                    "parameter2": 8,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -52463,9 +52750,10 @@
                   "goToChapter": 4,
                   "goToDialog": 12,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 12
+                    "parameter2": 12,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -52703,9 +52991,10 @@
                   "goToChapter": 4,
                   "goToDialog": 3,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 3
+                    "parameter2": 3,
+                    "parameter3": true
                   }
                 },
                 {
@@ -52802,9 +53091,10 @@
                   "goToChapter": 4,
                   "goToDialog": 8,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 8
+                    "parameter2": 8,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -52879,9 +53169,10 @@
                   "goToChapter": 4,
                   "goToDialog": 12,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 12
+                    "parameter2": 12,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -53119,9 +53410,10 @@
                   "goToChapter": 4,
                   "goToDialog": 3,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 3
+                    "parameter2": 3,
+                    "parameter3": true
                   }
                 },
                 {
@@ -53218,9 +53510,10 @@
                   "goToChapter": 4,
                   "goToDialog": 8,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 8
+                    "parameter2": 8,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -53295,9 +53588,10 @@
                   "goToChapter": 4,
                   "goToDialog": 12,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 12
+                    "parameter2": 12,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -53535,9 +53829,10 @@
                   "goToChapter": 4,
                   "goToDialog": 3,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 3
+                    "parameter2": 3,
+                    "parameter3": true
                   }
                 },
                 {
@@ -53634,9 +53929,10 @@
                   "goToChapter": 4,
                   "goToDialog": 8,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 8
+                    "parameter2": 8,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -53711,9 +54007,10 @@
                   "goToChapter": 4,
                   "goToDialog": 12,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 12
+                    "parameter2": 12,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -53951,9 +54248,10 @@
                   "goToChapter": 4,
                   "goToDialog": 3,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 3
+                    "parameter2": 3,
+                    "parameter3": true
                   }
                 },
                 {
@@ -54050,9 +54348,10 @@
                   "goToChapter": 4,
                   "goToDialog": 8,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 8
+                    "parameter2": 8,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -54127,9 +54426,10 @@
                   "goToChapter": 4,
                   "goToDialog": 12,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 12
+                    "parameter2": 12,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -54367,9 +54667,10 @@
                   "goToChapter": 4,
                   "goToDialog": 3,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 3
+                    "parameter2": 3,
+                    "parameter3": true
                   }
                 },
                 {
@@ -54466,9 +54767,10 @@
                   "goToChapter": 4,
                   "goToDialog": 8,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 8
+                    "parameter2": 8,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -54543,9 +54845,10 @@
                   "goToChapter": 4,
                   "goToDialog": 12,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 12
+                    "parameter2": 12,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -54783,9 +55086,10 @@
                   "goToChapter": 4,
                   "goToDialog": 3,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 3
+                    "parameter2": 3,
+                    "parameter3": true
                   }
                 },
                 {
@@ -54882,9 +55186,10 @@
                   "goToChapter": 4,
                   "goToDialog": 8,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 8
+                    "parameter2": 8,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -54959,9 +55264,10 @@
                   "goToChapter": 4,
                   "goToDialog": 12,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 12
+                    "parameter2": 12,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -55199,9 +55505,10 @@
                   "goToChapter": 4,
                   "goToDialog": 3,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 3
+                    "parameter2": 3,
+                    "parameter3": true
                   }
                 },
                 {
@@ -55298,9 +55605,10 @@
                   "goToChapter": 4,
                   "goToDialog": 8,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 8
+                    "parameter2": 8,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -55375,9 +55683,10 @@
                   "goToChapter": 4,
                   "goToDialog": 12,
                   "executeFunction": {
-                    "functionId": 7,
+                    "functionId": 6,
                     "parameter1": 4,
-                    "parameter2": 12
+                    "parameter2": 12,
+                    "paremeter3": true
                   }
                 },
                 {
@@ -55485,154 +55794,6 @@
                   }
                 }
               ]
-            }
-          ]
-        },
-        {
-          "number": 30,
-          "text": "",
-          "commands": [
-            {
-              "goToChapter": 4,
-              "goToDialog": 31,
-              "checkObject": [
-                {
-                  "goToChapter": 4,
-                  "goToDialog": 31,
-                  "executeFunction": {
-                    "functionId": 3,
-                    "parameter1": "kristalle",
-                    "parameter2": 4,
-                    "parameter3": 31
-                  }
-                }
-              ],
-              "executeFunction": {
-                "functionId": 7,
-                "parameter1": 4,
-                "parameter2": 31
-              }
-            }
-          ]
-        },
-        {
-          "number": 31,
-          "text": "",
-          "commands": [
-            {
-              "goToChapter": 4,
-              "goToDialog": 32,
-              "checkObject": [
-                {
-                  "goToChapter": 4,
-                  "goToDialog": 32,
-                  "executeFunction": {
-                    "functionId": 3,
-                    "parameter1": "schriftrolle",
-                    "parameter2": 4,
-                    "parameter3": 32
-                  }
-                }
-              ],
-              "executeFunction": {
-                "functionId": 7,
-                "parameter1": 4,
-                "parameter2": 32
-              }
-            }
-          ]
-        },
-        {
-          "number": 32,
-          "text": "",
-          "commands": [
-            {
-              "goToChapter": 4,
-              "goToDialog": 33,
-              "checkObject": [
-                {
-                  "goToChapter": 4,
-                  "goToDialog": 33,
-                  "executeFunction": {
-                    "functionId": 3,
-                    "parameter1": "neue schriftrolle",
-                    "parameter2": 4,
-                    "parameter3": 33
-                  }
-                }
-              ],
-              "executeFunction": {
-                "functionId": 7,
-                "parameter1": 4,
-                "parameter2": 33
-              }
-            }
-          ]
-        },
-        {
-          "number": 33,
-          "text": "",
-          "commands": [
-            {
-              "goToChapter": 4,
-              "goToDialog": 34,
-              "checkObject": [
-                {
-                  "goToChapter": 4,
-                  "goToDialog": 34,
-                  "executeFunction": {
-                    "functionId": 3,
-                    "parameter1": "muenzen",
-                    "parameter2": 4,
-                    "parameter3": 34
-                  }
-                }
-              ],
-              "executeFunction": {
-                "functionId": 7,
-                "parameter1": 4,
-                "parameter2": 34
-              }
-            }
-          ]
-        },
-        {
-          "number": 34,
-          "text": "",
-          "commands": [
-            {
-              "goToChapter": 4,
-              "goToDialog": 35,
-              "checkObject": [
-                {
-                  "goToChapter": 4,
-                  "goToDialog": 35,
-                  "executeFunction": {
-                    "functionId": 3,
-                    "parameter1": "karte",
-                    "parameter2": 4,
-                    "parameter3": 35
-                  }
-                }
-              ],
-              "executeFunction": {
-                "functionId": 7,
-                "parameter1": 4,
-                "parameter2": 35
-              }
-            }
-          ]
-        },
-        {
-          "number": 35,
-          "text": "",
-          "commands": [
-            {
-              "goToChapter": 4,
-              "goToDialog": 2,
-              "executeFunction": {
-                "functionId": 0
-              }
             }
           ]
         }

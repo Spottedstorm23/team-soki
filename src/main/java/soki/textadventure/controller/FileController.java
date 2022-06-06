@@ -240,6 +240,23 @@ public class FileController {
                         JSONArray checkForObjects = (JSONArray) target.get("checkObject");
                         if (checkForObjects != null) {
                             for (JSONObject checkForObject : (Iterable<JSONObject>) checkForObjects) {
+                                if (((String) checkForObject.get("name")).equals("muenzen")) {
+                                    if (getCoins() < 12) {
+                                        newChapter = (int) (long) checkForObject.get("goToChapter");
+                                        newDialog = (int) (long) checkForObject.get("goToDialog");
+
+                                        JSONObject executeFunction = (JSONObject) checkForObject.get("executeFunction");
+                                        if (executeFunction != null) {
+                                            executeFunctionFromJSON(executeFunction);
+                                        }
+
+                                        return new int[]{newChapter, newDialog};
+
+                                    } else {
+                                        return new int[]{newChapter, newDialog};
+
+                                    }
+                                }
                                 if (checkIfObjectExists((String) checkForObject.get("name"))) {
                                     newChapter = (int) (long) checkForObject.get("goToChapter");
                                     newDialog = (int) (long) checkForObject.get("goToDialog");
@@ -397,6 +414,42 @@ public class FileController {
                 changeLocation((int) ((long) parameter2), (int) ((long) parameter3));
                 addObject((String) parameter4, (Boolean) parameter5);
                 break;
+            }
+            case 15: {
+                if (getCoins() == 0) {
+                    addObject("muenzen", true);
+                }
+                addCoins((int) ((long) parameter1));
+                if (getCoins() == 0) {
+                    removeObject("muenzen");
+                }
+                changeLocation((int) ((long) parameter2), (int) ((long) parameter3));
+                setPlayerLocation((String) parameter4);
+                break;
+            }
+            case 16: {
+                giveallHaraItemsBack();
+                // Feder, Münzen, Karte, Schriftrolle, Neue Schriftrolle, Kristalle
+                if (checkIfObjectExists("schreibfeder")) {
+                    removeObject("schreibfeder");
+                }
+                if (checkIfObjectExists("muenzen")) {
+                    removeObject("muenzen");
+                    addCoins(-getCoins());
+                }
+                if (checkIfObjectExists("schriftrolle")) {
+                    removeObject("schriftrolle");
+                }
+                if (checkIfObjectExists("neue schriftrolle")) {
+                    removeObject("neue schriftrolle");
+                }
+                if (checkIfObjectExists("kristalle")) {
+                    removeObject("kristalle");
+                }
+                if (checkIfObjectExists("karte")) {
+                    removeObject("karte");
+                }
+                changeLocation((int) ((long) parameter1), (int) ((long) parameter2));
             }
         }
     }
