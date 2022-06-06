@@ -1,6 +1,5 @@
 package soki.textadventure.controller;
 
-import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,10 +12,11 @@ import javafx.scene.image.Image;
 import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 
-import javax.swing.Timer;
+import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -57,28 +57,52 @@ public class GameController {   // Controller for soki-game.fxml
             " Diese werden in der Regel als Liste zur Verfügung gestellt";
 
     private String currentDialog;
+    private FileController fileController = new FileController();
 
-    //Eventuell für die Abfrage der Dialoge benötigten Werte?
+    //Gamevariables
     // o - Prolog; 1 - Chapter 1; 2 - Chapter 2; 3 - Chapter 3; 4 - Chapter 4;
-    private int chapter = 0;
-    // Start immer mit dem ersten Block?
-    private int dialogBlock = 1;
+    private int currentChapter;
+    private int currentDialogBlock;
+    private String playerName;
+    private int currentPlayThrough;
+    private boolean nameIsSet;
+    private String currentLocation;
+    private boolean isEnd = false;
+
 
     public void setCurrentDialogLine(String text) {
         this.currentDialog = text;
+        updateUserLocationInWindow();
         timer.start();
     }
 
-    public void initialize() {
-        // setCurrentDialogLine("Hallo, was möchtest du machen?");
-        startFirstDialogueLine();
+    private boolean isNewGamePlus() {
+        return currentPlayThrough > 0 && currentChapter == 0 && currentDialogBlock == 0;
+    }
 
+    public void setGameVariables() {
+        setCurrentChapterAndDialogBlock(fileController.getPlayerChapter(), fileController.getPlayerDialog());
+        this.playerName = fileController.getPlayerName();
+        this.currentPlayThrough = fileController.getPlayerPlaythrough();
+        this.nameIsSet = !Objects.equals(fileController.getPlayerName(), "user");
+        this.currentLocation = fileController.getPlayerLocation();
+        this.isEnd = fileController.getIsEnd();
+    }
+
+    public void initialize() {
+        setGameVariables();
+        startFirstDialogueLine();
+        updateUserLocationInWindow();
         textFieldGameWindow.setOnAction(e -> {
             String inputText = textFieldGameWindow.getText();
             textAreaGameWindow.appendText(">> " + inputText + "\n");
             textFieldGameWindow.clear();
             try {
-                processUserInput(inputText);
+                if (nameIsSet) {
+                    processUserInput(inputText);
+                } else {
+                    setUserName(inputText);
+                }
             } catch (IOException ex) {
                 ex.printStackTrace();
             } catch (InterruptedException ex) {
@@ -88,7 +112,14 @@ public class GameController {   // Controller for soki-game.fxml
     }
 
     public void startFirstDialogueLine() {
-        setCurrentDialogLine("Hallo, was möchtest du machen?");
+        setCurrentDialogLine(replacePlaceholderWithName(fileController.getText(currentChapter, currentDialogBlock)));
+        //setCurrentDialogLine("0.0");
+        if (isNewGamePlus()) {
+            setSecondDialogOfNewGame("isFirstPlaythrough", "false");
+        } else if (currentChapter == 0 && currentDialogBlock == 0) {
+            setSecondDialogOfNewGame("isFirstPlaythrough", "true");
+        }
+        updateUserLocationInWindow();
     }
 
     Timer timer = new Timer(80, new ActionListener() {
@@ -96,13 +127,13 @@ public class GameController {   // Controller for soki-game.fxml
         @Override
         public void actionPerformed(java.awt.event.ActionEvent e) {
             textFieldGameWindow.setDisable(true);   // --> User soll nicht in der Lage sein,
-                                                    // während der Timer noch am Schreiben der Story ist,
-                                                    // zwischendurch eine Eingabe zu tätigen
+            // während der Timer noch am Schreiben der Story ist,
+            // zwischendurch eine Eingabe zu tätigen
+            textAreaGameWindow.setDisable(true);
             char[] character = currentDialog.toCharArray();
             for (char c : character) {
                 String s = String.valueOf(c);
                 textAreaGameWindow.appendText(s);
-                System.out.println(textAreaGameWindow.getText());
                 try {
                     Thread.sleep(50L); // USE "50L" FOR A GOOD PACE FOR THE GAME
                 } catch (InterruptedException ex) {
@@ -113,16 +144,19 @@ public class GameController {   // Controller for soki-game.fxml
             timer.stop();
 
             textFieldGameWindow.setDisable(false);
+            textAreaGameWindow.setDisable(false);
         }
     });
 
     // Kurze Wartezeit beim Beenden des Spiels (siehe: "if (lowerCaseInput.matches("beenden"))")
-    public static void delay (long millis, Runnable continuation) {
+    public static void delay(long millis, Runnable continuation) {
         Task<Void> sleeper = new Task<Void>() {
             @Override
             protected Void call() throws Exception {
-                try { Thread.sleep(millis); }
-                catch (InterruptedException e) { }
+                try {
+                    Thread.sleep(millis);
+                } catch (InterruptedException e) {
+                }
                 return null;
             }
         };
@@ -140,7 +174,6 @@ public class GameController {   // Controller for soki-game.fxml
         Matcher includesNonLetters = nonLettersRegex.matcher(lowerCaseInput);
 
         if (includesNonLetters.find()) {
-            //TODO Ausgabe einer ordentlichen Fehlermeldung für den Nutzer
             textAreaGameWindow.appendText("Du hast dich selbst verwirrt und versuchst deine Aktion neuzustarten\n");
             return;
         }
@@ -149,8 +182,8 @@ public class GameController {   // Controller for soki-game.fxml
             setCurrentDialogLine(listOfPossibleInputs);
 
         } else if (lowerCaseInput.matches("menu")) {
+            saveGame();
             setCurrentDialogLine("Du kehrst ins Hauptmenü zurück!\n");
-            // TODO Speichern
             delay(3000, () -> {
                 try {
                     openMenu();
@@ -160,7 +193,7 @@ public class GameController {   // Controller for soki-game.fxml
             });
 
         } else if (lowerCaseInput.matches("beenden")) {
-            // TODO Speichern
+            saveGame();
             setCurrentDialogLine("Dein Spiel wurde gespeichert. \"SOKI\" wird nun beendet...");
             delay(3000, this::quitgame);
             // oder: delay(3000, () -> quitgame());
@@ -168,52 +201,128 @@ public class GameController {   // Controller for soki-game.fxml
 
         } else if (lowerCaseInput.matches("untersuche [a-z]+")) {
             String targetObject = lowerCaseInput.replace("untersuche ", "");
-            setCurrentDialogLine("Du untersuchst " + targetObject + "!\n");
-            //TODO return target und nutze entsprechenden dialog
+            findMyDialog("untersuche", targetObject);
 
         } else if (lowerCaseInput.matches("nimm [a-z]+")) {
             String targetItem = lowerCaseInput.replace("nimm ", "");
-            setCurrentDialogLine("Du nimmst " + targetItem + "!\n");
-            //TODO return target und nutze entsprechenden dialog
+            findMyDialog("nimm", targetItem);
 
         } else if (lowerCaseInput.matches("inventar")) {
-            setCurrentDialogLine("Du öffnest dein Ineventar und siehst die deine Items an!\n");
-            //TODO Inventarliste ausgeben
+            String inventory = Arrays.toString(fileController.listVisibleObjects());
+            inventory = inventory.replace("[", "");
+            inventory = inventory.replace("]", "");
+            if (inventory.equals("[]")) {
+                inventory = "Du hast zur Zeit nichts im Inventar";
+            }
+            inventory = inventory.replace("muenzen", "muenzen (Du hast zur Zeit " + fileController.getCoins() + ")");
+            setCurrentDialogLine(inventory);
 
         } else if (lowerCaseInput.matches("benutze [a-z ]+")) {
-            //TODO Ziel(e) zurückgeben und entsprechnden Dialog ausgeben
             if (lowerCaseInput.matches("benutze [a-z]+ mit[ ]*")) {
                 setCurrentDialogLine("Bitte gib ein Ziel für deine Aktion ein!\n");
-            } else if (lowerCaseInput.contains("mit")) {
+            }
+            /*else if (lowerCaseInput.contains("mit")) {
                 String[] substrings = lowerCaseInput.split(" ");
                 System.out.println(Arrays.toString(substrings));
                 String targetedObject = substrings[3];
                 String usedItem = substrings[1];
                 setCurrentDialogLine("Du benutzt " + usedItem + " mit " + targetedObject + "\n");
 
-            } else {
+            }*/
+            else {
                 String usedItem = lowerCaseInput.replace("benutze ", "");
-                setCurrentDialogLine("Du benutzt " + usedItem + "\n");
+                System.out.println(usedItem);
+                findMyDialog("benutze", usedItem);
             }
 
         } else if (lowerCaseInput.matches("interagiere mit [a-z]+")) {
-            //TODO Ziel(e) zurückgeben und entsprechnden Dialog ausgeben
             String target = lowerCaseInput.replace("interagiere mit ", "");
-            setCurrentDialogLine("Du interagierst mit " + target + "\n");
+            findMyDialog("interagiere", target);
 
         } else if (lowerCaseInput.matches("gehe zu [a-z ]+")) {
-            //TODO Ort zurückgeben und entsprechnden Dialog ausgeben
             String targetPlace = lowerCaseInput.replace("gehe zu ", "");
-            setCurrentDialogLine("Du gehst zum " + targetPlace + "\n");
+            findMyDialog("gehe", targetPlace);
 
         } else if (lowerCaseInput.matches("waehle [a-z]+")) {
             String option = lowerCaseInput.replace("waehle ", "");
-            setCurrentDialogLine("Du wählst Option " + option + "\n");
+            System.out.println(option);
+            findMyDialog("waehle", option);
 
+        } else if (fileController.getIsEnd() && lowerCaseInput.matches("neustart")) {
+            textAreaGameWindow.clear();
+            //todo maybe change this sleep if needed
+            Thread.sleep(1000);
+            fileController.setIsEnd(false);
+            fileController.changeLocation(0, 0);
+            this.currentChapter = 0;
+            this.currentDialogBlock = 0;
+            startFirstDialogueLine();
         } else {
             setCurrentDialogLine("Du hast dich selbst verwirrt und versuchst deine Aktion neuzustarten. \n Tipp: Nutze Hilfe wenn du nicht weiter weißt");
         }
 
+    }
+
+    private void saveGame() {
+        fileController.changeLocation(currentChapter, currentDialogBlock);
+        fileController.setPlayerLocation(currentLocation);
+        fileController.setPlayerName(playerName);
+        fileController.setPlaythrough(currentPlayThrough);
+    }
+
+    private void findMyDialog(String command, String target) {
+        int[] newChapAndDialog = fileController.getNextDialogNumbersAndExecuteFunction(currentChapter, currentDialogBlock, command, target);
+        if (newChapAndDialog == null) {
+            newChapAndDialog = fileController.getNextDialogNumbersAndExecuteFunction(currentChapter, currentDialogBlock, "default", "default");
+        }
+        this.currentChapter = newChapAndDialog[0];
+        this.currentDialogBlock = newChapAndDialog[1];
+        setCurrentDialogLine(replacePlaceholderWithName(fileController.getText(currentChapter, currentDialogBlock)));
+    }
+
+    private void setSecondDialogOfNewGame(String command, String target) {
+        int[] newChapAndDialog = fileController.getNextDialogNumbersAndExecuteFunction(currentChapter, currentDialogBlock, command, target);
+        this.currentChapter = newChapAndDialog[0];
+        this.currentDialogBlock = newChapAndDialog[1];
+        currentDialog = currentDialog + "\n" + replacePlaceholderWithName(fileController.getText(currentChapter, currentDialogBlock));
+    }
+
+    private void setUserName(String input) {
+        String lowerCaseInput = input.toLowerCase();
+        Pattern nonLettersRegex = Pattern.compile("[^a-z ]+");
+        Matcher includesNonLetters = nonLettersRegex.matcher(lowerCaseInput);
+
+        if (includesNonLetters.find()) {
+            setCurrentChapterAndDialogBlock(0, 3);
+            setCurrentDialogLine(replacePlaceholderWithName(fileController.getText(currentChapter, currentDialogBlock)));
+            fileController.changeLocation(currentChapter, currentDialogBlock);
+        } else if (input.equals("user")) {
+            setCurrentChapterAndDialogBlock(0, 4);
+            setCurrentDialogLine(replacePlaceholderWithName(fileController.getText(currentChapter, currentDialogBlock)));
+            fileController.changeLocation(currentChapter, currentDialogBlock);
+        } else {
+            fileController.setPlayerName(input);
+            this.playerName = input;
+            this.nameIsSet = true;
+            setCurrentChapterAndDialogBlock(0, 5);
+            setCurrentDialogLine(replacePlaceholderWithName(fileController.getText(currentChapter, currentDialogBlock)));
+            fileController.changeLocation(currentChapter, currentDialogBlock);
+        }
+    }
+
+    private void setCurrentChapterAndDialogBlock(int chap, int dial) {
+        this.currentChapter = chap;
+        this.currentDialogBlock = dial;
+    }
+
+    private String replacePlaceholderWithName(String text) {
+        String newText = text.replace("{Name}", playerName);
+        return newText;
+    }
+
+    private void updateUserLocationInWindow() {
+        this.currentLocation = fileController.getPlayerLocation();
+        labelUserStandortGameWindow.setText(currentLocation);
     }
 
     public void openMenu() throws IOException {

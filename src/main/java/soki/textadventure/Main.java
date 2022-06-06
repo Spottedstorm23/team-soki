@@ -23,22 +23,17 @@ public class Main extends Application {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("SOKI");
         stage.setScene(scene);
-        // stage.initStyle(StageStyle.TRANSPARENT); // remove close, minimize, full screen option
-        // stage.setFullScreen(true); // full screen
+        stage.initStyle(StageStyle.TRANSPARENT); // remove close, minimize, full screen option
+        stage.setFullScreen(true); // full screen
         stage.setResizable(false); // cannot change window size
         stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH); // cannot exit full screen
-        stage.getIcons().add(new Image(this.getClass().getResourceAsStream("/icons/Soki-Icon.png")));
+        stage.getIcons().add(new Image(this.getClass().getResourceAsStream("/icons/SLogo.png")));
         stage.show();
     }
 
     public static void main(String[] args) {
         System.out.println("Wir sind cool, miau miau! <(⓿3⓿)>");
-
-        //Nur für Testzwecke
-        FileController fc = new FileController();
-        fc.changeVisible("snek","DerBlob");
-
-        //launch();
+        launch();
 
     }
 }
