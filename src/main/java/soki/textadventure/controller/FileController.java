@@ -314,6 +314,7 @@ public class FileController {
             }
             case 3: {
                 removeObject((String) parameter1);
+                changeLocation((int) ((long) parameter2), (int) ((long) parameter3));
                 break;
             }
             case 4: {
