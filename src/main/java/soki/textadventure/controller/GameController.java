@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import javax.swing.*;
 import java.awt.event.ActionListener;
@@ -333,8 +334,8 @@ public class GameController {   // Controller for soki-game.fxml
         Scene menuScene = new Scene(rootGame);
         Stage menuStage = new Stage();
         menuStage.setTitle("SOKI");
-        // menuStage.initStyle(StageStyle.TRANSPARENT); // remove close, minimize, full screen option
-        // menuStage.setFullScreen(true); // full screen
+        menuStage.initStyle(StageStyle.TRANSPARENT); // remove close, minimize, full screen option
+        menuStage.setFullScreen(true); // full screen
         menuStage.setResizable(false); // cannot change window size
         menuStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH); // cannot exit full screen
         menuStage.setScene(menuScene);
