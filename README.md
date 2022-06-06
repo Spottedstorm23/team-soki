@@ -1,7 +1,6 @@
 #Textadventure
 
 ## Git-/Code - Regeln
-
 * **Code**: englisch (Funktionen, Variablen etc.)
 * **Kommentare/ Dokumentation**: deutsch
 * **GIT**:
@@ -19,6 +18,17 @@
     * `FIX:` -> Fehlerbehebung mit eventueller Beschreibung
     * `CLEAN_UP:` -> Aufräumcommits für Mergerequests
 
+## Executable Version erzeugen und starten:
+* `mvn install` ausführen (Terminal oder IntelliJ: Execute Maeven Goal)
+* **.jar** die in `target` entsteht in `Textadventure_executable/bin` verschieben
+* **.jar** in `textadventure.jar` umbenennen
+* über launcher.bat starten
+
+
+## Requirements für Start in Entwicklungsumgebung:
+* Java 17.0.2
+* JavaFX 17
+
 ## Wunschliste für unser Projekt:
 * Hauptmenü
 * Storyplot
@@ -33,5 +43,4 @@
   * mehrere Speicherslots
 
 
-## How to start project:
-_folgt_
+

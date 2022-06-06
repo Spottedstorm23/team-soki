@@ -1,0 +1,27 @@
+.scroll-bar > .increment-button .increment-arrow,
+.scroll-bar .decrement-button .decrement-arrow {
+	 -fx-background-color: lime;
+}
+
+.scroll-bar-class .increment-button:hover,
+.scroll-bar-class .decrement-button:hover,
+.scroll-bar-class .increment-button:pressed,
+.scroll-bar-class .decrement-button:pressed{
+	-fx-background-color:black;
+}
+
+.scroll-bar .increment-button :hover,
+.scroll-bar .decrement-button :hover {
+	-fx-background-color: black;
+}
+
+.scroll-bar {
+    -fx-background-color: black;
+}
+
+.scroll-bar > .thumb {
+	-fx-background-color: lime;
+	-fx-background-insets: 2, 0, 0;
+	-fx-background-radius: 2em;
+
+}

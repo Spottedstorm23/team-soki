@@ -1,0 +1,1 @@
+java --module-path ".\jre" --add-modules java.base --module-path ".\lib\lib" --add-modules javafx.controls,javafx.fxml,javafx.graphics -jar .\bin\textadventure.jar --main-class java/soki/textadventure/Main.java
