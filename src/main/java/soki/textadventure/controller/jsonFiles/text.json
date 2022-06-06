@@ -5,7 +5,7 @@
       "dialogs": [
         {
           "number": 0,
-          "text": "Booting …\n…\nVor dir auf dem Bildschirm hat sich ein schwarzes Fenster geöffnet. Merkwürdig, dabei hast du nach Starten deines Rechners noch gar nichts angeklickt. \n„Hallo User!“ erscheint in leuchtend grüner Schrift. \n„Ich bin H-4-C-K, Ihr neues, allumfassendes Anti-Virenprogramm.“ Skeptisch wartest du ab, du bist dir sicher, kein neues Schutzprogramm installiert zu haben. Da schreibt das Programm auch schon weiter:\n„Sicher wundern Sie sich, warum ich hier bin. Keine Sorge, ich bin ein Bestandteil des Betriebsystemupdates.“ Stimmt, dein Rechner hat am gestrigen Abend ein neues Update installiert. Beruhigt davon bist du interessiert, was H-4-C-K alles kann. Du klickst in das Fenster.\n„Oh, Sie haben sich zu mir getraut. Das freut mich ^.^“ Bis gerade eben wusstest du nicht, dass Programme glücklich aussehen können.\n",
+          "text": "(Disclaimer: Alle Figuren und Ereignisse dieses Adventures sind frei erfunden.) \n\n Booting …\n…\nVor dir auf dem Bildschirm hat sich ein schwarzes Fenster geöffnet. Merkwürdig, dabei hast du nach Starten deines Rechners noch gar nichts angeklickt. \n„Hallo User!“ erscheint in leuchtend grüner Schrift. \n„Ich bin H-4-C-K, Ihr neues, allumfassendes Anti-Virenprogramm.“ Skeptisch wartest du ab, du bist dir sicher, kein neues Schutzprogramm installiert zu haben. Da schreibt das Programm auch schon weiter:\n„Sicher wundern Sie sich, warum ich hier bin. Keine Sorge, ich bin ein Bestandteil des Betriebsystemupdates.“ Stimmt, dein Rechner hat am gestrigen Abend ein neues Update installiert. Beruhigt davon bist du interessiert, was H-4-C-K alles kann. Du klickst in das Fenster.\n„Oh, Sie haben sich zu mir getraut. Das freut mich ^.^“ Bis gerade eben wusstest du nicht, dass Programme glücklich aussehen können.\n",
           "commands": [
             {
               "command": "isFirstPlaythrough",
@@ -1743,7 +1743,7 @@
       "dialogs": [
         {
           "number": 0,
-          "text": "\"Komm, wir haben nicht ewig Zeit, oder möchtest du lieber hierbleiben?\" Du gibst dir Mühe, mit dem Kater Schritt zu halten. Für so kurze Beine hat er ein ordentliches Tempo drauf. \"Du fragst dich sicherlich wie und warum du hier gelandet bist, und noch viel mehr: wie du hier wieder wegkommst, nicht? Nun, alles zu seiner Zeit. Du bist hier in einer alternativen Dimension. Dein Heimatplanet und alles was du kennst existiert hier nicht. Wir nennen diesen Realm 'Minor Interference', auch wenn eigentlich nichts hieran 'minor' ist.\" Er springt in einem Satz auf einen Felsen am Wegesrand. \"Siehst du das Schloss dort hinten? Das ist das Backup-Archive. Oder alternativ: dein Ticket nach Hause, wenn du dich richtig anstellst.\" E.N.G.E.L. wendet seinen Kopf ab und sieht dir eindringlich in die Augen. \"Du musst wissen, dass du nicht die erste externe Entität bist, die in die Minor Interference gezogen wurde. Ich weiß nicht, wie lange H-4-C-K ihr Unwesen treibt und selbst sie ist nur Handlangerin eines wesentlich größeren Übels. Eins weiß ich allerdings mit Sicherheit: wenn du hier jemals wieder hinaus willst, musst du an ihm vorbei. Und dafür hast du genau zwei Optionen: bewaffne dich bis an die Zähne oder werde zu einem Teil seiner Datensammlung. Was meinst du? (Waehle A für Kämpfen oder B für aufgeben)\"",
+          "text": "\"Komm, wir haben nicht ewig Zeit, oder möchtest du lieber hierbleiben?\" Du gibst dir Mühe, mit dem Kater Schritt zu halten. Für so kurze Beine hat er ein ordentliches Tempo drauf. \"Du fragst dich sicherlich wie und warum du hier gelandet bist, und noch viel mehr: wie du hier wieder wegkommst, nicht? Nun, alles zu seiner Zeit. Du bist hier in einer alternativen Dimension. Dein Heimatplanet und alles was du kennst existiert hier nicht. Wir nennen diesen Realm 'Minor Interference', auch wenn eigentlich nichts hieran 'minor' ist.\" Er springt in einem Satz auf einen Felsen am Wegesrand. \"Siehst du das Schloss dort hinten? Das ist das Backup-Archive. Oder alternativ: dein Ticket nach Hause, wenn du dich richtig anstellst.\" E.N.G.E.L. wendet seinen Kopf ab und sieht dir eindringlich in die Augen. \"Du musst wissen, dass du nicht die erste externe Entität bist, die in die Minor Interference gezogen wurde. Ich weiß nicht, wie lange H-4-C-K ihr Unwesen treibt und selbst sie ist nur Handlangerin eines wesentlich größeren Übels. Eins weiß ich allerdings mit Sicherheit: wenn du hier jemals wieder hinaus willst, musst du an ihm, Doom, vorbei. Und dafür hast du genau zwei Optionen: bewaffne dich bis an die Zähne oder werde zu einem Teil seiner Datensammlung. Was meinst du?\" \n(Waehle A für Kämpfen oder B für aufgeben.)",
           "commands": [
             {
               "command": "waehle",
@@ -2260,7 +2260,7 @@
         },
         {
           "number": 6,
-          "text": "E.N.G.E.L. starrt dich an. \"Bist du dir wirklich sicher, dass du jetzt schon weitergehen willst?\" (Waehle A wenn du dich umsehen willst und B wenn du zum Tor gehen möchtest)",
+          "text": "E.N.G.E.L. starrt dich an. \"Bist du dir wirklich sicher, dass du jetzt schon weitergehen willst?\" \n(Waehle A wenn du dich umsehen willst und B wenn du zum Tor gehen möchtest)",
           "commands": [
             {
               "command": "waehle",
@@ -5096,7 +5096,7 @@
         },
         {
           "number": 27,
-          "text": "\"Wusstest du, dass du auf deinem Weg einigen Torwächtern begegnen wirst? Du hast doch nicht erwartet, dass [v] sein Archiv unbewacht lässt, oder? Mach dir aber keine Sorgen, sie sind alle miteinander bestechlich. Da du hier gewesen bist, wird das erste Tor sicherlich kein Problem für dich darstellen!\"",
+          "text": "\"Wusstest du, dass du auf deinem Weg einigen Torwächtern begegnen wirst? Du hast doch nicht erwartet, dass Doom sein Archiv unbewacht lässt, oder? Mach dir aber keine Sorgen, sie sind alle miteinander bestechlich. Da du hier gewesen bist, wird das erste Tor sicherlich kein Problem für dich darstellen!\"",
           "commands": [
             {
               "command": "interagiere",
@@ -10838,7 +10838,7 @@
         },
         {
           "number": 2,
-          "text": "E.N.G.E.L. streicht sich nachdenklich über sein Ohr. \"Nun gut, du hast bewiesen, dass du durchaus zum Helden taugst. Ich will dich für eine kurze Verschnaufpause in meinen Turm Neldin einladen.\" \nDu bist positiv überrascht über diesen Vertrauensbeweis. Als ihr vor dem Turm stehen bleibt, aktiviert E.N.G.E.L. mit seiner Nase einen versteckten Hebel und die Tür öffnet sich.\n \"Schau dich ruhig um!\" ist das letzte was du hörst, bevor der Kater durch eine Katzenklappe in einem Zimmer verschwindet. Vorsichtig bewegst du dich durch den Gang und siehst eine Menge Entwürfe und Schriften, die du nicht entziffern kannst.\nWähle A, wenn du dich genauer umsehen möchtest, oder B, um Turm Neldin wieder zu verlassen. Aber Vorsicht, du kannst dann nicht mehr zurückkehren!",
+          "text": "E.N.G.E.L. streicht sich nachdenklich über sein Ohr. \"Nun gut, du hast bewiesen, dass du durchaus zum Helden taugst. Ich will dich für eine kurze Verschnaufpause in meinen Turm Neldin einladen.\" \nDu bist positiv überrascht über diesen Vertrauensbeweis. Als ihr vor dem Turm stehen bleibt, aktiviert E.N.G.E.L. mit seiner Nase einen versteckten Hebel und die Tür öffnet sich.\n \"Schau dich ruhig um!\" ist das letzte was du hörst, bevor der Kater durch eine Katzenklappe in einem Zimmer verschwindet. Vorsichtig bewegst du dich durch den Gang und siehst eine Menge Entwürfe und Schriften, die du nicht entziffern kannst.\n(Waehle A, wenn du dich genauer umsehen möchtest, oder B, um Turm Neldin wieder zu verlassen. Aber Vorsicht, du kannst dann nicht mehr zurückkehren!)",
           "commands": [
             {
               "command": "waehle",
@@ -11134,7 +11134,7 @@
         },
         {
           "number": 5,
-          "text": "Als du näher an die Wand herantrittst bemerkst du, dass eine bestimmte Stelle in der Backsteinwand von dem Farbenspiel des Lichts hervorgehoben wird. Neugierig legst du deine Hand darauf und ziehst sie sofort wieder zurück. Die Wand öffnet sich und legt eine Wendeltreppe frei.\nWähle A, um die Treppe erklimmen, oder B und verlasse doch lieber den Turm. Aber Vorsicht, du kannst dann nicht mehr zurückkehren!",
+          "text": "Als du näher an die Wand herantrittst bemerkst du, dass eine bestimmte Stelle in der Backsteinwand von dem Farbenspiel des Lichts hervorgehoben wird. Neugierig legst du deine Hand darauf und ziehst sie sofort wieder zurück. Die Wand öffnet sich und legt eine Wendeltreppe frei.\n(Waehle A, um die Treppe erklimmen, oder B und verlasse doch lieber den Turm. Aber Vorsicht, du kannst dann nicht mehr zurückkehren!)",
           "commands": [
             {
               "command": "waehle",
@@ -12708,7 +12708,7 @@
         },
         {
           "number": 13,
-          "text": "\"Ah, junges Blut! Komm doch mal schnell her und hilf mir! Meine Augen sind nicht mehr so gut wie früher. Schau’ doch mal scharf in meinen Kessel und beschreibe mir genau, was du siehst!\"\nDu musterst die grünliche Rauchwolke, die aus dem Kessel aufsteigt kritisch. Auch E.N.G.E.L. wirkt nicht sonderlich überzeugt von dem Vorschlag. \"Mir wären meiner Schnurrhaare zu schade für so eine Aktion. Wer weiß, ob die Brühe nicht in mein Gesicht explodieren würde.\"\n Wähle A um Kessel zu helfen oder B um dich langsam zu entfernen.",
+          "text": "\"Ah, junges Blut! Komm doch mal schnell her und hilf mir! Meine Augen sind nicht mehr so gut wie früher. Schau’ doch mal scharf in meinen Kessel und beschreibe mir genau, was du siehst!\"\nDu musterst die grünliche Rauchwolke, die aus dem Kessel aufsteigt kritisch. Auch E.N.G.E.L. wirkt nicht sonderlich überzeugt von dem Vorschlag. \"Mir wären meiner Schnurrhaare zu schade für so eine Aktion. Wer weiß, ob die Brühe nicht in mein Gesicht explodieren würde.\"\n (Wähle A um Kessel zu helfen oder B um dich langsam zu entfernen.)",
           "commands": [
             {
               "command": "waehle",
@@ -48534,7 +48534,7 @@
       "dialogs": [
         {
           "number": 0,
-          "text": "Der Fahrstuhl verliert an Geschwindigkeit und E.N.G.E.L. räuspert sich. \"Hör zu: was auch immer gleich passiert, ich möchte nur, dass du eins weißt. Wenn du nicht weiterweißt, scheue dich nicht auch mich als Waffe einzusetzen. Wir werden alle Mittel brauchen, die wir haben.\"\nDu hast nur Zeit schnell zu nicken, bevor der Fahrstuhl stehen bleibt und sich öffnet. Ihr befindet euch in einer Kuppel die soweit das Auge reicht mit Bildschirmen ausgekleidet ist. Abertausende verschiedene Videos spielen sich gleichzeitig ab. Du erkennst nicht eines von ihnen. In der Mitte des Saales steht ein enormer Thron. Besagter Thron dreht sich in eure Richtung und offenbart einen normal großen Mann. Es besteht jedoch kein Zweifel, dass es sich dabei um Doom handelt: scharfe Krallen, zwei Hörner auf dem Kopf, mehrere Flügel auf dem Rücken und leuchtend rote Augen.\nDoom erhebt sich aus seinem Thron. \"Wen haben wir denn da? Wenn das nicht mein Engelchen ist. Hast du endlich ein Menschlein gefunden, dass länger als drei Minuten überlebt?\"\nE.N.G.E.L. antwortet nicht. Stattdessen plustert er sein Fell auf und legt kampfbereit die Ohren an.\nDoom zieht unbeeindruckt eine Augenbraue hoch. \"Nicht sehr gesprächig heute, was? Und du, Mensch? Denkst du wirklich du hättest eine Chance gegen mich? Den Zahn kann ich dir ziehen. Du magst bis hier gekommen sein, aber ICH bin der Endboss.\" Doom dreht sich im Kreis und deutet auf die Bildschirme. \"Sieh sie dir nur an, all diese Leben. Sie empfinden keinen Schmerz mehr. Du andererseits…\" Er wendet sich wieder dir zu. \"Du könntest noch großes Leid erfahren. Oder du gibst einfach auf, und kannst dich ihnen anschließen. Ohne Qual, ohne Schmerzen. Was meinst du?\" Wähle A um aufzugeben oder B um zu kämpfen.",
+          "text": "Der Fahrstuhl verliert an Geschwindigkeit und E.N.G.E.L. räuspert sich. \"Hör zu: was auch immer gleich passiert, ich möchte nur, dass du eins weißt. Wenn du nicht weiterweißt, scheue dich nicht auch mich als Waffe einzusetzen. Wir werden alle Mittel brauchen, die wir haben.\"\nDu hast nur Zeit schnell zu nicken, bevor der Fahrstuhl stehen bleibt und sich öffnet. Ihr befindet euch in einer Kuppel die soweit das Auge reicht mit Bildschirmen ausgekleidet ist. Abertausende verschiedene Videos spielen sich gleichzeitig ab. Du erkennst nicht eines von ihnen. In der Mitte des Saales steht ein enormer Thron. Besagter Thron dreht sich in eure Richtung und offenbart einen normal großen Mann. Es besteht jedoch kein Zweifel, dass es sich dabei um Doom handelt: scharfe Krallen, zwei Hörner auf dem Kopf, mehrere Flügel auf dem Rücken und leuchtend rote Augen.\nDoom erhebt sich aus seinem Thron. \"Wen haben wir denn da? Wenn das nicht mein Engelchen ist. Hast du endlich ein Menschlein gefunden, dass länger als drei Minuten überlebt?\"\nE.N.G.E.L. antwortet nicht. Stattdessen plustert er sein Fell auf und legt kampfbereit die Ohren an.\nDoom zieht unbeeindruckt eine Augenbraue hoch. \"Nicht sehr gesprächig heute, was? Und du, Mensch? Denkst du wirklich du hättest eine Chance gegen mich? Den Zahn kann ich dir ziehen. Du magst bis hier gekommen sein, aber ICH bin der Endboss.\" Doom dreht sich im Kreis und deutet auf die Bildschirme. \"Sieh sie dir nur an, all diese Leben. Sie empfinden keinen Schmerz mehr. Du andererseits…\" Er wendet sich wieder dir zu. \"Du könntest noch großes Leid erfahren. Oder du gibst einfach auf, und kannst dich ihnen anschließen. Ohne Qual, ohne Schmerzen. Was meinst du?\" \n(Wähle A um aufzugeben oder B um zu kämpfen.)",
           "commands": [
             {
               "command": "waehle",
