@@ -450,6 +450,7 @@ public class FileController {
                     removeObject("karte");
                 }
                 changeLocation((int) ((long) parameter1), (int) ((long) parameter2));
+                break;
             }
         }
     }
