@@ -16,6 +16,7 @@ import javafx.stage.StageStyle;
 import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.regex.Matcher;
@@ -71,7 +72,7 @@ public class GameController {   // Controller for soki-game.fxml
 
 
     public void setCurrentDialogLine(String text) {
-        this.currentDialog = text;
+        this.currentDialog = new String(text.getBytes(),StandardCharsets.UTF_8) ;
         updateUserLocationInWindow();
         timer.start();
     }
@@ -284,7 +285,9 @@ public class GameController {   // Controller for soki-game.fxml
         int[] newChapAndDialog = fileController.getNextDialogNumbersAndExecuteFunction(currentChapter, currentDialogBlock, command, target);
         this.currentChapter = newChapAndDialog[0];
         this.currentDialogBlock = newChapAndDialog[1];
-        currentDialog = currentDialog + "\n" + replacePlaceholderWithName(fileController.getText(currentChapter, currentDialogBlock));
+        String addSecondDialogBlock = replacePlaceholderWithName(fileController.getText(currentChapter, currentDialogBlock));
+        addSecondDialogBlock = new String(addSecondDialogBlock.getBytes(),StandardCharsets.UTF_8);
+        currentDialog = currentDialog + "\n" + addSecondDialogBlock;
     }
 
     private void setUserName(String input) {

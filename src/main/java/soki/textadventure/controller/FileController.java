@@ -11,8 +11,8 @@ import java.io.IOException;
 import java.io.Reader;
 
 public class FileController {
-    private final String pathToPlayerDateJsonFile = "src/main/java/soki/textadventure/controller/jsonFiles/playerdata.json";
-    private final String pathToTextDataJsonFile = "src/main/java/soki/textadventure/controller/jsonFiles/text.json";
+    private final String pathToPlayerDateJsonFile = "./bin/playerdata.json";
+    private final String pathToTextDataJsonFile = "./bin/text.json";
 
     /*Functions for Playerdata*/
     public void giveallHaraItemsBack() {
